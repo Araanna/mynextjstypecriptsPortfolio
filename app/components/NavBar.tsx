@@ -30,7 +30,7 @@ const Navbar: React.FC<NavbarProps> = ({
 }) => {
   return (
     <nav
-      className={`fixed z-[9999] bg-white shadow-lg flex flex-col md:h-[20rem] h-[3.5rem] md:w-[3.5rem] w-auto bottom-4 left-1/2 transform -translate-x-1/2 md:bottom-auto md:left-20 md:top-[30%] border rounded-lg py-[3rem] transition-all duration-300 ease-in-out ${
+      className={`fixed z-[9999] bg-white shadow-lg flex flex-col md:h-[20rem] h-[3rem] px-3 md:py-[3rem] py-4 md:w-[3.5rem] w-auto bottom-4 left-1/2 transform -translate-x-1/2 md:bottom-auto md:left-20 md:top-[30%] border rounded-lg transition-all duration-300 ease-in-out ${
         isVisible
           ? "opacity-100 translate-y-0"
           : "opacity-0 translate-y-full absolute"

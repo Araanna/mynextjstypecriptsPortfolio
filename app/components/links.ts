@@ -3,11 +3,11 @@
 import { FaBook, FaGithub, FaLinkedin } from "react-icons/fa";
 
 export const navLinks = [
-  { id: "works", href: "#works", label: "Works" },
-  { id: "values", href: "#values", label: "Values" },
-  { id: "interest", href: "#interest", label: "Interest" },
-  { id: "resume", href: "#resume", label: "Resume" },
-  { id: "certificates", href: "#certificates", label: "Certificates" },
+  { id: "works", href: "/Works", label: "Works" },
+  { id: "values", href: "/Values", label: "Values" },
+  { id: "resume", href: "/Resume", label: "Resume" },
+  { id: "interest", href: "/Interest", label: "Interest" },
+  { id: "certificates", href: "/Certificate", label: "Certificates" },
 ];
 
 export const socialLinks = [

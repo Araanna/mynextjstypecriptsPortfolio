@@ -2,12 +2,17 @@
 
 import React, { useEffect, useState } from "react";
 
+import About from "@/pages/About";
+import Contact from "@/pages/Contact";
 import Home from "@/pages/Home";
 import Navbar from "./components/NavBar";
-import Pages from "./components/Pages";
+import Sidebar from "./components/Sidebar";
+import Skills from "@/pages/Skills";
 
-const App: React.FC = () => {
-  const [isVisible, setIsVisible] = useState(true);
+interface AppProps {}
+
+const App: React.FC<AppProps> = () => {
+  const [isVisible, setIsVisible] = useState<boolean>(true);
   const [activeSection, setActiveSection] = useState<string>("About");
   const [lastScrollY, setLastScrollY] = useState<number>(0);
 
@@ -16,10 +21,8 @@ const App: React.FC = () => {
       const currentScrollY = window.scrollY;
 
       if (currentScrollY > lastScrollY) {
-        // Scrolling down
         setIsVisible(false);
       } else {
-        // Scrolling up
         setIsVisible(true);
       }
 
@@ -31,10 +34,9 @@ const App: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
-  // Scroll to the top of the page (Home section) when Home is clicked
   const scrollToHome = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-    setActiveSection("Home"); // Ensure the Home section is active (optional, but ensures consistency)
+    setActiveSection("Home");
   };
 
   return (
@@ -45,7 +47,13 @@ const App: React.FC = () => {
         scrollToHome={scrollToHome}
       />
       <Home />
-      <Pages section={activeSection} />
+      <Sidebar section={activeSection}>
+        <div className="absolute right-[8rem] h-screen transform translate-y-[5rem] translate-x-2 flex items-center justify-center md:transform md:-translate-x-1/4">
+          {activeSection === "About" && <About />}
+          {activeSection === "Skills" && <Skills />}
+          {activeSection === "Contact" && <Contact />}
+        </div>
+      </Sidebar>
     </div>
   );
 };

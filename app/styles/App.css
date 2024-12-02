@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  background-color: #1b1919;
+}
+
+.vertical-text {
+  writing-mode: vertical-rl;
+  text-orientation: sideways-right;
+  transform: rotate(-180deg);
+}
