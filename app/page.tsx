@@ -47,6 +47,7 @@ const App: React.FC<AppProps> = () => {
         scrollToHome={scrollToHome}
       />
       <Home />
+      <div className="border border-1 "></div>
       <Sidebar section={activeSection}>
         <div className="absolute right-[8rem] h-screen transform translate-y-[5rem] translate-x-2 flex items-center justify-center md:transform md:-translate-x-1/4">
           {activeSection === "About" && <About />}

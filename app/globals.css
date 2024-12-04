@@ -6,13 +6,13 @@
 
 
 :root {
-  --background: rgb(2 6 23);
+  --background: rgb(0, 0, 0);
   --foreground: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #ffc7c7;
     --foreground: #ededed;
   }
 }
@@ -29,3 +29,15 @@ body {
   transform: rotate(-180deg);
 }
 
+/* Add dark mode styles */
+body.dark {
+  background-color: #000000; /* Dark background */
+  color: #f0f0f0; /* Light text */
+}
+
+/* Tailwind dark mode styles */
+body.dark .your-custom-class {
+  /* Custom dark mode styles for specific elements */
+  background-color: #3b3b3b; 
+  color:#ffffff;
+}

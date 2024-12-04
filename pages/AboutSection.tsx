@@ -16,13 +16,17 @@ const TAB_DATA: Tab[] = [
     id: "skills",
     content: (
       <ul className="list-disc pl-2">
-        <li>Node.js</li>
-        <li>Express</li>
-        <li>PostgreSQL</li>
-        <li>Django</li>
-        <li>FastAPI</li>
-        <li>JavaScript</li>
-        <li>React</li>
+        {[
+          "Node.js",
+          "Express",
+          "PostgreSQL",
+          "Django",
+          "FastAPI",
+          "Typescript",
+          "React",
+        ].map((skill, index) => (
+          <li key={index} className="hover:text-fuchsia-200">{skill}</li>
+        ))}
       </ul>
     ),
   },
@@ -30,18 +34,59 @@ const TAB_DATA: Tab[] = [
     title: "Education",
     id: "education",
     content: (
-      <ul className="list-disc pl-2">
-        <li>Information Technology Major in System Development</li>
-        <li>Cagayan de Oro College - PHINMA </li>
+      <ul className="list-disc">
+        {[
+          {
+            year: "2023-2024",
+            details: [
+              "Information Technology Major in System Development",
+              "Cagayan de Oro College - PHINMA",
+            ],
+          },
+          {
+            year: "2021-2022",
+            details: [
+              "Information Technology",
+              "Central Mindanao University",
+            ],
+            achievements: [
+              "College Dean's Lister",
+              "College of Information Science and Computing Organization Member",
+              "University Scholar",
+            ]
+          },
+        ].map((education, index) => (
+          <li key={index} className="list-none mb-4">
+            <div className="hover:text-fuchsia-200">{education.year}</div>
+            <ul className="pl-5 list-none">
+              {education.details.map((detail, i) => (
+                <li key={i} className="hover:text-fuchsia-200">{detail}</li>
+              ))}
+              {education.achievements && (
+                <ul className="pl-8 list-disc">
+                  {education.achievements.map((achievement, j) => (
+                    <li key={j} className="hover:text-fuchsia-200">{achievement}</li>
+                  ))}
+                </ul>
+              )}
+            </ul>
+          </li>
+        ))}
       </ul>
     ),
   },
   {
-    title: "Certifications",
+    title: "Certifications & Internships",
     id: "certifications",
     content: (
       <ul className="list-disc pl-2">
-        <li>Linux Fundamentals</li>
+        {[
+          "Linux Fundamentals",
+          "TESDA UI Design Certificate",
+          "Fligno Software Developer Intern",
+        ].map((certification, index) => (
+          <li key={index} className="hover:text-fuchsia-200">{certification}</li>
+        ))}
       </ul>
     ),
   },
@@ -61,18 +106,22 @@ const AboutSection: React.FC = () => {
 
   return (
     <section className="text-zinc-600">
-      <div className="flex flex-row justify-start mt-8">
-        {TAB_DATA.map((tabItem) => (
-          <TabButton
-            key={tabItem.id}
-            selectTab={() => handleTabChange(tabItem.id)}
-            active={tab === tabItem.id}
-          >
-            {tabItem.title}
-          </TabButton>
-        ))}
+      <div className="ml-4 md:ml-0 text-left flex flex-col h-full ">
+        <div className="flex justify-start mt-8">
+          {TAB_DATA.map((tabItem) => (
+            <TabButton
+              key={tabItem.id}
+              selectTab={() => handleTabChange(tabItem.id)}
+              active={tab === tabItem.id}
+            >
+              {tabItem.title}
+            </TabButton>
+          ))}
+        </div>
+        <div className="mt-8 relative">
+          <div className="absolute inset-0">{currentTab?.content}</div>
+        </div>
       </div>
-      <div className="mt-8">{currentTab?.content}</div>
     </section>
   );
 };

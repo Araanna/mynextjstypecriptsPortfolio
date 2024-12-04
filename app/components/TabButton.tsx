@@ -12,12 +12,18 @@ interface TabButtonProps {
   children: React.ReactNode;
 }
 
-const TabButton: React.FC<TabButtonProps> = ({ active, selectTab, children }) => {
-  const buttonClasses = active ? "text-white border-b border-sky-500 text-fuchsia-500" : "text-[#ADB7BE]";
+const TabButton: React.FC<TabButtonProps> = ({
+  active,
+  selectTab,
+  children,
+}) => {
+  const buttonClasses = active
+    ? "text-white border-b border-slate-500 text-sky-500"
+    : "text-[#ADB7BE]";
 
   return (
     <button onClick={selectTab}>
-      <p className={`mr-3 font-semibold hover:text-white ${buttonClasses}`}>
+      <p className={`mr-3 font-semibold hover:text-fuchsia-500 ${buttonClasses}`}>
         {children}
       </p>
       <motion.div

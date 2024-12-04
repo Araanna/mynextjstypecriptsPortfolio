@@ -2,6 +2,7 @@ import type { Config } from "tailwindcss";
 
 export default {
   mode: "jit",
+  darkMode: 'class',
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -17,7 +18,7 @@ export default {
         foreground: "var(--foreground)",
       },
       animation: {
-        "spin-slow": "spin 10s linear infinite",
+        "spin-slow": "spin 20s linear infinite",
       },
     },
   },

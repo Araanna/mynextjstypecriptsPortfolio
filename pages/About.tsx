@@ -18,32 +18,33 @@ const staticData = {
 
 function About() {
   return (
-    <section
-      className="flex flex-col md:flex-row items-center md:mt-16 mt-12 px-4 transform translate-x-1/4"
-    >
-      {/* Left Column: Text Content */}
+    <section className="flex flex-col md:flex-row items-center md:mt-16 md:text-[8px] mt-12 px-2 transform translate-x-40">
       <motion.div
         className="w-full md:w-[30rem] mx-auto mb-4 md:mb-0 text-justify text-sm"
-        initial={{ opacity: 0, x: -50 }} // Start from hidden and off-screen
-        animate={{ opacity: 1, x: 0 }} // Fade in and slide to the normal position
-        transition={{ duration: 0.8 }} // Transition duration
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
       >
+        {" "}
+        <h1 className="text-3xl font-bold transform translate-x-1 -translate-y-[3rem] ">
+          About Me
+        </h1>
         <p>{staticData.intro}</p>
         <p className="mt-4">{staticData.passion}</p>
       </motion.div>
 
       {/* Right Column: Image */}
       <motion.div
-        className="flex justify-center items-center w-full md:w-[25rem] mx-auto"
-        initial={{ opacity: 0, scale: 0.8 }} 
-        animate={{ opacity: 1, scale: 1 }} 
+        className="flex justify-center items-center w-full md:w-[25rem] mx-auto "
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, delay: 0.2 }}
       >
         <Image
           src={ProfileImage}
           alt="Mela"
           width={200}
-          height={200}
+          height={250}
           className="rounded-lg mx-10"
         />
       </motion.div>

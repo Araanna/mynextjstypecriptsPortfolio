@@ -1,11 +1,12 @@
 // links.ts
 
-import { FaBook, FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+
+import { AiOutlineFileText } from "react-icons/ai";
 
 export const navLinks = [
   { id: "works", href: "/Works", label: "Works" },
   { id: "values", href: "/Values", label: "Values" },
-  { id: "resume", href: "/Resume", label: "Resume" },
   { id: "interest", href: "/Interest", label: "Interest" },
   { id: "certificates", href: "/Certificate", label: "Certificates" },
 ];
@@ -26,10 +27,11 @@ export const socialLinks = [
     colorClass: "hover:text-gray-100",
   },
   {
-    href: "https://yourstory.com",
-    label: "Story",
-    title: "Story",
-    Icon: FaBook,
-    colorClass: "hover:text-green-100",
+    href: "/cv.pdf",
+    label: "Resume",
+    title: "Resume",
+    Icon: AiOutlineFileText,
+    colorClass: "hover:text-red-100",
+    download: true,
   },
 ];
