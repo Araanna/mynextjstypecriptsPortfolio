@@ -6,8 +6,10 @@ import About from "@/pages/About";
 import Contact from "@/pages/Contact";
 import Home from "@/pages/Home";
 import Navbar from "./components/NavBar";
+import ScrollingText from "./components/scrollingText";
 import Sidebar from "./components/Sidebar";
 import Skills from "@/pages/Skills";
+import scrollingText from "./components/scrollingText";
 
 interface AppProps {}
 
@@ -47,7 +49,7 @@ const App: React.FC<AppProps> = () => {
         scrollToHome={scrollToHome}
       />
       <Home />
-      <div className="border border-1 "></div>
+      <ScrollingText />
       <Sidebar section={activeSection}>
         <div className="absolute right-[8rem] h-screen transform translate-y-[5rem] translate-x-2 flex items-center justify-center md:transform md:-translate-x-1/4">
           {activeSection === "About" && <About />}

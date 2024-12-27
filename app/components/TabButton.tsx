@@ -23,7 +23,9 @@ const TabButton: React.FC<TabButtonProps> = ({
 
   return (
     <button onClick={selectTab}>
-      <p className={`mr-3 font-semibold hover:text-fuchsia-500 ${buttonClasses}`}>
+      <p
+        className={`mr-3 font-semibold hover:text-indigo-300 ${buttonClasses}`}
+      >
         {children}
       </p>
       <motion.div

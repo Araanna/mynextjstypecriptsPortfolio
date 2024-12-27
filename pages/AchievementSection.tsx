@@ -25,7 +25,9 @@ const TAB_DATA: Tab[] = [
           "Typescript",
           "React",
         ].map((skill, index) => (
-          <li key={index} className="hover:text-fuchsia-200">{skill}</li>
+          <li key={index} className="hover:text-indigo-200">
+            {skill}
+          </li>
         ))}
       </ul>
     ),
@@ -45,27 +47,28 @@ const TAB_DATA: Tab[] = [
           },
           {
             year: "2021-2022",
-            details: [
-              "Information Technology",
-              "Central Mindanao University",
-            ],
+            details: ["Information Technology", "Central Mindanao University"],
             achievements: [
               "College Dean's Lister",
               "College of Information Science and Computing Organization Member",
               "University Scholar",
-            ]
+            ],
           },
         ].map((education, index) => (
           <li key={index} className="list-none mb-4">
-            <div className="hover:text-fuchsia-200">{education.year}</div>
+            <div className="hover:text-indigo-200">{education.year}</div>
             <ul className="pl-5 list-none">
               {education.details.map((detail, i) => (
-                <li key={i} className="hover:text-fuchsia-200">{detail}</li>
+                <li key={i} className="hover:text-fuchsia-200">
+                  {detail}
+                </li>
               ))}
               {education.achievements && (
                 <ul className="pl-8 list-disc">
                   {education.achievements.map((achievement, j) => (
-                    <li key={j} className="hover:text-fuchsia-200">{achievement}</li>
+                    <li key={j} className="hover:text-fuchsia-200">
+                      {achievement}
+                    </li>
                   ))}
                 </ul>
               )}
@@ -85,7 +88,9 @@ const TAB_DATA: Tab[] = [
           "TESDA UI Design Certificate",
           "Fligno Software Developer Intern",
         ].map((certification, index) => (
-          <li key={index} className="hover:text-fuchsia-200">{certification}</li>
+          <li key={index} className="hover:text-fuchsia-200">
+            {certification}
+          </li>
         ))}
       </ul>
     ),
@@ -105,7 +110,7 @@ const AboutSection: React.FC = () => {
   const currentTab = TAB_DATA.find((t) => t.id === tab);
 
   return (
-    <section className="text-zinc-600">
+    <section className="text-zinc-300">
       <div className="ml-4 md:ml-0 text-left flex flex-col h-full ">
         <div className="flex justify-start mt-8">
           {TAB_DATA.map((tabItem) => (

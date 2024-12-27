@@ -1,70 +1,69 @@
-import Ecom from "../assets/images/E-commerce MockUP.png";
+"use client";
+
 import Image from "next/image";
 import Layout from "@/app/components/Layout";
-import React from "react";
 import Sidebar from "@/app/components/Sidebar";
-import UIX from "../assets/images/UX Design.png";
 import { motion } from "framer-motion";
+import { projectsData } from "@/lib/projectsData";
 
 const Works: React.FC = () => {
   return (
     <Layout>
       <Sidebar section="Works" />
-      <div className="absolute top-[2rem] left-[18rem]">
-        <h1 className="text-white text-3xl font-bold my-20">my works</h1>
-        <div className="flex space-x-10">
-          <div>
+      <div className="absolute top-[2rem] left-[28rem]">
+        <h1 className="text-white text-6xl font-bold my-20">ᵐʸ ʷᵒʳᵏˢ</h1>
+        {/* Smooth overflow with proper scroll behavior */}
+        <div className="flex flex-wrap gap-10 overflow-y-auto max-h-[calc(90vh-200px)] ">
+          {projectsData.map(({ title, description, tags, imageUrl }) => (
             <motion.div
+              key={title}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.8 }}
               transition={{ duration: 0.5 }}
-              className="group"
+              className="group w-[50rem] rounded-xl overflow-hidden hover:transform hover:scale-[1.02] transition-all duration-300"
             >
-              <Image
-                src={Ecom}
-                alt="Project 1"
-                width={250}
-                height={450}
-                className="group-hover:scale-95 transition-transform duration-300"
-              />
-              <h2 className="text-white text-md font-black mt-3 hover:text-fuchsia-300">
-                UI/UX Design and System Development
-              </h2>
-              <h2 className="text-neutral-400 text-sm font-semi text-center hover:text-fuchsia-300">
-                E-commerce Platform Mockup and Full-Stack System Development
-              </h2>
-              <h2 className="text-stone-500 text-xs  font-bold hover:text-fuchsia-300  text-left">
-                HTML, CSS, and JavaScript for Front-End, <br /> AJAX and RESTful
-                APIs for Data Communication, <br />  PHP for Back-End <br />{" "}
-                and Database Integration using mySQL
-              </h2>
-            </motion.div>
-          </div>
+              <div className="flex items-center border border-white/20 rounded-xl p-4 bg-gradient-to-br from-indigo-500/10 via-transparent to-white/5 backdrop-blur-md hover:border-indigo-500/30 transition-all duration-300 ">
+                <div className="flex flex-row w-full gap-6 bg-transparent ">
+                  {/* Image Section */}
+                  <div className="w-[200px] flex-shrink-0 ">
+                    <Image
+                      src={imageUrl}
+                      alt={title}
+                      width={200}
+                      height={200}
+                      className="w-full h-[200px] object-cover rounded-lg transition-transform duration-300 group-hover:scale-105 bg-transparent"
+                    />
+                  </div>
 
-          <div>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.8 }}
-              transition={{ duration: 0.5 }}
-              className="group"
-            >
-              <Image
-                src={UIX}
-                alt="Project 2"
-                width={220}
-                height={350}
-                className="group-hover:scale-95 transition-transform duration-300"
-              />
-              <h2 className="text-white text-md font-black text-center hover:text-fuchsia-300">
-                POS and Inventory System
-              </h2>
-              <h2 className="text-neutral-400 text-sm font-semi text-center hover:text-fuchsia-300">
-                UIX Design
-              </h2>
+                  {/* Content Section */}
+                  <div className="flex-1 flex flex-col justify-between py-2 bg-transparent">
+                    <div className="space-y-4 bg-transparent">
+                      <h2 className="text-xl font-bold text-white group-hover:text-indigo-200 transition-colors bg-transparent">
+                        {title}
+                      </h2>
+                      <p className="text-gray-200 text-sm bg-transparent pb-[5rem] pr-[18rem] ">
+                        {description}
+                      </p>
+                    </div>
+
+                    <ul className="flex flex-wrap gap-2 mt-10 bg-transparent">
+                      {tags.map((tag, index) => (
+                        <li
+                          key={index}
+                          className="z-0 bg-white/10 px-4 py-1.5 text-sm tracking-wide 
+                    text-gray-200 rounded-sm hover:bg-indigo-600/20 
+                    transition-colors duration-200 "
+                        >
+                          {tag}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </motion.div>
-          </div>
+          ))}
         </div>
       </div>
     </Layout>

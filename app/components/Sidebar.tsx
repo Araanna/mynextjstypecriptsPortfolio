@@ -2,7 +2,7 @@
 
 import { FiMoon, FiSun } from "react-icons/fi"; // Importing sun and moon icons for light/dark mode
 import React, { useEffect, useState } from "react";
-import { navLinks, socialLinks } from "./links";
+import { navLinks, socialLinks } from "@/lib/links";
 
 import { FaHome } from "react-icons/fa"; // Importing the home icon from react-icons
 import Link from "next/link";

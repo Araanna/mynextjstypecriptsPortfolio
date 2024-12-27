@@ -1,4 +1,4 @@
-import AboutSection from "./AboutSection";
+import AboutSection from "./AchievementSection";
 import React from "react";
 import { motion } from "framer-motion";
 

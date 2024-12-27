@@ -68,7 +68,7 @@ export default function Interest() {
               height={300}
             />
             <div className="row-start-1 row-span-2 object-cover shadow-md border border-stone-800 rounded-md w-[15rem] h-[33rem]">
-              <p className="text-xs p-2 text-pretty">
+              <h2 className="text-white text-xs font-semi text-pretty p-2 text-center">
                 When I was a teenager, I dreamed of owning a surfboard when I
                 grew up. Looking at my family’s situation, which could barely
                 afford to send us to school, I downloaded images from the
@@ -89,7 +89,7 @@ export default function Interest() {
                 engaging in volunteer activities whenever I spot an opportunity.
                 Besides these interests, what excites me the most is learning
                 different languages and cuisines.
-              </p>
+              </h2>
             </div>
           </div>
         </div>
