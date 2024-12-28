@@ -39,7 +39,7 @@ const Certificate: React.FC = () => {
                 transition={{ duration: 0.5 }}
                 className="group"
               >
-                <div className="flex items-center border-e hover:border-2 hover:border-indigo-500/30 rounded-2xl py-5 px-3 bg-white/30 backdrop-blur-md bg-gradient-to-bl from-indigo-500/30 via-transparent to-[#F4F1F8]/40">
+                <div className="flex items-center  border-e hover:border-2 hover:border-indigo-500/30 rounded-2xl py-5 px-3 bg-white/30 backdrop-blur-xl bg-gradient-to-bl from-indigo-500/30 via-transparent to-[#F4F1F8]/40">
                   {" "}
                   <Image
                     src={certificate.image}

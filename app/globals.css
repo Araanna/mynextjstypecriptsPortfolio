@@ -29,8 +29,8 @@ body.dark {
 /* Tailwind dark mode styles */
 body.dark .your-custom-class {
   /* Custom dark mode styles for specific elements */
-  background-color: #d3ceb3; 
-  color:#ffffff;
+  background-color: #080808; 
+  color:#866060;
 }
 @layer base {
   :root {

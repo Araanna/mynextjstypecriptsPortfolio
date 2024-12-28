@@ -13,6 +13,7 @@ import { usePathname } from "next/navigation";
 interface SidebarProps {
   section: string;
   children?: React.ReactNode;
+  className?: string;
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ section, children }) => {
@@ -34,10 +35,10 @@ const Sidebar: React.FC<SidebarProps> = ({ section, children }) => {
   }, [pathname]);
 
   return (
-    <div className="flex flex-row text-gray-400">
+    <div className="flex flex-row text-gray-400 ">
       {/* Sidebar */}
       <motion.div
-        className="col w-[8%] h-[60rem] border-r-2 p-4 py-[12rem] text-center flex flex-col justify-between"
+        className="col w-[8%] h-[60rem] border-r-2 p-4 py-[12rem] text-center flex flex-col justify-between "
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         exit={{ opacity: 0, x: -50 }}

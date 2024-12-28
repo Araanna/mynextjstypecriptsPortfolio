@@ -7,7 +7,8 @@
   padding: 0;
   box-sizing: border-box;
   transition: all 0.3s ease;
-  background-color: #1b1919;
+
+  border-radius: 0 0 20px 20px; 
 }
 
 .vertical-text {
@@ -65,3 +66,16 @@ p {
   margin-top:200px;
 }
 
+
+/* Add dark mode styles */
+body.dark {
+  background-color: #000000; /* Dark background */
+  color: #f0f0f0; /* Light text */
+}
+
+/* Tailwind dark mode styles */
+body.dark .your-custom-class {
+  /* Custom dark mode styles for specific elements */
+  background-color: #a9a3a3; 
+  color:#866060;
+}
