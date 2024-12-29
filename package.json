@@ -9,8 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
     "@hookform/resolvers": "^3.9.1",
-    "@mui/material": "^6.1.9",
+    "@mui/material": "^6.3.0",
     "@radix-ui/react-label": "^2.1.1",
     "@radix-ui/react-slot": "^1.1.1",
     "@radix-ui/react-toast": "^1.2.4",
@@ -26,9 +28,9 @@
     "next-router-mock": "^0.9.13",
     "nextjs-toast": "^1.0.4",
     "nodemailer": "^6.9.16",
-    "react": "^19.0.0-rc-66855b96-20241106",
+    "react": "^18.3.1",
     "react-animated-numbers": "^0.18.0",
-    "react-dom": "^19.0.0-rc-66855b96-20241106",
+    "react-dom": "^18.3.1",
     "react-hook-form": "^7.54.2",
     "react-icons": "^5.3.0",
     "react-intersection-observer": "^9.13.1",

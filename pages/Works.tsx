@@ -1,10 +1,12 @@
-"use client";
-
 import Image from "next/image";
 import Layout from "@/app/components/Layout";
-import Sidebar from "@/app/components/Sidebar";
+import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import { projectsData } from "@/lib/projectsData";
+
+const Sidebar = dynamic(() => import('@/app/components/Sidebar'), {
+  ssr: false,
+});
 
 const Works: React.FC = () => {
   return (

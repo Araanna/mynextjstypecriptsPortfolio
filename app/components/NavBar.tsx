@@ -11,10 +11,10 @@ interface NavButton {
 }
 
 const navButtons: NavButton[] = [
-  { label: "Home", icon: <HiHome /> },
-  { label: "About", icon: <SiAboutdotme /> },
-  { label: "Skills", icon: <FaLaptopCode /> },
-  { label: "Contact", icon: <MdContactPage /> },
+  { label: "Home", icon: <HiHome className="text-xl" /> },
+  { label: "About", icon: <SiAboutdotme className="text-3xl" /> },
+  { label: "Skills", icon: <FaLaptopCode className="text-xl" /> },
+  { label: "Contact", icon: <MdContactPage className="text-xl" /> },
 ];
 
 interface NavbarProps {
@@ -30,7 +30,7 @@ const Navbar: React.FC<NavbarProps> = ({
 }) => {
   return (
     <nav
-      className={`fixed z-[9999] backdrop-blur-lg bg-white/20 shadow-lg flex flex-col md:h-[20rem] h-[3rem] px-3 md:py-[3rem] py-4 md:w-[3.5rem] w-auto bottom-4 left-1/2 transform -translate-x-1/2 md:bottom-auto md:left-20 md:top-[30%] border-[#000] rounded-lg transition-all duration-300 ease-in-out ${
+      className={`fixed z-[9999] backdrop-blur-lg bg-white/20 shadow-lg flex flex-col md:h-[20rem] h-[3rem] px-4 md:py-[3rem] py-2 md:w-[3.5rem] w-auto bottom-4 left-1/2 transform -translate-x-1/2 md:bottom-auto md:left-20 md:top-[30%] border-[#000] rounded-lg transition-all duration-300 ease-in-out ${
         isVisible
           ? "opacity-100 translate-y-0"
           : "opacity-0 translate-y-full absolute"
