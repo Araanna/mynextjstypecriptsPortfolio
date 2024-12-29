@@ -1,3 +1,5 @@
+import "react-toastify/dist/ReactToastify.css";
+
 import {
   Form,
   FormControl,
@@ -6,6 +8,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { ToastContainer, toast } from "react-toastify";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -13,9 +16,12 @@ import React from "react";
 import { Textarea } from "@/components/ui/textarea";
 import { sendContactForm } from "../lib/api";
 import { useForm } from "react-hook-form";
-import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+
+// Import ToastContainer correctly
+
+// Import the styles for react-toastify
 
 const formSchema = z.object({
   name: z.string().min(1, { message: "Name is required" }),
@@ -27,7 +33,6 @@ const formSchema = z.object({
 type FormValues = z.infer<typeof formSchema>;
 
 const Contact: React.FC = () => {
-  const { toast } = useToast();
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -40,26 +45,15 @@ const Contact: React.FC = () => {
 
   const handleSubmit = async (data: FormValues) => {
     try {
-      toast({
-        title: "Submitting...",
-        description: "Please wait while we send your message.",
-      });
+      toast.info("Submitting... Please wait while we send your message.");
 
       await sendContactForm(data);
 
-      toast({
-        title: "Success!",
-        description: "Your message has been sent successfully.",
-        variant: "default",
-      });
+      toast.success("Your message has been sent successfully!");
 
       form.reset();
     } catch (err: any) {
-      toast({
-        title: "Error",
-        description: err.message || "Failed to send the message.",
-        variant: "destructive",
-      });
+      toast.error(err.message || "Failed to send the message.");
     }
   };
 
@@ -165,6 +159,17 @@ const Contact: React.FC = () => {
           </Form>
         </div>
       </div>
+
+      <ToastContainer
+        className="fixed bottom-4 right-4 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-4 sm:right-4 sm:top-auto sm:flex-col md:max-w-[420px]"
+        autoClose={5000}
+        hideProgressBar
+        closeOnClick
+        pauseOnHover
+        draggable
+        pauseOnFocusLoss
+        theme="light"
+      />
     </>
   );
 };
