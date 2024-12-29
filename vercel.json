@@ -7,6 +7,16 @@
           "buildCommand": "npm install --legacy-peer-deps && npm run build"
         }
       }
-    ]
+    ],
+    "routes": [
+        {
+          "src": "/components/(.*)",
+          "dest": "/components/$1"
+        },
+        {
+          "src": "/pages/(.*)",
+          "dest": "/pages/$1"
+        }
+      ]
   }
   
