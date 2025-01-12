@@ -18,7 +18,7 @@ export default {
         foreground: "var(--foreground)",
       },
       fontFamily: {
-        cursive: ['"Dancing Script"', "cursive"], 
+        cursive: ['"Dancing Script"', "cursive"],
       },
       animation: {
         "spin-slow": "spin 20s linear infinite",
@@ -74,5 +74,13 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    require("@designbycode/tailwindcss-text-shadow")({
+      shadowColor: "rgba(0, 0, 0, 0.55)",
+      shadowBlur: "6px",
+      shadowOffsetX: "12px",
+      shadowOffsetY: "12px",
+    }),
+  ],
 } satisfies Config;

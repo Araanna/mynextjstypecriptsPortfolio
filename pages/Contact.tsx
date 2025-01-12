@@ -81,7 +81,7 @@ const Contact: React.FC = () => {
         </p>
       </div>
       <div className=" w-[150px] h-[150px] rounded-full bg-fuchsia-300 absolute top-[27rem] right-0 translate-x-[12rem]">
-        HII
+      
       </div>
 
       <div className="relative bottom-[14rem] right-[15rem]">

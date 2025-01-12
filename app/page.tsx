@@ -18,7 +18,7 @@ const App: React.FC<AppProps> = () => {
   const [isVisible, setIsVisible] = useState<boolean>(true);
   const [activeSection, setActiveSection] = useState<string>("About");
   const [lastScrollY, setLastScrollY] = useState<number>(0);
-  const [showFooter, setShowFooter] = useState<boolean>(true);
+
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
