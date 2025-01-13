@@ -1,4 +1,4 @@
-import Layout from "@/app/components/Layout";
+import Layout from "@/app/components/layout";
 import React from "react";
 import RotatingText from "@/app/components/RotatingText";
 import Sidebar from "@/app/components/Sidebar";
@@ -8,7 +8,6 @@ const Values: React.FC = () => {
     <Layout>
       <Sidebar section="Values" />
 
-     
       <div className="absolute top-[10rem] left-[50rem] ">
         <div className="absolute left-1/2 transform -translate-x-1/2 ">
           <RotatingText />
