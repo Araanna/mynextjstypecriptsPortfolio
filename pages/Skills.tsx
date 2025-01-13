@@ -35,7 +35,7 @@ const Skills: React.FC = () => {
 
       {/* Right Column: Skills Icons */}
       <motion.div
-        className="flex flex-wrap justify-center w-full md:w-[25rem] mx-auto border rounded-lg border-[#33353F] foreground backdrop-blur-lg bg-white/2"
+        className="flex flex-wrap justify-center w-full md:w-[25rem] mx-auto border rounded-lg border-[#33353F] foreground backdrop-blur-lg bg-white/10"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, delay: 0.2 }}
@@ -45,7 +45,7 @@ const Skills: React.FC = () => {
             key={index}
             className="flex flex-col items-center p-6  m-2 text-center   "
           >
-            <skill.Icon className="text-4xl mb-2 text-blue-500  text-shadow text-shadow-x-md text-shadow-y-lg text-shadow-blur-2 text-shadow-blue-500 " />
+            <skill.Icon className="text-4xl mb-2 text-blue-500  text-shadow text-shadow-x-md text-shadow-y-lg text-shadow-blur-2 text-shadow-blue-500 hover:text-sky-400 " />
             <p className="text-sm">{skill.name}</p>
           </div>
         ))}
