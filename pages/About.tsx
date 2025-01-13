@@ -5,15 +5,21 @@ import ProfileImage from "@/assets/images/ProfileImage.png";
 import React from "react";
 import { motion } from "framer-motion";
 
-// Static content for the about section
 const staticData = {
-  intro: `I am a full-stack web developer with a strong passion for exploring new skills and interests, which keeps my curiosity alive. 
-          Building various projects, from mobile apps to websites, brings me great satisfaction, especially when I see the results of my work. 
-          You can check out my creations on GitHub. I have experience with JavaScript, React, Redux, Python (Django, Flask, FastAPI), 
-          Node.js (Express), PostgreSQL, HTML, CSS, Docker, and Git. My expertise includes working with WebSocket, REST API, and GraphQL for APIs. 
-          As a fast learner and team player, I am always excited to collaborate and expand my skill set to create amazing applications.`,
-  passion: `What drives me is the mix of art and technology—I see it like painting, where I can be bold and confident that the quality shines through. 
-            I’ve also developed a keen interest in marketing and business strategies, especially after helping my parents run their business.`,
+  intro: `I am a dedicated and passionately curious full-stack web developer with strong expertise in JavaScript, React, and backend development. My experience includes working with SQL, MongoDB, and Docker, as well as building REST APIs using Django.
+
+  To prepare myself for job opportunities, I have self-studied these technologies, diving deep into their applications and principles. I enjoy the process of learning and integrating various APIs, often leveraging tools like Postman to test and refine my work.`,
+  passion: `Building projects, from websites to mobile applications, fuels my passion for technology and problem-solving. Each project is an opportunity to grow, and I take pride in seeing my ideas come to life. You can explore my creations on GitHub, where I showcase my knowledge and enthusiasm for coding.`,
+  tools: [
+    { category: "Frontend", tools: "JavaScript, React, Redux, HTML, CSS" },
+    {
+      category: "Backend",
+      tools: "Django, REST API, Node.js (Express), WebSocket",
+    },
+    { category: "Databases", tools: "SQL, MongoDB, PostgreSQL" },
+    { category: "Tools and Platforms", tools: "Docker, Git, Postman" },
+    { category: "API Development", tools: "REST API, GraphQL" },
+  ],
 };
 
 function About() {
@@ -25,17 +31,27 @@ function About() {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }}
       >
-        {" "}
-        <h1 className="text-3xl font-bold transform translate-x-1 -translate-y-[3rem] ">
+        <h1 className="text-3xl font-bold transform translate-x-1 -translate-y-[3rem]">
           About Me
         </h1>
         <p>{staticData.intro}</p>
         <p className="mt-4">{staticData.passion}</p>
+
+        <h2 className="text-lg font-semibold mt-6">
+          Experience Making Projects with These Tools:
+        </h2>
+        <ul className="list-disc list-inside mt-4">
+          {staticData.tools.map((item, index) => (
+            <li key={index}>
+              <strong>{item.category}:</strong> {item.tools}
+            </li>
+          ))}
+        </ul>
       </motion.div>
 
       {/* Right Column: Image */}
       <motion.div
-        className="flex justify-center items-center w-full md:w-[25rem] mx-auto "
+        className="flex justify-center items-center w-full md:w-[25rem] mx-auto"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, delay: 0.2 }}
