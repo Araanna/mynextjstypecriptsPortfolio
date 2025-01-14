@@ -7,10 +7,10 @@ const nextConfig = {
   reactStrictMode: true, // Optional: can help catch issues earlier
   webpack(config) {
     // Adding alias to Webpack configuration
-    config.resolve.alias['@'] = path.resolve('src'); // Modify this path as needed
-    config.resolve.alias['@components'] = path.resolve('src/components');
-    config.resolve.alias['@assets'] = path.resolve('src/assets');
-    config.resolve.alias['@pages'] = path.resolve('src/pages'); // Added pages alias
+    config.resolve.alias['@'] = path.resolve('app'); // Modify this path as needed
+    config.resolve.alias['@components'] = path.resolve('app/components');
+    config.resolve.alias['@assets'] = path.resolve('app/assets');
+    config.resolve.alias['@pages'] = path.resolve('pages'); // Added pages alias
     return config;
   }
 };

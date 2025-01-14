@@ -7,13 +7,13 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
+} from "@/components/ui/form.tsx";
 import { ToastContainer, toast } from "react-toastify";
 
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button.tsx";
+import { Input } from "@/components/ui/input.tsx";
 import React from "react";
-import { Textarea } from "@/components/ui/textarea";
+import { Textarea } from "@/components/ui/textarea.tsx";
 import { sendContactForm } from "../lib/api";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
