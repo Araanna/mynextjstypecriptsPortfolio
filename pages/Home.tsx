@@ -1,4 +1,4 @@
-import ExperienceBoard from "@/app/components/ExperienceBoard";
+import ExperienceBoard from "../app/components/ExperienceBoard";
 import React from "react";
 
 function Home() {

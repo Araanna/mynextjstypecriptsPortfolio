@@ -3,7 +3,7 @@
 import React from "react";
 import SectionHeading from "./SectionsHeading";
 import Works from "./Works";
-import { projectsData } from "@/lib/projectsData";
+import { projectsData } from "../lib/projectsData";
 
 export default function Projects() {
   return (

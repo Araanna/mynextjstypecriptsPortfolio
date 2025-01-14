@@ -1,7 +1,7 @@
-import Layout from "@/app/components/Layout";
+import Layout from "../app/components/Layout";
 import React from "react";
-import RotatingText from "@/app/components/RotatingText";
-import Sidebar from "@/app/components/Sidebar";
+import RotatingText from "../app/components/RotatingText";
+import Sidebar from "../app/components/Sidebar";
 
 const Values: React.FC = () => {
   return (
