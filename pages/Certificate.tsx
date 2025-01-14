@@ -1,8 +1,8 @@
 import Fligno from "../assets/images/Fligno.png";
 import Image from "next/image";
-import Layout from "@/app/components/Layout.tsx";
+import Layout from "../app/components/Layout.tsx";
 import React from "react";
-import Sidebar from "@/app/components/Sidebar.tsx";
+import Sidebar from "../app/components/Sidebar.tsx";
 import Tesda from "../assets/images/TESDA.png";
 import { motion } from "framer-motion";
 
