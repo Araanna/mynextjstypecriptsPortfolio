@@ -7,7 +7,7 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form.tsx";
+} from "../components/ui/form.tsx";
 import { ToastContainer, toast } from "react-toastify";
 
 import { Button } from "../components/ui/button.tsx";

@@ -1,5 +1,5 @@
-import Ecom from "@/assets/images/UX Design.png";
-import UIX from "@/assets/images/E-commerce MockUP.png";
+import Ecom from "../assets/images/UX Design.png";
+import UIX from "../assets/images/E-commerce MockUP.png";
 
 export const projectsData = [
   {

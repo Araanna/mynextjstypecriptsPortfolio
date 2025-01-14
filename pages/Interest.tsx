@@ -6,7 +6,7 @@ import Image4 from "../assets/images/image 4.png";
 import Image5 from "../assets/images/image 5.png";
 import Image6 from "../assets/images/image 6.png";
 import Layout from "../app/components/Layout.tsx";
-import Sidebar from "../app/components/Sidebar";
+import Sidebar from "../app/components/Sidebar.tsx";
 
 export default function Interest() {
   return (
