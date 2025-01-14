@@ -14,8 +14,12 @@ const nextConfig = {
     config.resolve.alias['@components'] = path.resolve(__dirname, 'app/components');
     config.resolve.alias['@assets'] = path.resolve(__dirname, 'app/assets');
     config.resolve.alias['@pages'] = path.resolve(__dirname, 'pages'); // Ensure correct path
+
+    // Alias for tailwindcss (optional, only if necessary)
+    config.resolve.alias['tailwindcss'] = require.resolve('tailwindcss');
+
     return config;
-  }
+  },
 };
 
 export default nextConfig;
