@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Layout from "@/app/components/layout";
+import Layout from "@/app/components/Layout";
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import { projectsData } from "@/lib/projectsData";

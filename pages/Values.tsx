@@ -1,4 +1,4 @@
-import Layout from "@/app/components/layout";
+import Layout from "@/app/components/Layout";
 import React from "react";
 import RotatingText from "@/app/components/RotatingText";
 import Sidebar from "@/app/components/Sidebar";
