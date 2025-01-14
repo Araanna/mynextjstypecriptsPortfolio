@@ -16,8 +16,7 @@ const nextConfig = {
     config.resolve.alias['@assets'] = path.resolve(__dirname, 'app/assets');
     config.resolve.alias['@pages'] = path.resolve(__dirname, 'pages'); // Ensure correct path
 
-    // Use path.resolve to resolve 'tailwindcss' correctly in ES module
- 
+    // Return the modified config
     return config;
   },
 };
