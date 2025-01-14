@@ -8,7 +8,6 @@ import {
   FormLabel,
   FormMessage,
 } from "../components/ui/form.tsx";
-import { ToastContainer, toast } from "react-toastify";
 
 import { Button } from "../components/ui/button.tsx";
 import { Input } from "../components/ui/input.tsx";
@@ -16,12 +15,9 @@ import React from "react";
 import { Textarea } from "../components/ui/textarea.tsx";
 import { sendContactForm } from "../lib/api";
 import { useForm } from "react-hook-form";
+import { useToast } from "../hooks/use-toast.ts";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-
-// Import ToastContainer correctly
-
-// Import the styles for react-toastify
 
 const formSchema = z.object({
   name: z.string().min(1, { message: "Name is required" }),
@@ -42,18 +38,27 @@ const Contact: React.FC = () => {
       message: "",
     },
   });
+  const { toast } = useToast();
 
   const handleSubmit = async (data: FormValues) => {
     try {
-      toast.info("Submitting... Please wait while we send your message.");
-
+      toast({
+        title: "Submitting...",
+        description: "Please wait while we send your message.",
+        variant: "info",
+      });
       await sendContactForm(data);
-
-      toast.success("Your message has been sent successfully!");
-
+      toast({
+        title: "Your message has been sent successfully!",
+        variant: "success",
+      });
       form.reset();
     } catch (err: any) {
-      toast.error(err.message || "Failed to send the message.");
+      toast({
+        title: "Failed to send the message.",
+        description: err.message || "Something went wrong.",
+        variant: "error",
+      });
     }
   };
 
@@ -80,9 +85,7 @@ const Contact: React.FC = () => {
           Fill up the form to easily reach me out.{" "}
         </p>
       </div>
-      <div className=" w-[150px] h-[150px] rounded-full bg-fuchsia-300 absolute top-[27rem] right-0 translate-x-[12rem]">
-      
-      </div>
+      <div className=" w-[150px] h-[150px] rounded-full bg-fuchsia-300 absolute top-[27rem] right-0 translate-x-[12rem]"></div>
 
       <div className="relative bottom-[14rem] right-[15rem]">
         <div className="foreground absolute w-auto h-auto sm:border-[#33353F] sm:border rounded-lg p-3 backdrop-blur-lg bg-white/2">
@@ -159,17 +162,6 @@ const Contact: React.FC = () => {
           </Form>
         </div>
       </div>
-
-      <ToastContainer
-        className="fixed bottom-4 right-4 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-4 sm:right-4 sm:top-auto sm:flex-col md:max-w-[420px]"
-        autoClose={5000}
-        hideProgressBar
-        closeOnClick
-        pauseOnHover
-        draggable
-        pauseOnFocusLoss
-        theme="light"
-      />
     </>
   );
 };
