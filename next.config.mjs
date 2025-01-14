@@ -1,7 +1,8 @@
+import { fileURLToPath } from 'url';
 import path from 'path';
 
 // Use import.meta.url to get the directory name
-const __dirname = path.dirname(new URL(import.meta.url).pathname);
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const nextConfig = {
   typescript: {
@@ -15,8 +16,8 @@ const nextConfig = {
     config.resolve.alias['@assets'] = path.resolve(__dirname, 'app/assets');
     config.resolve.alias['@pages'] = path.resolve(__dirname, 'pages'); // Ensure correct path
 
-    // Alias for tailwindcss (optional, only if necessary)
-    config.resolve.alias['tailwindcss'] = require.resolve('tailwindcss');
+    // Use path.resolve to resolve 'tailwindcss' correctly in ES module
+    config.resolve.alias['tailwindcss'] = path.resolve(__dirname, 'node_modules/tailwindcss');
 
     return config;
   },
