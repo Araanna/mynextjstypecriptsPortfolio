@@ -2,18 +2,6 @@ import "./globals.css";
 
 import type { Metadata } from "next";
 import { Toaster } from "../components/ui/toaster";
-import localFont from "next/font/local";
-
-const geistSans = localFont({
-  src: "/fonts/GeistVF.woff", // Reference from the public directory
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "/fonts/GeistMonoVF.woff", // Reference from the public directory
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
 
 export const metadata: Metadata = {
   title: "𝓂ℯ𝓁𝒶.dev",
@@ -30,9 +18,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/app/favicon.ico" />
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body>
         <main>{children}</main>
         <Toaster />
       </body>
