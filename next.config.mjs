@@ -8,9 +8,7 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true, // Ignore TypeScript build errors
   },
-  eslint: {
-    ignoreBuildErrors: true, // Ignore TypeScript build errors
-  },
+
   reactStrictMode: true, // Optional: can help catch issues earlier
   webpack(config) {
     // Adding alias to Webpack configuration
