@@ -1,4 +1,5 @@
 import "../app/styles/App.css";
+import '../app/fonts/GeistMonoVF.woff'
 
 import { AppProps } from "next/app";
 import { Inter } from "next/font/google";
