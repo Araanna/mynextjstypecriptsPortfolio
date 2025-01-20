@@ -5,12 +5,12 @@ import { Toaster } from "../components/ui/toaster";
 import localFont from "next/font/local";
 
 const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
+  src: "/fonts/GeistVF.woff", // Reference from the public directory
   variable: "--font-geist-sans",
   weight: "100 900",
 });
 const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
+  src: "/fonts/GeistMonoVF.woff", // Reference from the public directory
   variable: "--font-geist-mono",
   weight: "100 900",
 });
