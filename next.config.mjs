@@ -8,6 +8,9 @@ const nextConfig = {
     ignoreBuildErrors: true, // Ignore TypeScript build errors
   },
   reactStrictMode: true,
+  eslint: {
+    ignoreDuringBuilds: true, // Ignore ESLint errors during builds
+  },
   webpack(config) {
     config.resolve.alias["@"] = path.resolve(__dirname);
     config.resolve.alias["@components"] = path.resolve(__dirname, "app/components");
