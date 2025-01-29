@@ -1,14 +1,29 @@
 import { fileURLToPath } from "url";
 import path from "path";
+import { FlatCompat } from "@eslint/eslintrc";
 
 // Use import.meta.url to get the directory name
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+const compat = new FlatCompat({
+  baseDirectory: __dirname,
+});
+
+const eslintConfig = [
+  ...compat.config({
+    extends: ["next"],
+    rules: {
+      "react/no-unescaped-entities": "off",
+      "@next/next/no-page-custom-font": "off",
+    },
+  }),
+];
 
 const nextConfig = {
   typescript: {
     ignoreBuildErrors: true, // Ignore TypeScript build errors
   },
-
+  
   reactStrictMode: true, // Optional: can help catch issues earlier
   webpack(config) {
     // Adding alias to Webpack configuration
@@ -37,4 +52,4 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;
+export { eslintConfig, nextConfig };
