@@ -1,55 +1,32 @@
 import { fileURLToPath } from "url";
 import path from "path";
-import { FlatCompat } from "@eslint/eslintrc";
 
-// Use import.meta.url to get the directory name
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
-
-const eslintConfig = [
-  ...compat.config({
-    extends: ["next"],
-    rules: {
-      "react/no-unescaped-entities": "off",
-      "@next/next/no-page-custom-font": "off",
-    },
-  }),
-];
 
 const nextConfig = {
   typescript: {
     ignoreBuildErrors: true, // Ignore TypeScript build errors
   },
-  
-  reactStrictMode: true, // Optional: can help catch issues earlier
+  reactStrictMode: true,
   webpack(config) {
-    // Adding alias to Webpack configuration
-    config.resolve.alias["@"] = path.resolve(__dirname); // Use __dirname here
-    config.resolve.alias["@components"] = path.resolve(
-      __dirname,
-      "app/components"
-    );
-    config.resolve.alias["@assets"] = path.resolve(__dirname, "public/assets"); // Make sure this is where your assets are
-    config.resolve.alias["@pages"] = path.resolve(__dirname, "pages"); // Ensure correct path
+    config.resolve.alias["@"] = path.resolve(__dirname);
+    config.resolve.alias["@components"] = path.resolve(__dirname, "app/components");
+    config.resolve.alias["@assets"] = path.resolve(__dirname, "public/assets");
+    config.resolve.alias["@pages"] = path.resolve(__dirname, "pages");
 
-    // Add rule to handle font files (woff, woff2, etc.)
     config.module.rules.push({
       test: /\.(woff|woff2|eot|ttf|otf)$/,
       use: {
         loader: "url-loader",
         options: {
-          limit: 10000, // Adjust this value based on your file size
+          limit: 10000,
           name: "fonts/[name].[hash:8].[ext]",
         },
       },
     });
 
-    // Return the modified config
     return config;
   },
 };
 
-export { eslintConfig, nextConfig };
+export default nextConfig;
