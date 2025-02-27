@@ -8,7 +8,8 @@
     "lint": "next lint",
     "build": "npm install --legacy-peer-deps && next build",
     "clean": "rmdir -rf node_modules .next dist build && npm cache clean --force",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+     "v": "node -v"
   },
   "dependencies": {
     "@designbycode/tailwindcss-text-shadow": "^2.2.1",
