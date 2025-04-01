@@ -27,7 +27,7 @@ const staticData = {
 
 function About() {
   return (
-    <section className="flex flex-col md:flex-row items-start justify-start min-h-[calc(100vh-4rem)] w-full overflow-hidden translate-x-0 md:translate-x-1">
+    <section className="flex flex-col md:flex-row items-start justify-start min-h-[calc(100vh-4rem)] overflow-y-auto md:overflow-visible w-full md:w-[80rem] overflow-hidden translate-x-0 md:translate-x-[-15%] md:translate-y-[-5%] relative  bg-white/80 dark:bg-gray-900 rounded-lg m-3">
       {/* Scrollable content container for mobile */}
       <div className="w-full h-full md:h-[35px] overflow-y-auto md:overflow-visible">
         <div className="flex flex-col md:flex-row items-center justify-center py-4 px-4 sm:px-2 lg:px-10 max-w-[1200px] mx-auto ">
@@ -50,10 +50,6 @@ function About() {
                   {staticData.passion}
                 </p>
               </div>
-
-              <h2 className="text-xs sm:text-xl font-semibold mb-4 text-gray-800 dark:text-gray-200">
-                Experience With These Technologies:
-              </h2>
 
               {/* Skills Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
@@ -109,7 +105,7 @@ function About() {
                   src={profileImage}
                   alt="Profile Image"
                   fill
-                  className="rounded-lg object-cover shadow-xl -translate-y-[22rem]"
+                  className="rounded-lg object-cover shadow-xl -translate-y-[10rem]"
                   sizes="(max-width: 768px) 100vw, 50vw"
                   priority
                 />
