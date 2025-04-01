@@ -1,13 +1,13 @@
 "use client";
 
-import { FiMoon, FiSun } from "react-icons/fi"; // Importing sun and moon icons for light/dark mode
+import { FiMoon, FiSun } from "react-icons/fi";
 import React, { useEffect, useState } from "react";
 import { navLinks, socialLinks } from "../../lib/links.ts";
 
-import { FaHome } from "react-icons/fa"; // Importing the home icon from react-icons
+import { FaHome } from "react-icons/fa";
 import Link from "next/link";
 import Tooltip from "@mui/material/Tooltip";
-import { motion } from "framer-motion"; // Import motion from framer-motion
+import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 
 interface SidebarProps {
@@ -17,13 +17,23 @@ interface SidebarProps {
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ section, children }) => {
-  const pathname = usePathname(); // Get the current pathname using usePathname
+  const pathname = usePathname();
   const [showTopBar, setShowTopBar] = useState(true);
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   const toggleTheme = () => {
     setIsDarkMode((prev) => !prev);
-    document.body.classList.toggle("dark", !isDarkMode); // Toggle dark mode on body
+    document.body.classList.toggle("dark", !isDarkMode);
   };
 
   useEffect(() => {
@@ -35,82 +45,137 @@ const Sidebar: React.FC<SidebarProps> = ({ section, children }) => {
   }, [pathname]);
 
   return (
-    <div className="flex flex-row text-gray-400 ">
-      {/* Sidebar */}
-      <motion.div
-        className="col w-[8%] h-[60rem] border-r-2 p-4 py-[12rem] text-center flex flex-col justify-between "
-        initial={{ opacity: 0, x: -50 }}
-        animate={{ opacity: 1, x: 0 }}
-        exit={{ opacity: 0, x: -50 }}
-        transition={{ duration: 0.5 }}
-      >
-        <ul>
-          {navLinks.map(({ id, href, label }) => (
-            <li key={id} className="mb-4">
-              <Link href={href}>
-                <span className="hover:text-gray-100 cursor-pointer transition-all duration-300 ease-in-out transform hover:scale-105 text-xs font-bold vertical-text">
-                  {label}
-                </span>
-              </Link>
-            </li>
-          ))}
-        </ul>
-
-        {/* Home Button */}
-        <div className="flex justify-center items-center mt-4">
-          <Link href="/">
-            <span className="text-2xl text-gray-600 hover:text-gray-800">
-              <FaHome /> {/* Home icon */}
-            </span>
-          </Link>
-        </div>
-
-        {/* Light/Dark Mode Toggle */}
-        <div className="flex justify-center items-center mt-4">
-          <button
-            onClick={toggleTheme}
-            className="text-2xl text-gray-600 hover:text-gray-800"
-          >
-            {isDarkMode ? <FiSun /> : <FiMoon />}{" "}
-            {/* Sun icon for light mode, moon icon for dark mode */}
-          </button>
-        </div>
-      </motion.div>
-
-      {showTopBar && (
+    <div className="flex flex-col md:flex-row text-gray-400 min-h-screen">
+      {/* Mobile Navigation (Top) */}
+      {isMobile && (
         <motion.div
-          className="w-full h-20 border-b-2 flex justify-end items-center pr-8"
-          initial={{ opacity: 0, y: -20 }} // Initial state: hidden and slightly above
-          animate={{ opacity: 1, y: 0 }} // Animate to visible and in place
-          exit={{ opacity: 0, y: -20 }} // Exit state: hidden and slightly above
-          transition={{ duration: 0.5 }} // Duration of animation
+          className="w-full h-16 border-b-2 p-4 flex justify-between items-center"
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -50 }}
+          transition={{ duration: 0.5 }}
         >
-          {socialLinks.map(
-            ({ href, label, title, Icon, colorClass, download }) => (
-              <a
-                key={label}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`relative text-gray-600 ${colorClass} mx-4`}
-                aria-label={label}
-                title={title}
-                download={download ? true : undefined} // Adding the download attribute
-              >
-                <Icon size={24} />
-                <Tooltip title={title} placement="bottom-start">
-                  <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 text-sm bg-black text-white p-2 rounded opacity-0 hover:opacity-100 transition-opacity duration-300">
+          {/* Mobile Menu - Horizontal Scroll */}
+          <div className="flex-1 overflow-x-auto whitespace-nowrap hide-scrollbar">
+            <div className="flex space-x-6 pr-4">
+              {navLinks.map(({ id, href, label }) => (
+                <Link key={id} href={href}>
+                  <span className="hover:text-gray-100 cursor-pointer transition-all duration-300 text-xs font-bold">
                     {label}
                   </span>
-                </Tooltip>
-              </a>
-            )
-          )}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Mobile Icons */}
+          <div className="flex items-center space-x-4 ml-4">
+            <Link href="/">
+              <span className="text-xl text-gray-600 hover:text-gray-800">
+                <FaHome />
+              </span>
+            </Link>
+            <button
+              onClick={toggleTheme}
+              className="text-xl text-gray-600 hover:text-gray-800"
+            >
+              {isDarkMode ? <FiSun /> : <FiMoon />}
+            </button>
+          </div>
         </motion.div>
       )}
 
-      {/* Render children here */}
-      <div>{children}</div>
+      {/* Desktop Sidebar (Left) */}
+      {!isMobile && (
+        <motion.div
+          className="w-20 h-screen border-r-2 p-4 flex flex-col justify-between items-center py-12"
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -50 }}
+          transition={{ duration: 0.5 }}
+        >
+          <ul className="flex flex-col items-center space-y-6">
+            {navLinks.map(({ id, href, label }) => (
+              <li key={id}>
+                <Link href={href}>
+                  <span className="hover:text-gray-100 cursor-pointer transition-all duration-300 ease-in-out transform hover:scale-105 text-xs font-bold vertical-text">
+                    {label}
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          <div className="flex flex-col items-center space-y-4">
+            <Link href="/">
+              <span className="text-2xl text-gray-600 hover:text-gray-800">
+                <FaHome />
+              </span>
+            </Link>
+            <button
+              onClick={toggleTheme}
+              className="text-2xl text-gray-600 hover:text-gray-800"
+            >
+              {isDarkMode ? <FiSun /> : <FiMoon />}
+            </button>
+          </div>
+        </motion.div>
+      )}
+
+      {/* Main Content */}
+      <div className="flex-1 flex flex-col">
+        {showTopBar && (
+          <motion.div
+            className="w-full h-16 border-b-2 flex justify-end items-center px-4 md:pr-8 overflow-x-auto"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="flex space-x-4 md:space-x-6">
+              {socialLinks.map(
+                ({ href, label, title, Icon, colorClass, download }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`relative text-gray-600 ${colorClass}`}
+                    aria-label={label}
+                    title={title}
+                    download={download ? true : undefined}
+                  >
+                    <Icon size={isMobile ? 20 : 24} />
+                    <Tooltip title={title} placement="bottom-start">
+                      <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 text-xs md:text-sm bg-black text-white p-1 md:p-2 rounded opacity-0 hover:opacity-100 transition-opacity duration-300">
+                        {label}
+                      </span>
+                    </Tooltip>
+                  </a>
+                )
+              )}
+            </div>
+          </motion.div>
+        )}
+
+        {/* Children Content (Certificates will appear here) */}
+        <div className="flex-1 overflow-auto p-4 md:p-6 ">{children}</div>
+      </div>
+
+      {/* Mobile-specific styles */}
+      <style jsx>{`
+        .hide-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+        .hide-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+        .vertical-text {
+          writing-mode: vertical-rl;
+          text-orientation: mixed;
+        }
+      `}</style>
     </div>
   );
 };

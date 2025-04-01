@@ -44,24 +44,25 @@ const App: React.FC<AppProps> = () => {
 
   return (
     <>
-     
-        <Navbar
-          onNavigate={setActiveSection}
-          isVisible={isVisible}
-          scrollToHome={scrollToHome}
-        />
-        <Home />
-        <ScrollingText />
-        <Sidebar section={activeSection} >
-          <div className="absolute right-[8rem] h-screen transform translate-y-[5rem] translate-x-2 flex items-center justify-center md:transform md:-translate-x-1/4">
+      <Navbar
+        onNavigate={setActiveSection}
+        isVisible={isVisible}
+        scrollToHome={scrollToHome}
+      />
+      <Home />
+      <ScrollingText />
+      <Sidebar section={activeSection}>
+        <div className="relative w-full min-h-[calc(100vh-8rem)] md:min-h-[80vh] flex items-center justify-center px-4">
+          <div className="w-full max-w-3xl mx-auto py-8 md:py-0">
             {activeSection === "About" && <About />}
             {activeSection === "Skills" && <Skills />}
             {activeSection === "Contact" && <Contact />}
-          </div> 
-        </Sidebar>
-      
-       <Slide />
-      <Footer  />
+          </div>
+        </div>
+      </Sidebar>
+
+      <Slide />
+      <Footer />
     </>
   );
 };
