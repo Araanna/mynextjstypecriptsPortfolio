@@ -28,12 +28,12 @@ const Section1 = () => {
 const Section2 = () => {
   return (
     <>
-      <div className="flex items-center gap-1 translate-x-15 translate-y-[-17vh] md:translate-x-10 md:translate-y-[-25vh] ">
+      <div className="flex items-center gap-1 translate-x-15 translate-y-[18vh]  md:translate-y-[5vh] ">
         <p className="inline-flex items-center gap-1 md:text-xl text-neutral-500 mb-4">
           Designed and coded with <CiHeart /> by
         </p>
       </div>
-      <div className="fixed flex justify-between  items-end justify-items-end mb-8 translate-x-15 translate-y-[47rem] md:translate-y-[50vh]">
+      <div className="flex justify-between items-end mb-8 translate-x-15 translate-y-0 md:translate-y-[-10vh]">
         <h1 className="text-[20vw] leading-[0.8] mt-4 text-neutral-500 sm:text-[15vw] md:text-[18vw] lg:text-[20vw] xl:text-[22vw] md:text-shadow-sm md:font-serif md:font-semibold">
           𝓶𝓮𝓵𝓪
         </h1>
