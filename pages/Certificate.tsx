@@ -33,7 +33,7 @@ const Certificate: React.FC = () => {
         </div>
 
         {/* Main Content */}
-        <div className="flex-1 p-4 md:p-8 overflow-y-auto">
+        <div className="flex-1 items-center justify-center p-10 md:p-10 md:px-[5rem]  overflow-y-auto max-h-[calc(100vh-4rem)]">
           {/* Certificate Title with Motion */}
           <motion.h1
             className="text-3xl font-bold mb-8 text-center"
@@ -77,8 +77,7 @@ const Certificate: React.FC = () => {
                       className="font-bold mt-2 text-gray-800 dark:text-gray-100"
                       whileHover={{ color: "#EBE5C2" }}
                     >
-                      {cert.title}{" "}
-                      <br />
+                      {cert.title} <br />
                       <span className="font-normal text-gray-600 dark:text-gray-300">
                         {cert.description}
                       </span>

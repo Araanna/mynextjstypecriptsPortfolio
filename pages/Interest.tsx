@@ -19,7 +19,7 @@ export default function Interest() {
 
         {/* Main Content */}
         <div className="flex-1 p-4 md:px-8 relative md:right-[6rem] right-0 overflow-y-auto">
-          <h1 className="text-3xl md:text-5xl font-bold text-white text-left mb-6 md:mb-8">
+          <h1 className="text-3xl md:text-5xl font-bold  text-left mb-6 md:mb-8">
             ᵐʸ ᶦⁿᵗᵉʳᵉˢᵗ
           </h1>
 

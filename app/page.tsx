@@ -49,11 +49,11 @@ const App: React.FC<AppProps> = () => {
         isVisible={isVisible}
         scrollToHome={scrollToHome}
       />
-      <Home />
+      <Home setActiveSection={setActiveSection} />
       <ScrollingText />
       <Sidebar section={activeSection}>
         <div className="relative w-full min-h-[calc(100vh-8rem)] md:min-h-[80vh] flex items-center justify-center px-4">
-          <div className="w-full max-w-3xl mx-[20rem] md:mx-auto  py-8 md:py-0">
+          <div className="w-full  mx-[20rem] md:mx-auto  py-8 md:py-0">
             {activeSection === "About" && <About />}
             {activeSection === "Skills" && <Skills />}
             {activeSection === "Contact" && <Contact />}

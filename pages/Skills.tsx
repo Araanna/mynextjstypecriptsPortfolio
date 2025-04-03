@@ -31,10 +31,10 @@ const skillSets: SkillSet[] = [
 
 const Skills: React.FC = () => {
   return (
-    <section className="flex flex-col md:flex-row items-start justify-center min-h-[calc(100vh-4rem)] w-full px-4 sm:px-6 lg:px-8 max-w-[1200px] mx-auto py-8 md:py-2 md:translate-x-[-10%] md:translate-y-[-5%] m-5">
+    <section className="flex flex-col md:flex-row items-center justify-center min-h-full w-full px-4 sm:px-6 lg:px-8 max-w-[1200px] mx-auto  md:py-2 overflow-visible">
       {/* Left Column: About Section */}
       <motion.div
-        className="w-full md:w-1/2 order-2 md:order-1 md:pr-8"
+        className="w-full md:w-1/2 order-2 md:order-1 mb-[25rem] md:mb-0 md:pr-12 md:pb-[20rem]"
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }}
@@ -44,19 +44,19 @@ const Skills: React.FC = () => {
 
       {/* Right Column: Skills Icons */}
       <motion.div
-        className="w-full md:w-1/2 order-1 md:order-2 mb-8 md:mb-0"
+        className="w-full md:w-1/2 order-1 md:order-2 md:mb-0 "
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, delay: 0.2 }}
       >
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 p-6 rounded-lg border border-[#33353F] bg-white/10 backdrop-blur-lg">
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-1  md:gap-1 py-8 rounded-lg border border-[#33353F] bg-white/10 backdrop-blur-lg">
           {skillSets.map((skill, index) => (
             <div
               key={index}
-              className="flex flex-col items-center p-4 transition-all hover:scale-105"
+              className="flex flex-col items-center p-2 md:p-4 transition-all hover:scale-105"
             >
-              <skill.Icon className="text-4xl mb-2 text-inherit text-blue-500" />
-              <p className="text-sm ">{skill.name}</p>
+              <skill.Icon className="text-sm md:text-4xl mb-2   text-blue-500 hover:text-blue-900" />
+              <p className="text-sm text-sky-600">{skill.name}</p>
             </div>
           ))}
         </div>

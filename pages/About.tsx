@@ -3,7 +3,7 @@
 import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
-import profileImage from "../assets/images/profileImage.png";
+import profileImage from "../assets/images/mela.dev.jpg";
 
 const staticData = {
   intro: `I am a dedicated and passionately curious full-stack web developer with strong expertise in JavaScript, React, and backend development. My experience includes working with SQL, MongoDB, and Docker, as well as building REST APIs using Django.
@@ -14,7 +14,7 @@ const staticData = {
 
 function About() {
   return (
-    <section className="flex flex-col md:flex-row items-start justify-start min-h-[calc(80vh-4rem)] overflow-y-auto md:overflow-visible w-full md:w-[80rem] overflow-hidden translate-x-0 md:translate-x-[-15%] md:translate-y-[-25%]  m-5">
+    <section className="flex flex-col md:flex-row items-start  min-h-[calc(80vh-4rem)] overflow-y-auto md:overflow-visible w-full md:w-[80rem] overflow-hidden translate-x-0 md:translate-x-[7rem] md:translate-y-13 ">
       {/* Scrollable content container for mobile */}
       <div className="w-full h-full md:h-[35px] overflow-y-auto md:overflow-visible">
         <div className="flex flex-col md:flex-row items-center justify-center py-4 px-4 sm:px-2 lg:px-10 max-w-[1200px] mx-auto ">
@@ -66,7 +66,7 @@ function About() {
                   src={profileImage}
                   alt="Profile Image"
                   fill
-                  className="rounded-lg object-cover shadow-xl -translate-y-[8rem]"
+                  className="rounded-lg object-cover shadow-xl -translate-y-1"
                   sizes="(max-width: 768px) 100vw, 50vw"
                   priority
                 />

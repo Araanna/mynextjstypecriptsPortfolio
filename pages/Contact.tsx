@@ -64,7 +64,7 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section className="flex flex-col md:flex-row items-start justify-center min-h-[calc(100vh-4rem)] w-full px-4 sm:px-6 lg:px-8 max-w-[1200px] mx-auto py-8">
+    <section className="flex flex-col md:flex-row items-start justify-center min-h-[calc(80vh-4rem)] w-full px-4 sm:px-6 lg:px-8 max-w-[1200px] mx-auto py-8">
       {/* Left Column: Contact Header */}
       <motion.div
         className="w-full md:w-1/2 order-1 md:order-1 md:pr-8"
@@ -91,7 +91,7 @@ const Contact: React.FC = () => {
             Fill up the form to easily reach me out.
           </p>
         </div>
-        <div className="hidden md:block w-[150px] h-[150px] rounded-full bg-fuchsia-300/30 relative bottom-[5rem] right-[-32rem]"></div>
+        <div className="hidden md:block w-[150px] h-[150px] rounded-full bg-fuchsia-300/30 relative bottom-[1rem] right-[-55rem]"></div>
       </motion.div>
 
       {/* Right Column: Contact Form */}
