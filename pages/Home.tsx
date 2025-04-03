@@ -1,6 +1,6 @@
 "use client";
 
-import { FaDribbble, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaBehance, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 import ExperienceBoard from "../app/components/ExperienceBoard";
 import { motion } from "framer-motion";
@@ -80,7 +80,7 @@ const Home = ({ setActiveSection }: HomeProps) => {
         >
           <button
             onClick={handleHireMeClick}
-            className="px-6 py-2 sm:px-8 sm:py-3 bg-gradient-to-r from-cyan-600 to-fuchsia-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-fuchsia-400 focus:ring-opacity-50 text-sm sm:text-base"
+            className="px-6 py-2 sm:px-8 sm:py-3 bg-gradient-to-r from-cyan-600 to-violet-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-fuchsia-400 focus:ring-opacity-50 text-sm sm:text-base"
           >
             Hire Me
           </button>
@@ -108,14 +108,15 @@ const Home = ({ setActiveSection }: HomeProps) => {
 
           <div className="flex flex-row items-center gap-3">
             <a
-              href="https://dribbble.com/yourprofile"
+              href="https://www.behance.net/yourprofile"
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center gap-1 transition-colors hover:text-orange-500"
             >
-              <FaDribbble className="h-4 w-4 sm:h-5 sm:w-5 transition-transform group-hover:scale-110" />
-              <span>Dribbble</span>
+              <FaBehance className="h-4 w-4 sm:h-5 sm:w-5 transition-transform group-hover:scale-110" />
+              <span>Behance</span>
             </a>
+
             <span className="text-gray-300 hidden sm:inline">|</span>
           </div>
 
@@ -123,7 +124,7 @@ const Home = ({ setActiveSection }: HomeProps) => {
             href="https://www.instagram.com/arannnnnaaa/"
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center gap-1 transition-colors hover:text-pink-600"
+            className="group flex items-center gap-1 transition-colors "
           >
             <FaInstagram className="h-4 w-4 sm:h-5 sm:w-5 transition-transform group-hover:scale-110" />
             <span>Instagram</span>
