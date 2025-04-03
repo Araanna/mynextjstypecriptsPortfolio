@@ -10,24 +10,11 @@ const staticData = {
 
   To prepare myself for job opportunities, I have self-studied these technologies, diving deep into their applications and principles. I enjoy the process of learning and integrating various APIs, often leveraging tools like Postman to test and refine my work.`,
   passion: `Building projects, from websites to mobile applications, fuels my passion for technology and problem-solving. Each project is an opportunity to grow, and I take pride in seeing my ideas come to life. You can explore my creations on GitHub, where I showcase my knowledge and enthusiasm for coding.`,
-  skills: [
-    {
-      category: "Frontend",
-      items: ["JavaScript", "React", "Redux", "HTML", "CSS"],
-    },
-    {
-      category: "Backend",
-      items: ["Django", "REST API", "Node.js", "Express", "WebSocket"],
-    },
-    { category: "Databases", items: ["SQL", "MongoDB", "PostgreSQL"] },
-    { category: "Tools", items: ["Docker", "Git", "Postman"] },
-    { category: "API Development", items: ["REST API", "GraphQL"] },
-  ],
 };
 
 function About() {
   return (
-    <section className="flex flex-col md:flex-row items-start justify-start min-h-[calc(100vh-4rem)] overflow-y-auto md:overflow-visible w-full md:w-[80rem] overflow-hidden translate-x-0 md:translate-x-[-15%] md:translate-y-[-5%] relative  bg-white/80 dark:bg-gray-900 rounded-lg m-3">
+    <section className="flex flex-col md:flex-row items-start justify-start min-h-[calc(80vh-4rem)] overflow-y-auto md:overflow-visible w-full md:w-[80rem] overflow-hidden translate-x-0 md:translate-x-[-15%] md:translate-y-[-25%]  m-5">
       {/* Scrollable content container for mobile */}
       <div className="w-full h-full md:h-[35px] overflow-y-auto md:overflow-visible">
         <div className="flex flex-col md:flex-row items-center justify-center py-4 px-4 sm:px-2 lg:px-10 max-w-[1200px] mx-auto ">
@@ -39,42 +26,16 @@ function About() {
             transition={{ duration: 0.8 }}
           >
             <div className="max-w-2xl mx-auto">
-              <h1 className="text-2xl sm:text-3xl font-bold mb-4 text-gray-900 dark:text-white">
+              <h1 className="text-2xl sm:text-3xl font-bold mb-4  ">
                 About Me
               </h1>
-              <div className="-inset-2 space-y-8 text-gray-700 dark:text-gray-300 mb-6 overflow-hidden">
-                <p className="text-sm sm:text-base leading-relaxed">
+              <div className="-inset-2 space-y-8   mb-6 overflow-hidden">
+                <p className="text-xs sm:text-base leading-relaxed">
                   {staticData.intro}
                 </p>
                 <p className="text-xs sm:text-base leading-relaxed">
                   {staticData.passion}
                 </p>
-              </div>
-
-              {/* Skills Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
-                {staticData.skills.map((skillGroup, index) => (
-                  <motion.div
-                    key={index}
-                    className="bg-white dark:bg-gray-800 p-3 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-100 dark:border-gray-700"
-                    whileHover={{ y: -3 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <h3 className="font-bold text-base mb-2 text-center text-gray-800 dark:text-gray-200">
-                      {skillGroup.category}
-                    </h3>
-                    <div className="flex flex-wrap justify-center gap-1">
-                      {skillGroup.items.map((skill, skillIndex) => (
-                        <span
-                          key={skillIndex}
-                          className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs"
-                        >
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                  </motion.div>
-                ))}
               </div>
             </div>
           </motion.div>
@@ -105,7 +66,7 @@ function About() {
                   src={profileImage}
                   alt="Profile Image"
                   fill
-                  className="rounded-lg object-cover shadow-xl -translate-y-[10rem]"
+                  className="rounded-lg object-cover shadow-xl -translate-y-[8rem]"
                   sizes="(max-width: 768px) 100vw, 50vw"
                   priority
                 />

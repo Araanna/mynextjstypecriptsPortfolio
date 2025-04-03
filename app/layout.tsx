@@ -18,7 +18,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/app/favicon.ico" />
       </head>
-      <body>
+      <body className="bg-base-100 ">
         <main>{children}</main>
         <Toaster />
       </body>

@@ -45,11 +45,11 @@ const Sidebar: React.FC<SidebarProps> = ({ section, children }) => {
   }, [pathname]);
 
   return (
-    <div className="flex flex-col md:flex-row text-gray-400 min-h-screen">
+    <div className="flex flex-col md:flex-row ">
       {/* Mobile Navigation (Top) */}
       {isMobile && (
         <motion.div
-          className="w-full h-16 border-b-2 p-4 flex justify-between items-center"
+          className="w-full h-16  border-b-2 p-4 flex justify-between items-center"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -50 }}
@@ -159,7 +159,7 @@ const Sidebar: React.FC<SidebarProps> = ({ section, children }) => {
         )}
 
         {/* Children Content (Certificates will appear here) */}
-        <div className="flex-1 overflow-auto p-4 md:p-6 ">{children}</div>
+        <div className="flex-1 p-4 md:p-6 ">{children}</div>
       </div>
 
       {/* Mobile-specific styles */}

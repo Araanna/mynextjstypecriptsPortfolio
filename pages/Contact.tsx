@@ -13,6 +13,7 @@ import { Button } from "../components/ui/button.tsx";
 import { Input } from "../components/ui/input.tsx";
 import React from "react";
 import { Textarea } from "../components/ui/textarea.tsx";
+import { motion } from "framer-motion";
 import { sendContactForm } from "../lib/api";
 import { useForm } from "react-hook-form";
 import { useToast } from "../hooks/use-toast.ts";
@@ -63,36 +64,48 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <>
-      <h1 className="text-9xl font-mono font-extrabold transform translate-x-35 -translate-y-[17rem]">
-        Contact Me
-      </h1>
-
-      <div className="z-0 transform inset-2 -translate-x-[45rem] translate-y-[7rem]">
-        <h1 className="font-bold text-xl mb-5">Let's Connect</h1>
-        <p className="mb-3">I'd love to hear from you!</p>
-        <p className="font-bold text-md">
-          Want to
-          <span className="relative inline-block">
-            <span className="underline underline-offset-4 decoration-2 decoration-fuchsia-500 m-2">
-              get in touch
+    <section className="flex flex-col md:flex-row items-start justify-center min-h-[calc(100vh-4rem)] w-full px-4 sm:px-6 lg:px-8 max-w-[1200px] mx-auto py-8">
+      {/* Left Column: Contact Header */}
+      <motion.div
+        className="w-full md:w-1/2 order-1 md:order-1 md:pr-8"
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        <h1 className="text-4xl sm:text-6xl md:text-7xl font-mono font-extrabold mb-8">
+          Contact Me
+        </h1>
+        <div className="mb-8">
+          <h2 className="font-bold text-xl mb-4">Let's Connect</h2>
+          <p className="mb-3">I'd love to hear from you!</p>
+          <p className="font-bold text-md mb-4">
+            Want to
+            <span className="relative inline-block">
+              <span className="underline underline-offset-4 decoration-2 decoration-fuchsia-500 mx-2">
+                get in touch
+              </span>
             </span>
-          </span>
-          with me?
-        </p>
-        <p className="text-sm font-bold">
-          {" "}
-          Fill up the form to easily reach me out.{" "}
-        </p>
-      </div>
-      <div className=" w-[150px] h-[150px] rounded-full bg-fuchsia-300 absolute top-[27rem] right-0 translate-x-[12rem]"></div>
+            with me?
+          </p>
+          <p className="text-sm font-bold">
+            Fill up the form to easily reach me out.
+          </p>
+        </div>
+        <div className="hidden md:block w-[150px] h-[150px] rounded-full bg-fuchsia-300/30 relative bottom-[5rem] right-[-32rem]"></div>
+      </motion.div>
 
-      <div className="relative bottom-[14rem] right-[15rem]">
-        <div className="foreground absolute w-auto h-auto sm:border-[#33353F] sm:border rounded-lg p-3 backdrop-blur-lg bg-white/2">
+      {/* Right Column: Contact Form */}
+      <motion.div
+        className="w-full md:w-1/2 order-2 md:order-2"
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+      >
+        <div className="border-[#33353F] border rounded-lg p-6 backdrop-blur-lg bg-white/10">
           <Form {...form}>
             <form
               onSubmit={form.handleSubmit(handleSubmit)}
-              className="space-y-3"
+              className="space-y-4"
             >
               <FormField
                 control={form.control}
@@ -142,7 +155,7 @@ const Contact: React.FC = () => {
                     <FormControl>
                       <Textarea
                         {...field}
-                        rows={4}
+                        rows={5}
                         placeholder="Enter your message"
                       />
                     </FormControl>
@@ -161,8 +174,8 @@ const Contact: React.FC = () => {
             </form>
           </Form>
         </div>
-      </div>
-    </>
+      </motion.div>
+    </section>
   );
 };
 

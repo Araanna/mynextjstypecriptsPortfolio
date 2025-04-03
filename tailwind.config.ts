@@ -2,7 +2,6 @@ import type { Config } from "tailwindcss";
 
 export default {
   mode: "jit",
-  darkMode: ["class", "class"],
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -10,13 +9,9 @@ export default {
     "./pages/LinkPages/**/*.{ts,tsx}",
     "./LinkPages/**/*.{js,ts,jsx,tsx}",
   ],
-
+  
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-      },
       fontFamily: {
         cursive: ['"Dancing Script"', "cursive"],
       },
@@ -27,44 +22,20 @@ export default {
       },
       keyframes: {
         show: {
-          "0%": {
-            transform: "translateY(-300%)",
-          },
-          "5%": {
-            transform: "translateY(-200%)",
-          },
-          "33%": {
-            transform: "translateY(-200%)",
-          },
-          "38%": {
-            transform: "translateY(-100%)",
-          },
-          "60%": {
-            transform: "translateY(-100%)",
-          },
-          "71%": {
-            transform: "translateY(0)",
-          },
-          "80%": {
-            transform: "translateY(0)",
-          },
-          "90%": {
-            transform: "translateY(0)",
-          },
-          "99.99%": {
-            transform: "translateY(0)",
-          },
-          "100%": {
-            transform: "translateY(-300%)",
-          },
+          "0%": { transform: "translateY(-300%)" },
+          "5%": { transform: "translateY(-200%)" },
+          "33%": { transform: "translateY(-200%)" },
+          "38%": { transform: "translateY(-100%)" },
+          "60%": { transform: "translateY(-100%)" },
+          "71%": { transform: "translateY(0)" },
+          "80%": { transform: "translateY(0)" },
+          "90%": { transform: "translateY(0)" },
+          "99.99%": { transform: "translateY(0)" },
+          "100%": { transform: "translateY(-300%)" },
         },
         scroll: {
-          "0%": {
-            transform: "translateX(100%)",
-          },
-          "100%": {
-            transform: "translateX(-100%)",
-          },
+          "0%": { transform: "translateX(100%)" },
+          "100%": { transform: "translateX(-100%)" },
         },
       },
       borderRadius: {
@@ -74,7 +45,9 @@ export default {
       },
     },
   },
+
   plugins: [
+    require("daisyui"),
     require("tailwindcss-animate"),
     require("@designbycode/tailwindcss-text-shadow")({
       shadowColor: "rgba(0, 0, 0, 0.55)",
@@ -83,4 +56,41 @@ export default {
       shadowOffsetY: "12px",
     }),
   ],
+
+  // DaisyUI config with retro theme
+  daisyui: {
+    themes: [
+      "light", // default light theme
+      "dark",  // default dark theme
+      {
+        retro: {
+          "primary": "#ef9995",
+          "secondary": "#a4cbb4",
+          "accent": "#ebdc99",
+          "neutral": "#7d7259",
+          "base-100": "#f4e8c1",
+          "info": "#2563eb",
+          "success": "#16a34a",
+          "warning": "#d97706",
+          "error": "#dc2626",
+          "--rounded-box": "0.5rem",
+          "--rounded-btn": "0.5rem",
+          "--rounded-badge": "0.5rem",
+          "--animation-btn": "0.25s",
+          "--animation-input": "0.2s",
+          "--btn-focus-scale": "0.98",
+          "--border-btn": "1px",
+          "--tab-border": "1px",
+          "--tab-radius": "0.5rem",
+        }
+      }
+    ],
+    darkTheme: "dark", // default dark theme
+    base: true,
+    styled: true,
+    utils: true,
+    rtl: false,
+    prefix: "",
+    logs: true,
+  },
 } satisfies Config;

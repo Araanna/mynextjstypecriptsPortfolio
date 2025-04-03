@@ -25,7 +25,7 @@ const TAB_DATA: Tab[] = [
           "Typescript",
           "React",
         ].map((skill, index) => (
-          <li key={index} className="hover:text-indigo-300">
+          <li key={index} className="hover:text-indigo-900">
             {skill}
           </li>
         ))}
@@ -56,7 +56,7 @@ const TAB_DATA: Tab[] = [
           },
         ].map((education, index) => (
           <li key={index} className="mb-4">
-            <span className="hover:text-indigo-400 font-bold">
+            <span className="hover:text-indigo-900 font-bold">
               {education.year}
             </span>
             <ul className="pl-5 list-disc">
