@@ -17,15 +17,28 @@ export default {
       },
       animation: {
         "spin-slow": "spin 20s linear infinite",
-        flip: "flip 6s ease-in-out infinite",
+        flip: "show 40s linear infinite",
         scroll: "scroll 25s linear infinite",
       },
       keyframes: {
         flip: {
-          "0%, 32%": { transform: "translateY(0)" },
-          "33%, 65%": { transform: "translateY(-33.33%)" },
-          "66%, 99%": { transform: "translateY(-66.66%)" },
-          "100%": { transform: "translateY(0)" }
+          // Changed from 'show' to 'flip'
+          "0%, 33%": { transform: "translateY(0)" }, // FullStack Developer
+          "33.1%, 66%": { transform: "translateY(-100%)" }, // Mobile Developer
+          "66.1%, 99.9%": { transform: "translateY(-200%)" }, // UI Designer
+          "100%": { transform: "translateY(0)" }, // Reset
+        },
+        show: {
+          "0%": { transform: "translateY(-300%)" },
+          "5%": { transform: "translateY(-200%)" },
+          "33%": { transform: "translateY(-200%)" },
+          "38%": { transform: "translateY(-100%)" },
+          "60%": { transform: "translateY(-100%)" },
+          "71%": { transform: "translateY(0)" },
+          "80%": { transform: "translateY(0)" },
+          "90%": { transform: "translateY(0)" },
+          "99.99%": { transform: "translateY(0)" },
+          "100%": { transform: "translateY(-300%)" },
         },
         scroll: {
           "0%": { transform: "translateX(100%)" },
@@ -51,10 +64,11 @@ export default {
     }),
   ],
 
+  // DaisyUI config with retro theme
   daisyui: {
     themes: [
-      "light",
-      "dark",
+      "light", // default light theme
+      "dark", // default dark theme
       {
         retro: {
           primary: "#ef9995",
@@ -78,7 +92,7 @@ export default {
         },
       },
     ],
-    darkTheme: "dark",
+    darkTheme: "dark", // default dark theme
     base: true,
     styled: true,
     utils: true,

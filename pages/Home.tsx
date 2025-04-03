@@ -41,31 +41,19 @@ const Home = ({ setActiveSection }: HomeProps) => {
               Hello, I'm Mela
             </span>
             <br />
-            <div className="relative overflow-hidden h-12 sm:h-14 md:h-16 mt-2 sm:mt-3 md:mt-4 mx-auto w-fit">
-              <div className="relative h-full">
-                <motion.div
-                  animate={{
-                    y: [0, -33.33, -66.66], // Each step moves by 33.33% (100%/3)
-                  }}
-                  transition={{
-                    duration: 3, // Total animation duration (2s per title)
-                    ease: "easeInOut",
-                    repeat: Infinity,
-                    repeatType: "loop",
-                    times: [0, 0.33, 0.66, 1], // Keyframe timing (0%, 33%, 66%, 100%)
-                  }}
-                  className="flex flex-col"
-                >
-                  <div className="flex justify-center items-center h-12 sm:h-14 md:h-16 text-slate-800 p-1 text-xl sm:text-2xl md:text-3xl">
-                    FullStack Developer
-                  </div>
-                  <div className="flex justify-center items-center h-12 sm:h-14 md:h-16 text-slate-800 p-1 text-xl sm:text-2xl md:text-3xl">
-                    Mobile Developer
-                  </div>
-                  <div className="flex justify-center items-center h-12 sm:h-14 md:h-16 text-slate-800 p-1 text-xl sm:text-2xl md:text-3xl">
-                    UI Designer
-                  </div>
-                </motion.div>
+            <div className="relative overflow-hidden h-12 sm:h-14 md:h-16 mt-2 sm:mt-3 md:mt-4">
+              <div className="relative flex flex-col animate-flip">
+                {" "}
+                {/* Use animate-flip here */}
+                <div className="flex justify-center items-center h-12 sm:h-14 md:h-16 text-slate-800 p-1 text-xl sm:text-2xl md:text-3xl">
+                  FullStack Developer
+                </div>
+                <div className="flex justify-center items-center h-12 sm:h-14 md:h-16 text-slate-800 p-1 text-xl sm:text-2xl md:text-3xl">
+                  Mobile Developer
+                </div>
+                <div className="flex justify-center items-center h-12 sm:h-14 md:h-16 text-slate-800 p-1 text-xl sm:text-2xl md:text-3xl">
+                  UI Designer
+                </div>
               </div>
             </div>
           </motion.h1>
@@ -142,7 +130,7 @@ const Home = ({ setActiveSection }: HomeProps) => {
           </a>
         </motion.div>
 
-        {/* ExperienceBoard component */}
+        {/* ExperienceBoard component - will naturally sink with the flow */}
         <div className="px-2 sm:px-0">
           <ExperienceBoard />
         </div>
