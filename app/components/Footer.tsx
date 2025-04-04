@@ -28,13 +28,13 @@ const Section1 = () => {
 const Section2 = () => {
   return (
     <>
-      <div className="flex items-center gap-1 translate-x-15 translate-y-[18vh]  md:translate-y-[5vh] ">
+      <div className="flex items-center gap-1 translate-x-15 translate-y-[18vh]  md:translate-y-[5vh] text-stone-300 ">
         <p className="inline-flex items-center gap-1 md:text-xl text-neutral-500 mb-4">
           Designed and coded with <CiHeart /> by
         </p>
       </div>
-      <div className="flex justify-between items-end mb-8 translate-x-15 translate-y-0 md:translate-y-[-10vh]">
-        <h1 className="text-[20vw] leading-[0.8] mt-4 text-neutral-500 sm:text-[15vw] md:text-[18vw] lg:text-[20vw] xl:text-[22vw] md:text-shadow-sm md:font-serif md:font-semibold">
+      <div className="flex justify-between items-end mb-8 translate-x-15 translate-y-0 md:translate-y-[-10vh] text-stone-300">
+        <h1 className="text-[20vw] leading-[0.8] mt-4 text-neutral-500 sm:text-[15vw] md:text-[18vw] lg:text-[20vw] xl:text-[22vw] md:text-shadow-xs md:font-serif md:font-bold">
           𝓶𝓮𝓵𝓪
         </h1>
 
@@ -46,7 +46,7 @@ const Section2 = () => {
 
 const Nav = () => {
   return (
-    <div className="flex shrink-0 gap-12 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16">
+    <div className="flex shrink-0 gap-12 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 text-stone-200">
       <div className="flex flex-col gap-2">
         <h3 className="text-neutral-500">𝓐𝓫𝓸𝓾𝓽</h3>
 

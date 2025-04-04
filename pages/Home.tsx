@@ -121,16 +121,17 @@ const Home = ({ setActiveSection }: HomeProps) => {
 
             <span className="text-gray-300 hidden sm:inline">|</span>
           </div>
-
-          <a
-            href="https://www.instagram.com/arannnnnaaa/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group flex items-center gap-1 transition-colors"
-          >
-            <FaInstagram className="h-4 w-4 sm:h-5 sm:w-5 transition-transform group-hover:scale-110 text-pink-500" />
-            <span>Instagram</span>
-          </a>
+          <div className="flex flex-row items-center gap-3">
+            <a
+              href="https://www.instagram.com/arannnnnaaa/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center gap-1 transition-colors text-pink-600"
+            >
+              <FaInstagram className="h-4 w-4 sm:h-5 sm:w-5 transition-transform group-hover:scale-110" />
+              <span>Instagram</span>
+            </a>
+          </div>
         </motion.div>
 
         {/* ExperienceBoard component */}
