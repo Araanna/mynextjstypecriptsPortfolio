@@ -29,7 +29,7 @@ const Section2 = () => {
   return (
     <>
       <div className="sticky flex items-center gap-1 translate-x-15 translate-y-[20vh]  md:translate-y-[5vh] text-stone-800 ">
-        <p className="inline-flex items-center gap-1 md:text-xl mb-4">
+        <p className="inline-flex items-center gap-1 md:text-xl mb-12">
           Designed and coded with <CiHeart /> by
         </p>
       </div>
