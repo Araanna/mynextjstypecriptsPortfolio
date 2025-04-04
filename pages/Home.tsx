@@ -13,10 +13,14 @@ const Home = ({ setActiveSection }: HomeProps) => {
   const handleHireMeClick = () => {
     setActiveSection("Contact");
     setTimeout(() => {
-      const contactElement = document.getElementById("contact-section");
-      if (contactElement) {
-        contactElement.scrollIntoView({ behavior: "smooth" });
-      }
+      // Calculate middle of the viewport
+      const middleOfPage = window.innerHeight / 1 + window.scrollY;
+
+      // Scroll to the middle of the page
+      window.scrollTo({
+        top: middleOfPage,
+        behavior: "smooth",
+      });
     }, 100);
   };
 
@@ -43,8 +47,6 @@ const Home = ({ setActiveSection }: HomeProps) => {
             <br />
             <div className="relative overflow-hidden h-12 sm:h-14 md:h-16 mt-2 sm:mt-3 md:mt-4">
               <div className="relative flex flex-col animate-flip">
-                {" "}
-                {/* Use animate-flip here */}
                 <div className="flex justify-center items-center h-12 sm:h-14 md:h-16 text-slate-800 p-1 text-xl sm:text-2xl md:text-3xl">
                   FullStack Developer
                 </div>
@@ -108,7 +110,7 @@ const Home = ({ setActiveSection }: HomeProps) => {
 
           <div className="flex flex-row items-center gap-3">
             <a
-              href="https://www.behance.net/yourprofile"
+              href="https://www.behance.net/melanieabalde1"
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center gap-1 transition-colors hover:text-orange-500"
@@ -124,14 +126,14 @@ const Home = ({ setActiveSection }: HomeProps) => {
             href="https://www.instagram.com/arannnnnaaa/"
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center gap-1 transition-colors "
+            className="group flex items-center gap-1 transition-colors"
           >
             <FaInstagram className="h-4 w-4 sm:h-5 sm:w-5 transition-transform group-hover:scale-110" />
             <span>Instagram</span>
           </a>
         </motion.div>
 
-        {/* ExperienceBoard component - will naturally sink with the flow */}
+        {/* ExperienceBoard component */}
         <div className="px-2 sm:px-0">
           <ExperienceBoard />
         </div>
