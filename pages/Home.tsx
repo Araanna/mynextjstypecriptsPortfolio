@@ -100,7 +100,7 @@ const Home = ({ setActiveSection }: HomeProps) => {
               href="https://www.linkedin.com/in/melanie-abalde-0a363a31b/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center gap-1 transition-colors hover:text-blue-600"
+              className="group flex items-center gap-1 transition-colors text-blue-400"
             >
               <FaLinkedin className="h-4 w-4 sm:h-5 sm:w-5 transition-transform group-hover:scale-110" />
               <span>LinkedIn</span>
@@ -113,7 +113,7 @@ const Home = ({ setActiveSection }: HomeProps) => {
               href="https://www.behance.net/melanieabalde1"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center gap-1 transition-colors hover:text-orange-500"
+              className="group flex items-center gap-1 transition-colors text-cyan-600"
             >
               <FaBehance className="h-4 w-4 sm:h-5 sm:w-5 transition-transform group-hover:scale-110" />
               <span>Behance</span>
