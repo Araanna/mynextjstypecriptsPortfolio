@@ -128,7 +128,7 @@ const Home = ({ setActiveSection }: HomeProps) => {
             rel="noopener noreferrer"
             className="group flex items-center gap-1 transition-colors"
           >
-            <FaInstagram className="h-4 w-4 sm:h-5 sm:w-5 transition-transform group-hover:scale-110" />
+            <FaInstagram className="h-4 w-4 sm:h-5 sm:w-5 transition-transform group-hover:scale-110 text-pink-500" />
             <span>Instagram</span>
           </a>
         </motion.div>
