@@ -14,66 +14,63 @@ const staticData = {
 
 function About() {
   return (
-    <section className="flex flex-col md:flex-row items-start  min-h-[calc(80vh-4rem)] overflow-y-auto md:overflow-visible w-full md:w-[80rem] overflow-hidden translate-x-0 md:translate-x-[7rem] md:translate-y-13 ">
-      {/* Scrollable content container for mobile */}
-      <div className="w-full h-full md:h-[35px] overflow-y-auto md:overflow-visible">
-        <div className="flex flex-col md:flex-row items-center justify-center py-4 px-4 sm:px-2 lg:px-10 max-w-[1200px] mx-auto ">
-          {/* Content Column - appears first on mobile */}
-          <motion.div
-            className="w-full md:w-1/2 order-2 md:order-1 md:pr-8"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="max-w-2xl mx-auto">
-              <h1 className="text-2xl sm:text-3xl font-bold mb-4  ">
-                About Me
-              </h1>
-              <div className="-inset-2 space-y-8   mb-6 overflow-hidden">
-                <p className="text-xs sm:text-base leading-relaxed">
-                  {staticData.intro}
-                </p>
-                <p className="text-xs sm:text-base leading-relaxed">
-                  {staticData.passion}
-                </p>
-              </div>
+    <section className="flex items-center justify-center min-h-[calc(100vh-4rem)] w-full px-4 py-8 sm:py-12">
+      <div className="flex flex-col lg:flex-row items-center justify-center gap-8 max-w-6xl w-full">
+        {/* Content Column - appears first on mobile, second on desktop */}
+        <motion.div
+          className="w-full lg:w-1/2 order-2 lg:order-1"
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <div className="max-w-2xl mx-auto">
+            <h1 className="text-3xl sm:text-4xl font-bold mb-6 text-center lg:text-left">
+              About Me
+            </h1>
+            <div className="space-y-6">
+              <p className="text-sm sm:text-base leading-relaxed">
+                {staticData.intro}
+              </p>
+              <p className="text-sm sm:text-base leading-relaxed">
+                {staticData.passion}
+              </p>
             </div>
-          </motion.div>
+          </div>
+        </motion.div>
 
-          {/* Image Column - appears second on mobile */}
-          <motion.div
-            className="w-full md:w-1/2 flex justify-center items-center order-1 md:order-2 mb-6 md:mb-0"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <div className="relative w-40 h-40 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-80 lg:h-80">
-              {/* Mobile: Circular Image */}
-              <div className="md:hidden">
-                <Image
-                  src={profileImage}
-                  alt="Profile Image"
-                  fill
-                  className="rounded-full object-cover shadow-lg border-4 border-white dark:border-gray-800"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  priority
-                />
-              </div>
-
-              {/* Desktop: Rectangular Image */}
-              <div className="hidden md:block  ">
-                <Image
-                  src={profileImage}
-                  alt="Profile Image"
-                  fill
-                  className="rounded-lg object-cover shadow-xl -translate-y-1"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  priority
-                />
-              </div>
+        {/* Image Column - appears second on mobile, first on desktop */}
+        <motion.div
+          className="w-full lg:w-1/2 flex justify-center order-1 lg:order-2"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
+            {/* Mobile: Circular Image */}
+            <div className="lg:hidden">
+              <Image
+                src={profileImage}
+                alt="Profile Image"
+                fill
+                className="rounded-full object-cover shadow-lg border-4 border-white dark:border-gray-800"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                priority
+              />
             </div>
-          </motion.div>
-        </div>
+
+            {/* Desktop: Rectangular Image */}
+            <div className="hidden lg:block">
+              <Image
+                src={profileImage}
+                alt="Profile Image"
+                fill
+                className="rounded-lg object-cover shadow-xl"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                priority
+              />
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
