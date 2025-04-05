@@ -49,7 +49,7 @@ const Sidebar: React.FC<SidebarProps> = ({ section, children }) => {
       {/* Mobile Navigation (Top) */}
       {isMobile && (
         <motion.div
-          className="w-full h-16  border-b-2 p-4 flex justify-between items-center"
+          className="w-full h-16  border-b-1 p-4 flex justify-between items-center"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -50 }}

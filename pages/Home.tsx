@@ -29,7 +29,7 @@ const Home = ({ setActiveSection }: HomeProps) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
-      className="flex flex-col items-center justify-center min-h-screen relative pt-[2rem] md:pt-0 bg-gradient-to-br from-gray-100 to-gray-50"
+      className="flex flex-col items-center justify-center min-h-screen relative pt-[2rem] md:pt-0 bg-gradient-to-br from-stone-100 to-stone-400/20"
       id="home-section"
     >
       <div className="mx-auto max-w-4xl w-full px-4 sm:px-6 py-8 md:py-12 md:px-12">
@@ -41,7 +41,7 @@ const Home = ({ setActiveSection }: HomeProps) => {
             transition={{ delay: 0.2, duration: 0.8 }}
             className="text-transparent bg-clip-text bg-gradient-to-r from-slate-400 to-neutral-600/80 mb-6 md:mb-8 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold"
           >
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-700 to-stone-500/20 text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-700 to-stone-700/20 text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
               Hello, I'm Mela
             </span>
             <br />

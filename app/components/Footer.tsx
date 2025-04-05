@@ -6,7 +6,7 @@ import React from "react";
 export default function Footer() {
   return (
     <div
-      className="relative h-[800px] sm:h-[600px] md:h-[700px] lg:h-[800px] xl:h-[900px] "
+      className="relative h-[400px] sm:h-[200px] md:h-[300px] lg:h-[400px] xl:h-[580px] "
       style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
     >
       <div className="fixed bottom-0 w-full h-full bg-white/20 backdrop-blur-lg py-12 px-6 sm:px-8 flex flex-col justify-between">
@@ -19,7 +19,7 @@ export default function Footer() {
 
 const Section1 = () => {
   return (
-    <div className="mt-32 sm:mt-24 md:mt-28 lg:mt-32 xl:mt-36 p-10">
+    <div className="mt-[28rem] sm:mt-24 md:mt-38 lg:mt-42 xl:mt-50 p-10">
       <Nav />
     </div>
   );
@@ -28,17 +28,17 @@ const Section1 = () => {
 const Section2 = () => {
   return (
     <>
-      <div className="flex items-center gap-1 mb-0 translate-x-15 translate-y-[23vh]  md:translate-y-[5vh] text-stone-800 ">
+      <div className="flex items-center gap-1 mb-0 translate-x-15 translate-y-[4vh]  md:translate-y-[5vh] text-stone-800 ">
         <p className="inline-flex items-center gap-1 md:text-xl mb-12">
           Designed and coded with <CiHeart /> by
         </p>
       </div>
-      <div className="sticky flex justify-between items-end    mb-0  translate-x-0 translate-y-0 md:translate-y-[-10vh] md:translate-x-[-2vw] text-stone-500">
-        <h1 className="text-[20vw] leading-[0.8] mt-4  sm:text-[15vw] md:text-[18vw] lg:text-[20vw] xl:text-[22vw] md:text-shadow-xs md:font-serif md:font-bold">
+      <div className="md:sticky flex justify-between items-end    mb-0  translate-x-0 translate-y-[-3vh] md:translate-y-[-8vh] md:translate-x-[-2vw] text-stone-500">
+        <h1 className=" text-xs md:text-[18vw] leading-[0.8] mt-4  sm:text-[15vw] md:text-[18vw] lg:text-[20vw] xl:text-[22vw] md:text-shadow-xs md:font-serif md:font-bold">
           𝓶𝓮𝓵𝓪
         </h1>
 
-        <p>©copyright</p>
+        <p className="md:translate-y-15">©copyright</p>
       </div>
     </>
   );
