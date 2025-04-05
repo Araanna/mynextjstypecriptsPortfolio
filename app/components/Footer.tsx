@@ -11,7 +11,9 @@ export default function Footer() {
     >
       <div className="fixed bottom-0 w-full h-full bg-white/20 backdrop-blur-lg py-12 px-6 sm:px-8 flex flex-col justify-between">
         <Section1 />
-        <Section2 />
+        <div className="translate-x-0 translate-y-[-6vh] ">
+          <Section2 />
+        </div>
       </div>
     </div>
   );
@@ -19,7 +21,7 @@ export default function Footer() {
 
 const Section1 = () => {
   return (
-    <div className="mt-[28rem] sm:mt-24 md:mt-38 lg:mt-42 xl:mt-50 p-10">
+    <div className="ml-[-2rem] m-auto mt-[28rem] sm:mt-24 md:mt-38 lg:mt-42 xl:mt-50 p-10">
       <Nav />
     </div>
   );
@@ -33,8 +35,8 @@ const Section2 = () => {
           Designed and coded with <CiHeart /> by
         </p>
       </div>
-      <div className="md:sticky flex justify-between items-end    mb-0  translate-x-0 translate-y-[-3vh] md:translate-y-[-8vh] md:translate-x-[-2vw] text-stone-500">
-        <h1 className=" text-xs md:text-[18vw] leading-[0.8] mt-4  sm:text-[15vw] md:text-[18vw] lg:text-[20vw] xl:text-[22vw] md:text-shadow-xs md:font-serif md:font-bold">
+      <div className="md:sticky flex justify-between items-end    mb-0  translate-x-0 translate-y-[-3vh] md:translate-y-[-6vh] md:translate-x-[-2vw] text-stone-500">
+        <h1 className=" text-[22px] leading-[0.8] mt-4  sm:text-[15vw] md:text-[18vw] lg:text-[20vw] xl:text-[22vw] md:text-shadow-xs md:font-serif md:font-bold">
           𝓶𝓮𝓵𝓪
         </h1>
 
