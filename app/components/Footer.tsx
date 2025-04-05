@@ -34,7 +34,7 @@ const Section2 = () => {
         </p>
       </div>
       <div className="md:sticky flex justify-between items-end    mb-0  translate-x-0 translate-y-[-3vh] md:translate-y-[-8vh] md:translate-x-[-2vw] text-stone-500">
-        <h1 className=" text-xs md:text-[18vw] leading-[0.8] mt-4  sm:text-[15vw] md:text-[18vw] lg:text-[20vw] xl:text-[22vw] md:text-shadow-xs md:font-serif md:font-bold">
+        <h1 className=" text-md md:text-[18vw] leading-[0.8] mt-4  sm:text-[15vw] md:text-[18vw] lg:text-[20vw] xl:text-[22vw] md:text-shadow-xs md:font-serif md:font-bold">
           𝓶𝓮𝓵𝓪
         </h1>
 
