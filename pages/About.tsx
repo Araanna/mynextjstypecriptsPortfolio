@@ -14,7 +14,7 @@ const staticData = {
 
 function About() {
   return (
-    <section className="flex items-center justify-center min-h-[calc(100vh-4rem)] w-full px-4 py-8 sm:py-12">
+    <section className="flex items-center justify-center min-h-[calc(90vh-4rem)] w-full px-4 py-8 sm:py-12">
       <div className="flex flex-col lg:flex-row items-center justify-center gap-8 max-w-6xl w-full">
         {/* Content Column - appears first on mobile, second on desktop */}
         <motion.div
