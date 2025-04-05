@@ -28,12 +28,12 @@ const Section1 = () => {
 const Section2 = () => {
   return (
     <>
-      <div className="sticky flex items-center gap-1 translate-x-15 translate-y-[20vh]  md:translate-y-[5vh] text-stone-800 ">
+      <div className="sticky flex items-center gap-1 mb-2 translate-x-15 translate-y-[20vh]  md:translate-y-[5vh] text-stone-800 ">
         <p className="inline-flex items-center gap-1 md:text-xl mb-12">
           Designed and coded with <CiHeart /> by
         </p>
       </div>
-      <div className="flex justify-between items-end mb-8 translate-x-15 translate-y-0 md:translate-y-[-10vh] text-stone-500">
+      <div className="sticky flex justify-between items-end m-auto mb-0 translate-x-15 translate-y-0 md:translate-y-[-10vh] text-stone-500">
         <h1 className="text-[20vw] leading-[0.8] mt-4  sm:text-[15vw] md:text-[18vw] lg:text-[20vw] xl:text-[22vw] md:text-shadow-xs md:font-serif md:font-bold">
           𝓶𝓮𝓵𝓪
         </h1>

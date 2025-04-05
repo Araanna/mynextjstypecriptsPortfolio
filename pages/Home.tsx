@@ -73,19 +73,39 @@ const Home = ({ setActiveSection }: HomeProps) => {
           </motion.h2>
         </div>
 
-        {/* Hire Me Button */}
+        {/* Hire Me Button with floating effect */}
         <motion.div
           initial={{ x: -20, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ delay: 0.6, duration: 0.6 }}
+          animate={{
+            x: 0,
+            opacity: 1,
+            y: [0, -5, 0], // Floating effect
+          }}
+          transition={{
+            delay: 0.6,
+            duration: 0.6,
+            y: {
+              repeat: Infinity,
+              repeatType: "reverse",
+              duration: 3,
+              ease: "easeInOut",
+            },
+          }}
           className="mb-8 md:mb-12 flex justify-center"
         >
-          <button
+          <motion.button
             onClick={handleHireMeClick}
             className="px-6 py-2 sm:px-8 sm:py-3 bg-gradient-to-r from-cyan-600 to-violet-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-fuchsia-400 focus:ring-opacity-50 text-sm sm:text-base"
+            whileHover={{
+              scale: 1.05,
+              transition: { duration: 0.3 },
+            }}
+            whileTap={{
+              scale: 0.98,
+            }}
           >
             Hire Me
-          </button>
+          </motion.button>
         </motion.div>
 
         {/* Social links - stacked on mobile */}
