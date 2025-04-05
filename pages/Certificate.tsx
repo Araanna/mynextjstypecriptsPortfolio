@@ -33,7 +33,7 @@ const Certificate: React.FC = () => {
         </div>
 
         {/* Main Content */}
-        <div className="flex-1 items-center justify-center p-10 md:p-10 md:px-[5rem]  overflow-y-auto max-h-[calc(100vh-4rem)]">
+        <div className="flex-1 p-4 md:pl-6 md:pr-48 overflow-y-auto max-h-[calc(100vh-4rem)]">
           {/* Certificate Title with Motion */}
           <motion.h1
             className="text-3xl font-bold mb-8 text-center"

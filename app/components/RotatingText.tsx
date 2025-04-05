@@ -41,7 +41,7 @@ const RotatingText: React.FC = () => {
       {/* Rotating text */}
       <div
         ref={textRef}
-        className="absolute md:text-sm w-full h-full text-center text-md text-slate-200 hover:text-cyan-400 animate-spin-slow"
+        className="absolute md:text-sm w-full h-full text-center text-md text-yellow-900 hover:text-cyan-400 animate-spin-slow"
       ></div>
     </div>
   );

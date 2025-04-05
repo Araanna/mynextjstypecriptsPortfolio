@@ -28,7 +28,7 @@ body.dark * {
 /* Force background color update for elements that might not change */
 body.dark .your-custom-class,
 body.dark .some-other-elements {
-  background-color: #000000 !important;
+  background-color: #ffffff !important;
   color: #ECE3CA !important;
 }
 

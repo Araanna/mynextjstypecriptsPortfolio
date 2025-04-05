@@ -13,12 +13,8 @@ const Values: React.FC = () => {
         </div>
 
         {/* Main Content */}
-        <div className="flex-1 p-4 overflow-y-auto flex items-center justify-center md:justify-start md:pl-12">
-          <div className="translate-y-[-5rem] md:translate-y-0 md:-translate-x-[-15rem]">
-            {" "}
-            {/* Shifts left on desktop only */}
-            <RotatingText />
-          </div>
+        <div className="flex-1 p-4 md:mx-96 md:m-20 overflow-y-auto max-h-[calc(100vh-4rem)]">
+          <RotatingText />
         </div>
       </div>
     </Layout>
