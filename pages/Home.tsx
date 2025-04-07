@@ -1,12 +1,12 @@
 "use client";
 
 import { FaBehance, FaInstagram, FaLinkedin } from "react-icons/fa";
-import { motion, useAnimation } from "framer-motion";
-import { useEffect, useState } from "react";
 
 import ExperienceBoard from "../app/components/ExperienceBoard";
+import { motion } from "framer-motion";
+import { useState } from "react";
 
-// WaveWord Component for sine wave
+// WaveWord Component (no sine wave animation)
 const WaveWord = ({
   children,
   delay,
@@ -14,41 +14,14 @@ const WaveWord = ({
   children: React.ReactNode;
   delay: number;
 }) => {
-  const controls = useAnimation();
   const [isPaused, setIsPaused] = useState(false);
 
-  useEffect(() => {
-    const startWaveAnimation = async () => {
-      while (true) {
-        await controls.start({
-          y: [0, -10, 0, 10, 0], // Sine wave effect
-          transition: {
-            duration: 10 * 2, // Total duration for the wave effect
-            ease: "easeInOut",
-            delay, // Delay to stagger the words
-          },
-        });
-      }
-    };
-
-    const loopWithPause = () => {
-      startWaveAnimation();
-
-      // Pause the animation for 30 seconds
-      setIsPaused(true);
-      setTimeout(() => {
-        setIsPaused(false);
-        startWaveAnimation();
-      }, 300000); // 30 seconds pause
-    };
-
-    if (!isPaused) {
-      loopWithPause();
-    }
-  }, [controls, delay, isPaused]);
-
   return (
-    <motion.span animate={controls} className="inline-block px-1">
+    <motion.span
+      animate={{ opacity: 1 }}
+      transition={{ delay }}
+      className="inline-block px-1"
+    >
       {children}
     </motion.span>
   );
@@ -110,18 +83,11 @@ const Home = ({ setActiveSection }: HomeProps) => {
             </div>
           </motion.h1>
 
-          {/* Sine wave animated headline */}
+          {/* Static headline */}
           <motion.h2
             initial={{ opacity: 0 }}
-            animate={{
-              opacity: 1,
-              y: [0, -10, 0, 10, 0], // sine wave vertical movement
-            }}
-            transition={{
-              duration: 4,
-              ease: "easeInOut",
-              repeat: Infinity,
-            }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
             className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-gray-800 mt-6 md:mt-12 px-2 flex flex-wrap justify-center gap-x-2 text-center"
           >
             <WaveWord delay={0}>Creating</WaveWord>
