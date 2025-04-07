@@ -16,7 +16,7 @@ function About() {
   return (
     <section className="flex items-center justify-center min-h-[calc(90vh-4rem)] w-full px-4 py-8 sm:py-12">
       <div className="flex flex-col lg:flex-row items-center justify-center gap-8 max-w-6xl w-full">
-        {/* Content Column - appears first on mobile, second on desktop */}
+        {/* Content Column */}
         <motion.div
           className="w-full lg:w-1/2 order-2 lg:order-1"
           initial={{ opacity: 0, x: -50 }}
@@ -38,14 +38,25 @@ function About() {
           </div>
         </motion.div>
 
-        {/* Image Column - appears second on mobile, first on desktop */}
+        {/* Image Column with Floating Animation */}
         <motion.div
           className="w-full lg:w-1/2 flex justify-center order-1 lg:order-2"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
+          <motion.div
+            className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96"
+            animate={{
+              y: [0, -12, 0, 12, 0],
+              rotate: [0, 6, 0, -2, 0],
+            }}
+            transition={{
+              duration: 10.5,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          >
             {/* Mobile: Circular Image */}
             <div className="lg:hidden">
               <Image
@@ -69,7 +80,7 @@ function About() {
                 priority
               />
             </div>
-          </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>

@@ -10,14 +10,14 @@
 body {
   font-family: var(--font-geist-mono), sans-serif;
   background-color: #ECE3CA; /* Light mode background */
-  color: #181717; /* Dark text */
+  color: #61401b; /* Dark text */
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Dark Mode Styles */
 body.dark {
-  background-color: #181717; /* Dark mode background */
-  color: #ECE3CA; /* Light text */
+  background-color: #e0b7ff; /* Dark mode background */
+  color: #2d194d; /* Light text */
 }
 
 /* Ensure all elements transition smoothly */

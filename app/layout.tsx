@@ -14,11 +14,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-theme="light" className="scroll-smooth">
+    <html lang="en" data-theme="accent" className="scroll-smooth">
       <head>
         <link rel="icon" href="/app/favicon.ico" />
       </head>
-      <body className="bg-base-100">
+      <body>
         <main>{children}</main>
         <Toaster />
       </body>

@@ -1,10 +1,60 @@
 "use client";
 
 import { FaBehance, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { motion, useAnimation } from "framer-motion";
+import { useEffect, useState } from "react";
 
 import ExperienceBoard from "../app/components/ExperienceBoard";
-import { motion } from "framer-motion";
 
+// WaveWord Component for sine wave
+const WaveWord = ({
+  children,
+  delay,
+}: {
+  children: React.ReactNode;
+  delay: number;
+}) => {
+  const controls = useAnimation();
+  const [isPaused, setIsPaused] = useState(false);
+
+  useEffect(() => {
+    const startWaveAnimation = async () => {
+      while (true) {
+        await controls.start({
+          y: [0, -10, 0, 10, 0], // Sine wave effect
+          transition: {
+            duration: 10 * 2, // Total duration for the wave effect
+            ease: "easeInOut",
+            delay, // Delay to stagger the words
+          },
+        });
+      }
+    };
+
+    const loopWithPause = () => {
+      startWaveAnimation();
+
+      // Pause the animation for 30 seconds
+      setIsPaused(true);
+      setTimeout(() => {
+        setIsPaused(false);
+        startWaveAnimation();
+      }, 300000); // 30 seconds pause
+    };
+
+    if (!isPaused) {
+      loopWithPause();
+    }
+  }, [controls, delay, isPaused]);
+
+  return (
+    <motion.span animate={controls} className="inline-block px-1">
+      {children}
+    </motion.span>
+  );
+};
+
+// Home Component
 interface HomeProps {
   setActiveSection: (section: string) => void;
 }
@@ -60,16 +110,35 @@ const Home = ({ setActiveSection }: HomeProps) => {
             </div>
           </motion.h1>
 
-          {/* Additional headline */}
+          {/* Sine wave animated headline */}
           <motion.h2
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
-            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-gray-800 mt-6 md:mt-12 px-2"
+            initial={{ opacity: 0 }}
+            animate={{
+              opacity: 1,
+              y: [0, -10, 0, 10, 0], // sine wave vertical movement
+            }}
+            transition={{
+              duration: 4,
+              ease: "easeInOut",
+              repeat: Infinity,
+            }}
+            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-gray-800 mt-6 md:mt-12 px-2 flex flex-wrap justify-center gap-x-2 text-center"
           >
-            Creating <span className="text-cyan-600">Website</span>,{" "}
-            <span className="text-indigo-800/70">UI/UX with Figma</span>, and{" "}
-            <span className="text-fuchsia-600/60">experiences</span>.
+            <WaveWord delay={0}>Creating</WaveWord>
+            <WaveWord delay={0.1}>
+              <span className="text-cyan-600">Website</span>,
+            </WaveWord>
+            <WaveWord delay={0.2}>UI/UX</WaveWord>
+            <WaveWord delay={0.3}>
+              <span className="text-indigo-800/70">with</span>
+            </WaveWord>
+            <WaveWord delay={0.4}>
+              <span className="text-indigo-800/70">Figma</span>,
+            </WaveWord>
+            <WaveWord delay={0.5}>and</WaveWord>
+            <WaveWord delay={0.6}>
+              <span className="text-fuchsia-600/60">experiences</span>.
+            </WaveWord>
           </motion.h2>
         </div>
 
@@ -108,7 +177,7 @@ const Home = ({ setActiveSection }: HomeProps) => {
           </motion.button>
         </motion.div>
 
-        {/* Social links - stacked on mobile */}
+        {/* Social links */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -158,19 +227,6 @@ const Home = ({ setActiveSection }: HomeProps) => {
         <div className="px-2 sm:px-0">
           <ExperienceBoard />
         </div>
-      </div>
-
-      {/* Subtle decorative element */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
-        <motion.div
-          animate={{ y: [0, -10, 0] }}
-          transition={{
-            repeat: Infinity,
-            duration: 3,
-            ease: "easeInOut",
-          }}
-          className="h-2 w-2 rounded-full bg-gray-400"
-        />
       </div>
     </motion.section>
   );

@@ -49,7 +49,7 @@ const Sidebar: React.FC<SidebarProps> = ({ section, children }) => {
       {/* Mobile Navigation (Top) */}
       {isMobile && (
         <motion.div
-          className="w-full h-16  border-b-1 p-4 flex justify-between items-center"
+          className="w-full h-16  border-b-[1px] p-4 flex justify-between items-center"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -50 }}
@@ -88,7 +88,7 @@ const Sidebar: React.FC<SidebarProps> = ({ section, children }) => {
       {/* Desktop Sidebar (Left) */}
       {!isMobile && (
         <motion.div
-          className="w-20 h-screen border-r-2 p-4 flex flex-col justify-between items-center py-12"
+          className="w-20 h-screen border-r-[1px] border-slate-700/20  p-4 flex flex-col justify-between items-center py-12"
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -50 }}
@@ -126,7 +126,7 @@ const Sidebar: React.FC<SidebarProps> = ({ section, children }) => {
       <div className="flex-1 flex flex-col">
         {showTopBar && (
           <motion.div
-            className="w-full h-16 border-b-2 flex justify-end items-center px-4 md:pr-8 overflow-x-auto"
+            className="w-full h-16 border-b-[1px] border-slate-700/20 flex justify-end items-center px-4 md:pr-8 overflow-x-auto"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
@@ -140,14 +140,14 @@ const Sidebar: React.FC<SidebarProps> = ({ section, children }) => {
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`relative text-gray-600 ${colorClass}`}
+                    className={`relative text-stone-900 hover:text-yellow-900 ${colorClass}`}
                     aria-label={label}
                     title={title}
                     download={download ? true : undefined}
                   >
                     <Icon size={isMobile ? 20 : 24} />
                     <Tooltip title={title} placement="bottom-start">
-                      <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 text-xs md:text-sm bg-black text-white p-1 md:p-2 rounded opacity-0 hover:opacity-100 transition-opacity duration-300">
+                      <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 text-xs md:text-sm bg-black text-white p-1 md:p-2 rounded opacity-0 hover:opacity-10 transition-opacity duration-300">
                         {label}
                       </span>
                     </Tooltip>
