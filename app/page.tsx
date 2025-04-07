@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import About from "@/pages/About";
 import Contact from "@/pages/Contact";
@@ -18,6 +18,7 @@ const App: React.FC<AppProps> = () => {
   const [isVisible, setIsVisible] = useState<boolean>(true);
   const [activeSection, setActiveSection] = useState<string>("About");
   const [lastScrollY, setLastScrollY] = useState<number>(0);
+  const sidebarRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,18 +43,47 @@ const App: React.FC<AppProps> = () => {
     setActiveSection("Home");
   };
 
+  const handleNavigate = (section: string) => {
+    setActiveSection(section);
+
+    if (section === "Home") {
+      scrollToHome();
+      return;
+    }
+
+    setTimeout(() => {
+      if (sidebarRef.current) {
+        const sidebarRect = sidebarRef.current.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+        const scrollTarget =
+          window.scrollY +
+          sidebarRect.top -
+          viewportHeight / 1.9 +
+          sidebarRect.height / 2;
+
+        window.scrollTo({
+          top: scrollTarget,
+          behavior: "smooth",
+        });
+      }
+    }, 100);
+  };
+
   return (
     <>
       <Navbar
-        onNavigate={setActiveSection}
+        onNavigate={handleNavigate}
         isVisible={isVisible}
         scrollToHome={scrollToHome}
       />
       <Home setActiveSection={setActiveSection} />
       <ScrollingText />
       <Sidebar section={activeSection}>
-        <div className="relative w-full min-h-[calc(100vh-8rem)] md:min-h-[80vh] flex items-center justify-center px-4">
-          <div className="w-full  mx-[20rem] md:mx-auto  py-8 md:py-0">
+        <div
+          ref={sidebarRef}
+          className="relative w-full min-h-[calc(100vh-8rem)] md:min-h-[80vh] flex items-center justify-center px-4"
+        >
+          <div className="w-full mx-[20rem] md:mx-auto py-8 md:py-0">
             {activeSection === "About" && <About />}
             {activeSection === "Skills" && <Skills />}
             {activeSection === "Contact" && <Contact />}

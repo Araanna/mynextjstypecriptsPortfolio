@@ -14,7 +14,7 @@ const Home = ({ setActiveSection }: HomeProps) => {
     setActiveSection("Contact");
     setTimeout(() => {
       // Calculate middle of the viewport
-      const middleOfPage = window.innerHeight / 1 + window.scrollY;
+      const middleOfPage = window.innerHeight / 0.95 + window.scrollY;
 
       // Scroll to the middle of the page
       window.scrollTo({
@@ -29,7 +29,7 @@ const Home = ({ setActiveSection }: HomeProps) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
-      className="flex flex-col items-center justify-center min-h-screen relative pt-[2rem] md:pt-0 bg-gradient-to-br from-stone-100 to-stone-400/20"
+      className="flex flex-col items-center justify-center min-h-screen relative pt-[2rem] md:pt-0 bg-gradient-to-br from-white to-stone-500/20"
       id="home-section"
     >
       <div className="mx-auto max-w-4xl w-full px-4 sm:px-6 py-8 md:py-12 md:px-12">

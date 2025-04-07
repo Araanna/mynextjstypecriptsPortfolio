@@ -49,14 +49,14 @@ const Skills: React.FC = () => {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, delay: 0.2 }}
       >
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-1  md:gap-1 py-8 rounded-lg border border-[#33353F] bg-white/10 backdrop-blur-lg">
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-1  md:gap-1 py-8 rounded-lg border border-[#9c52bc] bg-white/10 backdrop-blur-lg">
           {skillSets.map((skill, index) => (
             <div
               key={index}
               className="flex flex-col items-center p-2 md:p-4 transition-all hover:scale-105"
             >
-              <skill.Icon className="text-sm md:text-4xl mb-2   text-blue-500 hover:text-blue-900" />
-              <p className="text-sm text-sky-600">{skill.name}</p>
+              <skill.Icon className="text-sm md:text-4xl mb-2   text-[#8f79c3] hover:text-pink-300" />
+              <p className="text-sm text-[#76639e]">{skill.name}</p>
             </div>
           ))}
         </div>

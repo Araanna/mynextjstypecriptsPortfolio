@@ -67,7 +67,7 @@ export default {
   // DaisyUI config with retro theme
   daisyui: {
     themes: [
-      "light", // default light theme
+      "accent", // default light theme
       "dark", // default dark theme
       {
         retro: {

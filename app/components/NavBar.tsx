@@ -48,7 +48,10 @@ const Navbar: React.FC<NavbarProps> = ({
               if (button.label === "Home") {
                 scrollToHome();
               } else if (button.label === "Game") {
-                window.open("https://araanna.github.io/gamedev_website/", "_blank");
+                window.open(
+                  "https://araanna.github.io/gamedev_website/",
+                  "_blank"
+                );
               } else {
                 onNavigate(button.label);
               }
