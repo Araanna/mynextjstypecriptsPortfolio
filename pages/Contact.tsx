@@ -102,17 +102,6 @@ const Contact: React.FC = () => {
         transition={{ duration: 0.8, delay: 0.2 }}
       >
         <div className="relative overflow-hidden border-[#33353F] border rounded-lg p-6 backdrop-blur-lg bg-white/10">
-          {/* Glass Shine Overlay */}
-          <motion.div
-            className="absolute inset-0 pointer-events-none before:content-[''] before:absolute before:-left-1/4 before:top-0 before:w-1/2 before:h-full before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent before:rotate-12"
-            animate={{ x: ["-100%", "150%"] }}
-            transition={{
-              duration: 1,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-
           <Form {...form}>
             <form
               onSubmit={form.handleSubmit(handleSubmit)}
