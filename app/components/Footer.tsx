@@ -30,17 +30,24 @@ const Section1 = () => {
 const Section2 = () => {
   return (
     <>
-      <div className="flex items-center gap-1 mb-0 translate-x-15 translate-y-[4vh]  md:translate-y-[5vh] text-stone-800 ">
-        <p className="inline-flex items-center gap-1 md:text-xl mb-12">
-          Designed and coded with <CiHeart /> by
-        </p>
-      </div>
-      <div className="md:sticky flex justify-between items-end    mb-0  translate-x-0 translate-y-[-3vh] md:translate-y-[-6vh] md:translate-x-[-2vw] text-stone-500">
-        <h1 className=" text-[22px] leading-[0.8] mt-4  sm:text-[15vw] md:text-[18vw] lg:text-[20vw] xl:text-[22vw] md:text-shadow-xs md:font-serif md:font-bold">
-          𝓶𝓮𝓵𝓪
-        </h1>
+      <div className="flex flex-col items-center justify-center text-center md:items-start md:text-left md:justify-start">
+        {/* Top Section */}
+        <div className="flex flex-col items-center justify-center text-center gap-1 mb-0 translate-y-[4vh] md:translate-y-[5vh] text-stone-800 md:flex-row md:items-center md:gap-1">
+          <p className="inline-flex items-center gap-1 md:text-xl mb-12">
+            Designed and coded with <CiHeart /> by
+          </p>
+        </div>
 
-        <p className="md:translate-y-15">©copyright</p>
+        {/* Bottom Section */}
+        <div className="flex flex-col items-center justify-center text-center mb-0 translate-y-[-3vh] md:sticky md:flex-row md:justify-between md:items-end md:translate-y-[-6vh] md:translate-x-[-2vw] text-stone-500 w-full">
+          <h1 className="text-[22px] leading-[0.8] mt-4 sm:text-[15vw] md:text-[18vw] lg:text-[20vw] xl:text-[22vw] md:text-shadow-xs md:font-serif md:font-bold">
+            𝓶𝓮𝓵𝓪
+          </h1>
+
+          <p className="mt-2 md:mt-0 md:translate-y-15">
+            © 2022 mela | All rights reserved
+          </p>
+        </div>
       </div>
     </>
   );
