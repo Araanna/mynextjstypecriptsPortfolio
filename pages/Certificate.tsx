@@ -27,7 +27,7 @@ const certificates = [
     image: PyTsada,
     alt: "Certificate 3",
     title: "PyTsada 2.0",
-    description: "Certificate of Attendance",
+    description: "Certificate for Active Participation",
   },
 ];
 

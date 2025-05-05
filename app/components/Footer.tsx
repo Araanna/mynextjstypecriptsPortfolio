@@ -45,7 +45,7 @@ const Section2 = () => {
           </h1>
 
           <p className="mt-2 md:mt-0 md:translate-y-15">
-            © 2022 mela | All rights reserved
+            © 2022 | All rights reserved
           </p>
         </div>
       </div>
