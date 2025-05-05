@@ -1,6 +1,7 @@
 import Fligno from "../assets/images/Fligno.png";
 import Image from "next/image";
 import Layout from "../app/components/Layout.tsx";
+import PyTsada from "../assets/images/PyTsada.jpg";
 import React from "react";
 import Sidebar from "../app/components/Sidebar.tsx";
 import Tesda from "../assets/images/TESDA.png";
@@ -20,6 +21,13 @@ const certificates = [
     alt: "Certificate 2",
     title: "TESDA",
     description: "User Design for User Interface",
+  },
+  {
+    id: 3,
+    image: PyTsada,
+    alt: "Certificate 3",
+    title: "PyTsada 2.0",
+    description: "Certificate of Attendance",
   },
 ];
 
@@ -71,7 +79,7 @@ const Certificate: React.FC = () => {
                     <Image
                       src={cert.image}
                       alt={cert.alt}
-                      className="w-full h-auto rounded-sm"
+                      className="w-full h-auto rounded-2xl p-1"
                     />
                     <motion.h3
                       className="font-bold mt-2 text-gray-800 dark:text-gray-100"
