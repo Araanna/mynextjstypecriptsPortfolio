@@ -79,7 +79,7 @@ const Certificate: React.FC = () => {
                     <Image
                       src={cert.image}
                       alt={cert.alt}
-                      className="w-full h-auto rounded-2xl p-1"
+                      className="w-auto h-auto rounded-2xl p-1"
                     />
                     <motion.h3
                       className="font-bold mt-2 text-gray-800 dark:text-gray-100"

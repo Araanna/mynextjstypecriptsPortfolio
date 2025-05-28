@@ -143,51 +143,7 @@ const Home = ({ setActiveSection }: HomeProps) => {
           </motion.button>
         </motion.div>
 
-        {/* Social links */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.8, duration: 0.6 }}
-          className="flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-3 text-sm sm:text-base md:text-lg text-gray-600 mb-8 md:mb-12"
-        >
-          <div className="flex flex-row items-center gap-3">
-            <a
-              href="https://www.linkedin.com/in/melanie-abalde-0a363a31b/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center gap-1 transition-colors text-blue-400"
-            >
-              <FaLinkedin className="h-4 w-4 sm:h-5 sm:w-5 transition-transform group-hover:scale-110" />
-              <span>LinkedIn</span>
-            </a>
-            <span className="text-gray-300 hidden sm:inline">|</span>
-          </div>
-
-          <div className="flex flex-row items-center gap-3">
-            <a
-              href="https://www.behance.net/melanieabalde1"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center gap-1 transition-colors text-cyan-600"
-            >
-              <FaBehance className="h-4 w-4 sm:h-5 sm:w-5 transition-transform group-hover:scale-110" />
-              <span>Behance</span>
-            </a>
-
-            <span className="text-gray-300 hidden sm:inline">|</span>
-          </div>
-          <div className="flex flex-row items-center gap-3">
-            <a
-              href="https://www.instagram.com/arannnnnaaa/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center gap-1 transition-colors text-pink-600"
-            >
-              <FaInstagram className="h-4 w-4 sm:h-5 sm:w-5 transition-transform group-hover:scale-110" />
-              <span>Instagram</span>
-            </a>
-          </div>
-        </motion.div>
+       
 
         {/* ExperienceBoard component */}
         <div className="px-2 sm:px-0">
