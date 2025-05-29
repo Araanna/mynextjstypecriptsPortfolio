@@ -1,10 +1,12 @@
-import Fligno from "../assets/images/Fligno.png";
+import Fligno from "../assets/images/Fligno.jpeg";
 import Image from "next/image";
 import Layout from "../app/components/Layout.tsx";
 import PyTsada from "../assets/images/PyTsada.jpg";
 import React from "react";
 import Sidebar from "../app/components/Sidebar.tsx";
-import Tesda from "../assets/images/TESDA.png";
+import Tesda from "../assets/images/TesdaCert.jpg";
+import BWAI2025 from "../assets/images/Google Certificate.jpg";
+
 import { motion } from "framer-motion";
 
 const certificates = [
@@ -28,6 +30,14 @@ const certificates = [
     alt: "Certificate 3",
     title: "PyTsada 2.0",
     description: "Certificate for Active Participation",
+  },
+  
+   {
+    id: 4,
+    image: BWAI2025,
+    alt: "Certificate 4",
+    title: "Building With AI 2025",
+    description: "Google Certificate",
   },
 ];
 
