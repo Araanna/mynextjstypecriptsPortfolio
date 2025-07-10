@@ -32,13 +32,13 @@ const Navbar: React.FC<NavbarProps> = ({
 }) => {
   return (
     <nav
-      className={`fixed z-[9999] backdrop-blur-lg bg-white/20 shadow-lg flex flex-col md:h-[25rem] h-[3rem] px-4 md:py-[3rem] py-2 md:w-[3.5rem] w-auto bottom-4 left-1/2 transform -translate-x-1/2 md:bottom-auto md:left-20 md:top-[30%] border-[#000] rounded-lg transition-all duration-300 ease-in-out ${
+      className={`fixed z-[9999] backdrop-blur-lg bg-white/20 shadow-lg flex h-[3rem] px-4 py-2 w-auto bottom-4 left-1/2 transform -translate-x-1/2 rounded-lg transition-all duration-300 ease-in-out ${
         isVisible
           ? "opacity-100 translate-y-0"
           : "opacity-0 translate-y-full absolute"
       }`}
     >
-      <div className="flex flex-row md:flex-col justify-center items-center space-x-12 md:space-x-0 md:space-y-12">
+      <div className="flex flex-row justify-center items-center space-x-12">
         {navButtons.map((button) => (
           <button
             key={button.label}
