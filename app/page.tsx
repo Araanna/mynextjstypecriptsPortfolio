@@ -91,7 +91,7 @@ const App: React.FC<AppProps> = () => {
         </div>
       </Sidebar>
 
-      <Slide />
+      {/* <Slide /> */}
       <Footer />
     </>
   );

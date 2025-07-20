@@ -1,3 +1,5 @@
+"use client";
+
 import { FaDocker, FaGitAlt, FaNodeJs, FaReact } from "react-icons/fa";
 import {
   SiDjango,
@@ -8,7 +10,7 @@ import {
   SiTypescript,
 } from "react-icons/si";
 
-import AboutSection from "./AchievementSection";
+import AboutSection from "./AchievementSection"; // Assuming AchievementSection is the AboutSection component
 import React from "react";
 import { motion } from "framer-motion";
 
@@ -27,6 +29,7 @@ const skillSets: SkillSet[] = [
   { Icon: SiMysql, name: "MySQL" },
   { Icon: FaDocker, name: "Docker" },
   { Icon: FaGitAlt, name: "Git" },
+  { Icon: SiPostgresql, name: "PostgreSQL" }, // Added PostgreSQL as it was in the AboutSection skills list
 ];
 
 const Skills: React.FC = () => {
@@ -49,14 +52,28 @@ const Skills: React.FC = () => {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, delay: 0.2 }}
       >
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-1  md:gap-1 py-8 rounded-lg border border-[#9c52bc] bg-white/10 backdrop-blur-lg">
+        <div 
+          // Adaptive background and border for the skills grid
+          className="grid grid-cols-2 sm:grid-cols-3 gap-1 md:gap-1 py-8 rounded-lg 
+                     border border-purple-400 dark:border-gray-700 
+                     bg-purple-100/10 dark:bg-gray-900/10 backdrop-blur-lg"
+        >
           {skillSets.map((skill, index) => (
             <div
               key={index}
               className="flex flex-col items-center p-2 md:p-4 transition-all hover:scale-105"
             >
-              <skill.Icon className="text-sm md:text-4xl mb-2   text-[#8f79c3] hover:text-pink-300" />
-              <p className="text-sm text-[#76639e]">{skill.name}</p>
+              <skill.Icon 
+                // Adaptive icon color
+                className="text-sm md:text-4xl mb-2 text-purple-700 hover:text-pink-500 
+                           dark:text-gray-300 dark:hover:text-pink-300" 
+              />
+              <p 
+                // Adaptive text color for skill names
+                className="text-sm text-purple-600 dark:text-gray-400"
+              >
+                {skill.name}
+              </p>
             </div>
           ))}
         </div>

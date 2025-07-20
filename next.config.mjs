@@ -11,6 +11,14 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true, // Ignore ESLint errors during builds
   },
+  // Add environment variable configuration
+  env: {
+    CLOUDINARY_API_SECRET: process.env.CLOUDINARY_API_SECRET,
+  },
+  // Optional: Configure images domains if using next/image with Cloudinary
+  images: {
+    domains: ['res.cloudinary.com'],
+  },
   webpack(config) {
     config.resolve.alias["@"] = path.resolve(__dirname);
     config.resolve.alias["@components"] = path.resolve(__dirname, "app/components");

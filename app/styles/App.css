@@ -6,6 +6,11 @@
   --font-geist-mono: 'GeistMono', sans-serif;
 }
 
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 /* Light Mode Styles */
 body {
   font-family: var(--font-geist-mono), sans-serif;
@@ -16,7 +21,7 @@ body {
 
 /* Dark Mode Styles */
 body.dark {
-  background-color: #e0b7ff; /* Dark mode background */
+   background-color: purple-900; /* Dark mode background */
   color: #2d194d; /* Light text */
 }
 

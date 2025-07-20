@@ -19,6 +19,7 @@ interface SidebarProps {
 const Sidebar: React.FC<SidebarProps> = ({ section, children }) => {
   const pathname = usePathname();
   const [showTopBar, setShowTopBar] = useState(true);
+  
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -32,9 +33,22 @@ const Sidebar: React.FC<SidebarProps> = ({ section, children }) => {
   }, []);
 
   const toggleTheme = () => {
-    setIsDarkMode((prev) => !prev);
-    document.body.classList.toggle("dark", !isDarkMode);
-  };
+  setIsDarkMode((prev) => {
+    const newMode = !prev;
+    document.body.classList.toggle("dark", newMode);
+    localStorage.setItem("theme", newMode ? "dark" : "light");
+    return newMode;
+  });
+};
+
+useEffect(() => {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    setIsDarkMode(true);
+    document.body.classList.add("dark");
+  }
+}, []);
+
 
   useEffect(() => {
     if (navLinks.some((link) => link.href === pathname)) {

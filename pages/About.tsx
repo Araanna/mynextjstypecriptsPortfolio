@@ -28,10 +28,10 @@ function About() {
               About Me
             </h1>
             <div className="space-y-6">
-              <p className="text-sm sm:text-base leading-relaxed">
+              <p className="text-sm sm:text-base leading-relaxed text-inherit">
                 {staticData.intro}
               </p>
-              <p className="text-sm sm:text-base leading-relaxed">
+              <p className="text-sm sm:text-base leading-relaxed text-inherit">
                 {staticData.passion}
               </p>
             </div>

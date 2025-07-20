@@ -2,6 +2,7 @@ import type { Config } from "tailwindcss";
 
 export default {
   mode: "jit",
+  darkMode: 'class',
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -17,16 +18,20 @@ export default {
       },
       animation: {
         "spin-slow": "spin 20s linear infinite",
-        flip: "show 40s linear infinite",
-        scroll: "scroll 25s linear infinite",
+        flip: "show 20s linear infinite",
+        scroll: "scroll 40s linear infinite", // Increased from 25s to 40s
+        "scroll-slow": "scroll 120s linear infinite", // Increased from 90s to 120s
+        "scroll-very-slow": "scroll 180s linear infinite", // Added new very slow option
       },
       keyframes: {
         flip: {
-          // Changed from 'show' to 'flip'
-          "0%, 33%": { transform: "translateY(0)" }, // FullStack Developer
-          "33.1%, 66%": { transform: "translateY(-100%)" }, // Mobile Developer
-          "66.1%, 99.9%": { transform: "translateY(-200%)" }, // UI Designer
-          "100%": { transform: "translateY(0)" }, // Reset
+          "0%": { transform: "translateY(0)" },
+          "33.33%": { transform: "translateY(0)" },
+          "33.34%": { transform: "translateY(-100%)" },
+          "66.66%": { transform: "translateY(-100%)" },
+          "66.67%": { transform: "translateY(-200%)" },
+          "99.99%": { transform: "translateY(-200%)" },
+          "100%": { transform: "translateY(0)" },
         },
         show: {
           "0%": { transform: "translateY(-300%)" },
@@ -41,7 +46,7 @@ export default {
           "100%": { transform: "translateY(-300%)" },
         },
         scroll: {
-          "0%": { transform: "translateX(100%)" },
+          "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-100%)" },
         },
       },
@@ -62,13 +67,19 @@ export default {
       shadowOffsetX: "12px",
       shadowOffsetY: "12px",
     }),
+    function ({ addUtilities }: { addUtilities: (utilities: Record<string, Record<string, string>>) => void }) {
+      addUtilities({
+        '.animation-paused': {
+          'animation-play-state': 'paused',
+        },
+      });
+    },
   ],
 
-  // DaisyUI config with retro theme
   daisyui: {
     themes: [
-      "accent", // default light theme
-      "dark", // default dark theme
+      "accent",
+      "dark",
       {
         retro: {
           primary: "#ef9995",
@@ -92,7 +103,7 @@ export default {
         },
       },
     ],
-    darkTheme: "dark", // default dark theme
+    darkTheme: "dark",
     base: true,
     styled: true,
     utils: true,

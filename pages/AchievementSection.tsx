@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useTransition } from "react";
-
 import TabButton from "../app/components/TabButton";
 
 type Tab = {
@@ -25,7 +24,7 @@ const TAB_DATA: Tab[] = [
           "Typescript",
           "React",
         ].map((skill, index) => (
-          <li key={index} className="hover:text-indigo-900">
+          <li key={index} className="hover:text-gray-700 dark:hover:text-gray-300">
             {skill}
           </li>
         ))}
@@ -56,19 +55,19 @@ const TAB_DATA: Tab[] = [
           },
         ].map((education, index) => (
           <li key={index} className="mb-4">
-            <span className="hover:text-indigo-900 font-bold">
+            <span className="hover:text-gray-700 dark:hover:text-gray-300 font-bold">
               {education.year}
             </span>
             <ul className="pl-5 list-disc">
               {education.details.map((detail, i) => (
-                <li key={i} className="hover:text-fuchsia-500">
+                <li key={i} className="hover:text-gray-600 dark:hover:text-gray-400">
                   {detail}
                 </li>
               ))}
               {education.achievements && (
                 <ul className="pl-8 list-disc">
                   {education.achievements.map((achievement, j) => (
-                    <li key={j} className="hover:text-fuchsia-500">
+                    <li key={j} className="hover:text-gray-600 dark:hover:text-gray-400">
                       {achievement}
                     </li>
                   ))}
@@ -90,7 +89,7 @@ const TAB_DATA: Tab[] = [
           "TESDA UI Design Certificate",
           "Fligno Software Developer Intern",
         ].map((certification, index) => (
-          <li key={index} className="hover:text-fuchsia-500">
+          <li key={index} className="hover:text-gray-600 dark:hover:text-gray-400">
             {certification}
           </li>
         ))}
@@ -112,7 +111,7 @@ const AboutSection: React.FC = () => {
   const currentTab = TAB_DATA.find((t) => t.id === tab);
 
   return (
-    <section className="text-zinc-500">
+    <section className="text-purple-700 dark:text-gray-300">
       <div className="ml-4 md:ml-0 text-left flex flex-col h-full">
         <div className="flex justify-start mt-8">
           {TAB_DATA.map((tabItem) => (
