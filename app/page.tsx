@@ -10,7 +10,7 @@ import Navbar from "./components/NavBar";
 import ScrollingText from "./components/scrollingText";
 import Sidebar from "./components/Sidebar";
 import Skills from "@/pages/Skills";
-import Slide from "./components/Slide";
+// import Slide from "./components/Slide";
 
 interface AppProps {}
 
