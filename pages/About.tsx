@@ -24,14 +24,14 @@ function About() {
           transition={{ duration: 0.8 }}
         >
           <div className="max-w-2xl mx-auto">
-            <h1 className="text-3xl sm:text-4xl font-bold mb-6 text-center lg:text-left">
+            <h1 className="text-3xl sm:text-4xl font-apple font-bold mb-6 text-center lg:text-left">
               About Me
             </h1>
             <div className="space-y-6">
-              <p className="text-sm sm:text-base leading-relaxed text-inherit">
+              <p className="text-sm sm:text-base font-apple leading-relaxed text-inherit">
                 {staticData.intro}
               </p>
-              <p className="text-sm sm:text-base leading-relaxed text-inherit">
+              <p className="text-sm sm:text-base font-apple leading-relaxed text-inherit">
                 {staticData.passion}
               </p>
             </div>

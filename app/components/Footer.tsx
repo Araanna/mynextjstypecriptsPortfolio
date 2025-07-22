@@ -1,4 +1,6 @@
 import { FaFacebook, FaGitlab, FaInstagram, FaLinkedin } from "react-icons/fa";
+import Image from "next/image";
+import { motion } from "framer-motion";
 
 import { CiHeart } from "react-icons/ci";
 import React from "react";
@@ -10,13 +12,13 @@ export default function Footer() {
       style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
     >
       {/* The main footer background that adapts to the theme */}
-      <div 
+      <div
         className="fixed bottom-0 w-full h-full 
                    bg-white/20 dark:bg-black/20 backdrop-blur-lg 
                    py-12 px-6 sm:px-8 flex flex-col justify-between"
       >
-        <Section1 />
-         <div className="translate-x-0 translate-y-[-6vh] ">
+        <Section1 />a
+        <div className="translate-x-0 translate-y-[-6vh] ">
           <Section2 />
         </div>
       </div>
@@ -39,7 +41,8 @@ const Section2 = () => {
         {/* Top Section - text color now inherits */}
         <div className="flex flex-col items-center justify-center text-center gap-1 mb-0 translate-y-[4vh] md:translate-y-[10vh] text-inherit md:flex-row md:items-center md:gap-1">
           <p className="inline-flex items-center gap-1 text-md md:text-md mb-12 text-inherit font-semibold">
-            CRAFTED WITH<CiHeart /> BY
+            CRAFTED WITH
+            <CiHeart /> BY
           </p>
         </div>
 
@@ -48,10 +51,46 @@ const Section2 = () => {
           <h1 className="text-[22px] leading-[0.8] mt-4 sm:text-[15vw] md:text-[18vw] lg:text-[20vw] xl:text-[22vw] md:text-shadow-xs md:font-serif md:font-bold">
             𝓶𝓮𝓵𝓪
           </h1>
+          <div className="flex flex-col items-center justify-center mb-6 space-y-1">
+            <p className="text-[10px] font-semibold">Tech stack used:</p>
 
-          <p className="mt-2 md:mt-0 md:translate-y-15 font-medium text-sm text-inherit">
-            © 2022 | ALL RIGHTS RESERVED
-          </p>
+            <div className="flex items-center justify-center gap-1.5">
+              <img
+                src="https://cdn.simpleicons.org/nextdotjs/000000"
+                alt="Next.js"
+                className="w-[25px] h-[25px] object-contain rounded-full"
+              />
+              <img
+                src="https://cdn.simpleicons.org/typescript/3178c6"
+                alt="TypeScript"
+                className="w-[25px] h-[25px] object-contain"
+              />
+              <img
+                src="https://cdn.simpleicons.org/tailwindcss/06B6D4"
+                alt="Tailwind CSS"
+                className="w-[25px] h-[25px] object-contain"
+              />
+              <img
+                src="https://cdn.simpleicons.org/cloudinary/3448C5"
+                alt="Cloudinary"
+                className="w-[25px] h-[25px] object-contain"
+              />
+              <img
+                src="https://euphy.dev/images/svg/icons/zustand.svg"
+                alt="Zustand"
+                className="w-[25px] h-[25px] object-contain rounded-full"
+              />
+              <img
+                src="https://cdn.simpleicons.org/vercel/000000"
+                alt="Vercel"
+                className="w-[25px] h-[25px] object-contain"
+              />
+            </div>
+
+            <p className="text-[10px] font-medium text-inherit">
+              © 2022 | ALL RIGHTS RESERVED
+            </p>
+          </div>
         </div>
       </div>
     </>
@@ -68,7 +107,10 @@ const Nav = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaFacebook className="text-gray-700 dark:text-purple-400" size={20} />
+            <FaFacebook
+              className="text-gray-700 dark:text-purple-400"
+              size={20}
+            />
           </a>
           <p className="font-bold text-inherit text-sm">Facebook</p>
         </div>
@@ -79,7 +121,10 @@ const Nav = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaInstagram className="text-gray-700 dark:text-purple-400" size={20} />
+            <FaInstagram
+              className="text-gray-700 dark:text-purple-400"
+              size={20}
+            />
           </a>
           <p className="font-bold text-inherit text-sm">Instagram</p>
         </div>
@@ -90,7 +135,10 @@ const Nav = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaLinkedin className="text-gray-700 dark:text-purple-400" size={20} />
+            <FaLinkedin
+              className="text-gray-700 dark:text-purple-400"
+              size={20}
+            />
           </a>
           <p className="font-bold text-inherit text-sm">LinkedIn</p>
         </div>
@@ -101,7 +149,10 @@ const Nav = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaGitlab className="text-gray-700 dark:text-purple-400" size={20} />
+            <FaGitlab
+              className="text-gray-700 dark:text-purple-400"
+              size={20}
+            />
           </a>
           <p className="font-bold text-inherit text-sm">Gitlab</p>
         </div>

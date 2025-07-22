@@ -15,6 +15,15 @@ export default {
     extend: {
       fontFamily: {
         cursive: ['"Dancing Script"', "cursive"],
+        apple: [
+          '-apple-system',
+          'BlinkMacSystemFont',
+          '"Segoe UI"',
+          'Roboto',
+          'Helvetica',
+          'Arial',
+          'sans-serif',
+        ],
       },
       animation: {
         "spin-slow": "spin 20s linear infinite",

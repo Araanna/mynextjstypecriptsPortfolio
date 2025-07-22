@@ -5,19 +5,20 @@ import { motion } from "framer-motion";
 import { FiCamera, FiGithub, FiCode } from "react-icons/fi";
 import ExperienceBoard from "../app/components/ExperienceBoard";
 import { githubProjects } from "@/lib/githubProjects";
+import { mapImageResources } from "@/lib/cloudinary";
+import { cn } from "@/lib/utils";
 
-// --- Types ---
-interface CloudinaryImage {
-  public_id: string;
-  secure_url: string;
-  width: number;
-  height: number;
-  folder?: string;
-}
+// Define the MappedImage type if not imported from elsewhere
+type MappedImage = {
+  id: string;
+  image: string;
+  title: string;
+  displayName: string;
+};
 
 // --- GalleriesContent Component ---
 const GalleriesContent = () => {
-  const [images, setImages] = useState<CloudinaryImage[]>([]);
+  const [images, setImages] = useState<MappedImage[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -25,13 +26,20 @@ const GalleriesContent = () => {
     const fetchGalleryImages = async () => {
       try {
         setLoading(true);
-        const response = await fetch("/api/cloudinary-gallery");
+        const response = await fetch(
+          "/api/cloudinary-gallery?folder=tech-communities",
+        );
         if (!response.ok) {
           const errorData = await response.json();
-          throw new Error(errorData.error || `HTTP error! status: ${response.status}`);
+          throw new Error(
+            errorData.error || `HTTP error! status: ${response.status}`,
+          );
         }
         const data = await response.json();
-        setImages(data.resources || []);
+
+        // ✅ Map Cloudinary resources to MappedImage[]
+        const mapped = mapImageResources(data.resources || []);
+        setImages(mapped);
       } catch (err: any) {
         setError(err.message || "Failed to load gallery images.");
       } finally {
@@ -44,39 +52,22 @@ const GalleriesContent = () => {
 
   if (loading) {
     return (
-      <motion.div
-        key="loading"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.3 }}
-        className="text-center mt-8 text-purple-800 dark:text-gray-200"
-      >
-        Loading gallery... 📸
+      <motion.div className="text-center mt-8 text-purple-800 dark:text-gray-400 text-xs font-semibold">
+        LOADING GALLERY... 📸
       </motion.div>
     );
   }
 
   if (error) {
     return (
-      <motion.div
-        key="error"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.3 }}
-        className="text-center mt-8 text-red-500 dark:text-red-400"
-      >
+      <motion.div className="text-center mt-8 text-red-500 dark:text-red-400">
         {error}
       </motion.div>
     );
   }
 
   return (
-    <motion.div
-      key="galleries"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.3 }}
-    >
+    <motion.div>
       {images.length === 0 ? (
         <p className="text-center mt-8 text-purple-700 dark:text-gray-300">
           No images found in the "Tech Communities" gallery.
@@ -85,14 +76,17 @@ const GalleriesContent = () => {
         <div className="grid grid-cols-2 gap-4 mt-4">
           {images.map((image) => (
             <div
-              key={image.public_id}
-              className="bg-purple-200 dark:bg-gray-700 h-44 rounded-lg flex items-center justify-center overflow-hidden shadow-md"
+              key={image.id}
+              className="relative group bg-purple-200 dark:bg-gray-700 h-44 rounded-lg overflow-hidden shadow-md"
             >
               <img
-                src={image.secure_url}
-                alt={`Image from ${image.folder || "gallery"}`}
+                src={image.image}
+                alt={image.title}
                 className="w-full h-full object-cover rounded-lg"
               />
+              <div className="absolute bottom-0 left-0 right-0 bg-black/60 text-white text-xs p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                {image.displayName}
+              </div>
             </div>
           ))}
         </div>
@@ -110,12 +104,10 @@ const GithubHighlightsContent = () => (
     transition={{ duration: 0.3 }}
   >
     <div className="mb-4">
-      <h3 className="text-md font-bold text-purple-900 dark:text-gray-950 flex items-center gap-2">
-        <FiGithub className="text-purple-600 dark:text-gray-950 text-sm" />
+      <h3 className="text-sm font-bold text-purple-900 dark:text-gray-950 flex items-center gap-2">
+        <FiGithub className="text-purple-600 dark:text-gray-950 text-md font-apple" />
         Open for Contribution
-       
       </h3>
-      
     </div>
 
     <div className="space-y-4">
@@ -124,25 +116,35 @@ const GithubHighlightsContent = () => (
         .map((project) => (
           <div
             key={project.id}
-            className="p-2 border-2 border-purple-400/60 dark:border-gray-900/20 rounded-lg hover:shadow-2xl transition-shadow"
+            className="p-2 border border-purple-400 dark:border-gray-900/20 rounded-lg hover:shadow-2xl transition-shadow"
           >
             <div className="flex justify-between items-start">
               <div>
-                <h4 className="font-semibold text-purple-800 dark:text-gray-900">
+                <h5 className="font-semibold text-purple-900 dark:text-gray-900 text-xs">
                   <a
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2"
+                    className="flex items-center gap-2 font-apple"
                   >
                     {project.title}
                   </a>
-                </h4>
-                <p className="text-purple-600 dark:text-gray-900 text-xs font-semibold mt-1">
+                </h5>
+                <p className="text-purple-600 dark:text-gray-900 text-xs font-medium mt-1 text-left">
                   {project.description}
                 </p>
               </div>
-              <span className="bg-purple-600/10 dark:bg-gray-700 text-purple-900 dark:text-gray-200 text-xs px-2 py-1 rounded-md font-bold">
+              <span
+                className={cn(
+                  "text-xs px-2 py-1 font-apple rounded-md font-medium",
+                  // Base glassmorphism effect
+                  "backdrop-blur-sm backdrop-saturate-150 border border-white/10",
+                  // Light mode: purple tint
+                  "text-purple-900 bg-purple-500/10",
+                  // Dark mode: dark glass effect
+                  "dark:text-black dark:bg-gray-700/20 dark:border-white/10",
+                )}
+              >
                 {project.techStack[0]}
               </span>
             </div>
@@ -169,16 +171,16 @@ const GithubHighlightsContent = () => (
         src="https://ghchart.rshah.org/6C3082/Araanna"
         alt="GitHub Contributions"
         className="w-full max-w-xl dark:hidden"
-  />
-  <img
-    src="https://ghchart.rshah.org/6B7280/Araanna"
-    alt="GitHub Contributions"
-    className="w-full max-w-xl hidden dark:block"
+      />
+      <img
+        src="https://ghchart.rshah.org/6B7280/Araanna"
+        alt="GitHub Contributions"
+        className="w-full max-w-xl hidden dark:block"
       />
     </div>
 
     <div className="mt-4 text-sm font-semibold text-purple-900 dark:text-gray-900">
-      Want to collaborate? Feel free to open an issue or PR!
+      Want to contribute in my github projects? Feel free to open an issue or PR!
     </div>
   </motion.div>
 );
@@ -189,7 +191,9 @@ interface HomeProps {
 }
 
 const Home = ({ setActiveSection }: HomeProps) => {
-  const [activeContent, setActiveContent] = useState<"galleries" | "github">("galleries");
+  const [activeContent, setActiveContent] = useState<"galleries" | "github">(
+    "galleries",
+  );
 
   const handleHireMeClick = () => {
     setActiveSection("Contact");
@@ -229,7 +233,7 @@ const Home = ({ setActiveSection }: HomeProps) => {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="text-[2.2rem] sm:text-[2.5rem] font-bold text-purple-900 dark:text-gray-900"
+            className="text-[2.2rem] sm:text-[2.5rem] font-apple font-bold text-purple-900 dark:text-gray-900"
           >
             Melanie Abalde
           </motion.h1>
@@ -237,9 +241,15 @@ const Home = ({ setActiveSection }: HomeProps) => {
           <div className="w-full flex justify-center md:justify-start">
             <div className="relative overflow-hidden h-10">
               <div className="relative flex flex-col animate-flip text-purple-800 dark:text-gray-950">
-                <div className="flex items-center h-10 font-semibold text-md">FullStack Developer</div>
-                <div className="flex items-center h-10 font-semibold text-md">Mobile Developer</div>
-                <div className="flex items-center h-10 font-semibold text-md">UI Designer</div>
+                <div className="flex items-center h-10 font-semibold text-md">
+                  FullStack Developer
+                </div>
+                <div className="flex items-center h-10 font-semibold text-md">
+                  Mobile Developer
+                </div>
+                <div className="flex items-center h-10 font-semibold text-md">
+                  UI Designer
+                </div>
               </div>
             </div>
           </div>
@@ -252,9 +262,9 @@ const Home = ({ setActiveSection }: HomeProps) => {
           >
             Creating Digital Experiences with Love & Passion
           </motion.h2>
- <div className="w-full max-w-lg flex justify-center items-center md:block md:-translate-x-[5rem]">
-  <ExperienceBoard />
-</div>
+          <div className="w-full max-w-lg flex justify-center items-center md:block md:-translate-x-[5rem]">
+            <ExperienceBoard />
+          </div>
 
           <motion.div
             initial={{ x: -20, opacity: 0 }}
@@ -266,12 +276,15 @@ const Home = ({ setActiveSection }: HomeProps) => {
             transition={{
               delay: 0.6,
               duration: 0.6,
-              y: { repeat: Infinity, repeatType: "reverse", duration: 3, ease: "easeInOut" },
+              y: {
+                repeat: Infinity,
+                repeatType: "reverse",
+                duration: 3,
+                ease: "easeInOut",
+              },
             }}
             className=" flex flex-col items-center md:items-start w-full"
           >
-          
-            
             <motion.button
               onClick={handleHireMeClick}
               className="bg-gradient-to-r from-pink-500 to-purple-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-opacity-50 text-xs sm:text-sm px-4 py-2
@@ -287,22 +300,27 @@ const Home = ({ setActiveSection }: HomeProps) => {
           <div className="flex mb-4 w-full max-w-sm md:max-w-full">
             <button
               onClick={() => setActiveContent("galleries")}
-              className={`flex-1 py-3 font-semibold transition-all duration-300 rounded-l-sm flex items-center justify-center gap-2 text-sm ${
+              className={cn(
+                "flex-1 py-3 font-semibold transition-all duration-300 rounded-l-sm flex items-center justify-center gap-2 text-xs",
+                "backdrop-blur-xl backdrop-saturate-150 border border-white/10",
                 activeContent === "galleries"
-                  ? "bg-purple-300 text-purple-800 shadow-lg dark:bg-gray-800 dark:text-gray-100"
-                  : "bg-purple-100 text-purple-700 dark:bg-gray-900 dark:text-gray-300"
-              }`}
+                  ? "bg-purple-500/20 text-purple-900  dark:bg-gray-800/30 dark:text-black"
+                  : "bg-purple-500/10 text-purple-700 dark:bg-gray-800/20 dark:text-gray-800",
+              )}  
             >
-              <FiCamera className="text-xl" />
+              <FiCamera className="text-lg font-bold" />
               MY TECH JOURNEY
             </button>
+
             <button
               onClick={() => setActiveContent("github")}
-              className={`flex-1 py-3 font-semibold transition-all duration-300 rounded-r-sm flex items-center justify-center gap-2 text-sm ${
+              className={cn(
+                "flex-1 py-3 font-semibold transition-all duration-300 rounded-r-sm flex items-center justify-center gap-2 text-xs",
+                "backdrop-blur-xl backdrop-saturate-150 border border-white/30",
                 activeContent === "github"
-                  ? "bg-purple-300 text-purple-800 shadow-lg dark:bg-gray-800 dark:text-gray-100"
-                  : "bg-purple-100 text-purple-700 dark:bg-gray-900 dark:text-gray-300"
-              }`}
+                  ? "bg-purple-500/20 text-purple-900  dark:bg-gray-800/30 dark:text-black"
+                  : "bg-purple-500/10 text-purple-700 dark:bg-gray-800/20 dark:text-gray-800",
+              )}
             >
               <FiGithub className="text-lg" />
               GitHub
@@ -310,7 +328,11 @@ const Home = ({ setActiveSection }: HomeProps) => {
           </div>
 
           <div className="w-full min-h-[400px]">
-            {activeContent === "galleries" ? <GalleriesContent /> : <GithubHighlightsContent />}
+            {activeContent === "galleries" ? (
+              <GalleriesContent />
+            ) : (
+              <GithubHighlightsContent />
+            )}
           </div>
         </div>
       </div>
