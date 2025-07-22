@@ -17,7 +17,7 @@ export default function Footer() {
                    bg-white/20 dark:bg-black/20 backdrop-blur-lg 
                    py-12 px-6 sm:px-8 flex flex-col justify-between"
       >
-        <Section1 />a
+        <Section1 />
         <div className="translate-x-0 translate-y-[-6vh] ">
           <Section2 />
         </div>
