@@ -1,3 +1,4 @@
+
 import { FaFacebook, FaGitlab, FaInstagram, FaLinkedin } from "react-icons/fa";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -17,8 +18,9 @@ export default function Footer() {
                    bg-white/20 dark:bg-black/20 backdrop-blur-lg 
                    py-12 px-6 sm:px-8 flex flex-col justify-between"
       >
-        <Section1 />
-        <div className="translate-x-0 translate-y-[-6vh] ">
+       
+        <div className="translate-x-0 translate-y-[35rem] md:translate-y-[45vh]">
+          <Nav />
           <Section2 />
         </div>
       </div>
@@ -26,13 +28,7 @@ export default function Footer() {
   );
 }
 
-const Section1 = () => {
-  return (
-    <div className="ml-[-2rem] m-auto mt-[38rem] sm:mt-24 md:mt-48 lg:mt-42 xl:mt-50 p-10">
-      <Nav />
-    </div>
-  );
-};
+
 
 const Section2 = () => {
   return (
@@ -47,12 +43,12 @@ const Section2 = () => {
         </div>
 
         {/* Bottom Section - text color now inherits */}
-        <div className="flex flex-col items-center justify-center text-center mb-0 translate-y-[-3vh] md:sticky md:flex-row md:justify-between md:items-end md:translate-y-[-6vh] md:translate-x-[-2vw] text-inherit w-full">
+        <div className="flex flex-col items-center justify-center mb-0 translate-y-[-3vh] md:sticky md:flex-row md:justify-between md:items-end md:translate-y-[-6vh] md:translate-x-[-2vw] text-inherit w-full">
           <h1 className="text-[22px] leading-[0.8] mt-4 sm:text-[15vw] md:text-[18vw] lg:text-[20vw] xl:text-[22vw] md:text-shadow-xs md:font-serif md:font-bold">
             𝓶𝓮𝓵𝓪
           </h1>
           <div className="flex flex-col items-center justify-center mb-6 space-y-1">
-            <p className="text-[10px] font-semibold">Tech stack used:</p>
+            <p className="text-[10px] font-semibold mt-5">Tech stack used:</p>
 
             <div className="flex items-center justify-center gap-1.5">
               <img
@@ -99,63 +95,63 @@ const Section2 = () => {
 
 const Nav = () => {
   return (
-    <div className="flex shrink-0 gap-12 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 text-inherit">
-      <div className="flex flex-col gap-2">
-        <div className="flex gap-4 items-center text-inherit">
-          <a
-            href="https://web.facebook.com/ichbinaranna"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaFacebook
-              className="text-gray-700 dark:text-purple-400"
-              size={20}
-            />
-          </a>
-          <p className="font-bold text-inherit text-sm">Facebook</p>
-        </div>
+    // On mobile (default), display as a row and center the icons.
+    // On larger screens (sm and up), revert to original display with text.
+    <div className="flex flex-row justify-center items-center gap-5 sm:flex-col sm:items-start sm:gap-2 text-inherit">
+      <div className="flex gap-4 items-center text-inherit">
+        <a
+          href="https://web.facebook.com/ichbinaranna"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaFacebook
+            className="text-gray-700 dark:text-purple-400"
+            size={20}
+          />
+        </a>
+        <p className="font-bold text-inherit text-sm hidden sm:block">Facebook</p>
+      </div>
 
-        <div className="flex gap-4 items-center text-inherit">
-          <a
-            href="https://www.instagram.com/_melkyway/?hl=en"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaInstagram
-              className="text-gray-700 dark:text-purple-400"
-              size={20}
-            />
-          </a>
-          <p className="font-bold text-inherit text-sm">Instagram</p>
-        </div>
+      <div className="flex gap-4 items-center text-inherit">
+        <a
+          href="https://www.instagram.com/_melkyway/?hl=en"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaInstagram
+            className="text-gray-700 dark:text-purple-400"
+            size={20}
+          />
+        </a>
+        <p className="font-bold text-inherit text-sm hidden sm:block">Instagram</p>
+      </div>
 
-        <div className="flex gap-4 items-center text-inherit">
-          <a
-            href="https://www.linkedin.com/in/melanie-abalde-0a363a31b/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaLinkedin
-              className="text-gray-700 dark:text-purple-400"
-              size={20}
-            />
-          </a>
-          <p className="font-bold text-inherit text-sm">LinkedIn</p>
-        </div>
+      <div className="flex gap-4 items-center text-inherit">
+        <a
+          href="https://www.linkedin.com/in/melanie-abalde-0a363a31b/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaLinkedin
+            className="text-gray-700 dark:text-purple-400"
+            size={20}
+          />
+        </a>
+        <p className="font-bold text-inherit text-sm hidden sm:block">LinkedIn</p>
+      </div>
 
-        <div className="flex gap-4 items-center text-inherit">
-          <a
-            href="https://gitlab.com/Araanna"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaGitlab
-              className="text-gray-700 dark:text-purple-400"
-              size={20}
-            />
-          </a>
-          <p className="font-bold text-inherit text-sm">Gitlab</p>
-        </div>
+      <div className="flex gap-4 items-center text-inherit">
+        <a
+          href="https://gitlab.com/Araanna"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaGitlab
+            className="text-gray-700 dark:text-purple-400"
+            size={20}
+          />
+        </a>
+        <p className="font-bold text-inherit text-sm hidden sm:block">Gitlab</p>
       </div>
     </div>
   );
