@@ -48,7 +48,7 @@ const Section2 = () => {
             𝓶𝓮𝓵𝓪
           </h1>
           <div className="flex flex-col items-center justify-center mb-6 space-y-1">
-            <p className="text-[10px] font-semibold mt-5">Tech stack used:</p>
+            <p className="text-[10px] font-semibold mt-5 text-inherit">Tech stack used:</p>
 
             <div className="flex items-center justify-center gap-1.5">
               <img
