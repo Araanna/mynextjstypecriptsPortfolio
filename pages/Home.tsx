@@ -179,8 +179,17 @@ const GithubHighlightsContent = () => (
       />
     </div>
 
-    <div className="mt-4 text-sm font-semibold text-purple-900 dark:text-gray-900">
-      Want to contribute in my github projects? Feel free to open an issue or PR!
+    <div
+      className={cn(
+        "mt-4 text-sm font-semibold",
+        "text-purple-900 dark:text-gray-300", // mobile default
+        "sm:text-gray-800 dark:sm:text-gray-300", // larger screens
+      )}
+    >
+      <p>
+        Want to contribute in my GitHub projects? Feel free to open an issue or
+        PR!
+      </p>
     </div>
   </motion.div>
 );
@@ -306,7 +315,7 @@ const Home = ({ setActiveSection }: HomeProps) => {
                 activeContent === "galleries"
                   ? "bg-purple-500/20 text-purple-900  dark:bg-gray-800/30 dark:text-black"
                   : "bg-purple-500/10 text-purple-700 dark:bg-gray-800/20 dark:text-gray-800",
-              )}  
+              )}
             >
               <FiCamera className="text-lg font-bold" />
               MY TECH JOURNEY
