@@ -1,4 +1,3 @@
-
 import { FaFacebook, FaGitlab, FaInstagram, FaLinkedin } from "react-icons/fa";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -18,7 +17,6 @@ export default function Footer() {
                    bg-white/20 dark:bg-black/20 backdrop-blur-lg 
                    py-12 px-6 sm:px-8 flex flex-col justify-between"
       >
-       
         <div className="translate-x-0 translate-y-[35rem] md:translate-y-[45vh]">
           <Nav />
           <Section2 />
@@ -27,8 +25,6 @@ export default function Footer() {
     </div>
   );
 }
-
-
 
 const Section2 = () => {
   return (
@@ -48,14 +44,24 @@ const Section2 = () => {
             𝓶𝓮𝓵𝓪
           </h1>
           <div className="flex flex-col items-center justify-center mb-6 space-y-1">
-            <p className="text-[10px] font-semibold mt-5 text-inherit">Tech stack used:</p>
+            <p className="text-[10px] font-semibold mt-5 text-inherit">
+              Tech stack used:
+            </p>
 
             <div className="flex items-center justify-center gap-1.5">
-              <img
-                src="https://cdn.simpleicons.org/nextdotjs/000000"
-                alt="Next.js"
-                className="w-[25px] h-[25px] object-contain rounded-full"
-              />
+              <div className="relative w-[25px] h-[25px]">
+                <img
+                  src="https://cdn.simpleicons.org/nextdotjs/000000"
+                  alt="Next.js"
+                  className="absolute inset-0 w-full h-full object-contain rounded-full dark:hidden"
+                />
+                <img
+                  src="https://cdn.simpleicons.org/nextdotjs/ffffff"
+                  alt="Next.js"
+                  className="absolute inset-0 w-full h-full object-contain rounded-full hidden dark:block"
+                />
+              </div>
+
               <img
                 src="https://cdn.simpleicons.org/typescript/3178c6"
                 alt="TypeScript"
@@ -109,7 +115,9 @@ const Nav = () => {
             size={20}
           />
         </a>
-        <p className="font-bold text-inherit text-sm hidden sm:block">Facebook</p>
+        <p className="font-bold text-inherit text-sm hidden sm:block">
+          Facebook
+        </p>
       </div>
 
       <div className="flex gap-4 items-center text-inherit">
@@ -123,7 +131,9 @@ const Nav = () => {
             size={20}
           />
         </a>
-        <p className="font-bold text-inherit text-sm hidden sm:block">Instagram</p>
+        <p className="font-bold text-inherit text-sm hidden sm:block">
+          Instagram
+        </p>
       </div>
 
       <div className="flex gap-4 items-center text-inherit">
@@ -137,7 +147,9 @@ const Nav = () => {
             size={20}
           />
         </a>
-        <p className="font-bold text-inherit text-sm hidden sm:block">LinkedIn</p>
+        <p className="font-bold text-inherit text-sm hidden sm:block">
+          LinkedIn
+        </p>
       </div>
 
       <div className="flex gap-4 items-center text-inherit">
@@ -146,10 +158,7 @@ const Nav = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <FaGitlab
-            className="text-gray-700 dark:text-purple-400"
-            size={20}
-          />
+          <FaGitlab className="text-gray-700 dark:text-purple-400" size={20} />
         </a>
         <p className="font-bold text-inherit text-sm hidden sm:block">Gitlab</p>
       </div>

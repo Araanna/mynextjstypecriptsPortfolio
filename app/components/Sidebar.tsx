@@ -59,7 +59,9 @@ const Sidebar: React.FC<SidebarProps> = ({ section, children }) => {
               {navLinks.map(({ id, href, label }) => (
                 <Link key={id} href={href}>
                   <span
-                    className={`cursor-pointer transition-all duration-300 text-xs font-bold ${textColor}`}
+                    className={`cursor-pointer text-xs font-bold px-2 py-1 rounded-md border border-white/20 backdrop-blur-sm transition-all duration-300
+                     bg-purple-200/30 text-purple-800 
+                     dark:bg-gray-700/30 dark:text-gray-100 ${textColor}`}
                   >
                     {label}
                   </span>
