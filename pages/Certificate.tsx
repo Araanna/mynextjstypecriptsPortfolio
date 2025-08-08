@@ -1,6 +1,7 @@
 import Fligno from "../assets/images/Fligno.jpeg";
 import Image from "next/image";
 import Layout from "../app/components/Layout.tsx";
+
 import PyTsada from "../assets/images/PyTsada.jpg";
 import React from "react";
 import Sidebar from "../app/components/Sidebar.tsx";

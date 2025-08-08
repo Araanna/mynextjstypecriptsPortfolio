@@ -2,7 +2,7 @@ import type { Config } from "tailwindcss";
 
 export default {
   mode: "jit",
-  darkMode: 'class',
+  darkMode: "class",
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -16,21 +16,21 @@ export default {
       fontFamily: {
         cursive: ['"Dancing Script"', "cursive"],
         apple: [
-          '-apple-system',
-          'BlinkMacSystemFont',
+          "-apple-system",
+          "BlinkMacSystemFont",
           '"Segoe UI"',
-          'Roboto',
-          'Helvetica',
-          'Arial',
-          'sans-serif',
+          "Roboto",
+          "Helvetica",
+          "Arial",
+          "sans-serif",
         ],
       },
       animation: {
         "spin-slow": "spin 20s linear infinite",
         flip: "show 20s linear infinite",
-        scroll: "scroll 40s linear infinite", // Increased from 25s to 40s
-        "scroll-slow": "scroll 120s linear infinite", // Increased from 90s to 120s
-        "scroll-very-slow": "scroll 180s linear infinite", // Added new very slow option
+        scroll: "scroll 40s linear infinite",
+        "scroll-slow": "scroll 120s linear infinite",
+        "scroll-very-slow": "scroll 180s linear infinite",
       },
       keyframes: {
         flip: {
@@ -76,48 +76,20 @@ export default {
       shadowOffsetX: "12px",
       shadowOffsetY: "12px",
     }),
-    function ({ addUtilities }: { addUtilities: (utilities: Record<string, Record<string, string>>) => void }) {
+    function ({
+      addUtilities,
+    }: {
+      addUtilities: (utilities: Record<string, Record<string, string>>) => void;
+    }) {
       addUtilities({
-        '.animation-paused': {
-          'animation-play-state': 'paused',
+        ".animation-paused": {
+          "animation-play-state": "paused",
         },
       });
     },
   ],
 
   daisyui: {
-    themes: [
-      "accent",
-      "dark",
-      {
-        retro: {
-          primary: "#ef9995",
-          secondary: "#a4cbb4",
-          accent: "#ebdc99",
-          neutral: "#7d7259",
-          "base-100": "#f4e8c1",
-          info: "#2563eb",
-          success: "#16a34a",
-          warning: "#d97706",
-          error: "#dc2626",
-          "--rounded-box": "0.5rem",
-          "--rounded-btn": "0.5rem",
-          "--rounded-badge": "0.5rem",
-          "--animation-btn": "0.25s",
-          "--animation-input": "0.2s",
-          "--btn-focus-scale": "0.98",
-          "--border-btn": "1px",
-          "--tab-border": "1px",
-          "--tab-radius": "0.5rem",
-        },
-      },
-    ],
-    darkTheme: "dark",
-    base: true,
-    styled: true,
-    utils: true,
-    rtl: false,
-    prefix: "",
-    logs: true,
+    themes: true, // ✅ allow DaisyUI to read @plugin "daisyui/theme" in CSS
   },
 } satisfies Config;

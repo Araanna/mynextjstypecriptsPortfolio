@@ -2,116 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --font-geist-mono: 'GeistMono', sans-serif;
-}
+@plugin "daisyui";
 
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-/* Light Mode Styles */
-body {
-  font-family: var(--font-geist-mono), sans-serif;
-  background-color: #ECE3CA; /* Light mode background */
-  color: #61401b; /* Dark text */
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
 
-/* Dark Mode Styles */
-body.dark {
-   background-color: purple-900; /* Dark mode background */
-  color: #2d194d; /* Light text */
-}
 
-/* Ensure all elements transition smoothly */
-body.dark * {
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
+@import "github-calendar/dist/github-calendar-responsive.css";
 
-/* Force background color update for elements that might not change */
-body.dark .your-custom-class,
-body.dark .some-other-elements {
-  background-color: #ffffff !important;
-  color: #ECE3CA !important;
-}
+  
 
-/* Remove default margin and padding */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+
+}
+body {
+  background-color: #ECD9FF;
+  color: #000000;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  @apply font-apple;
 }
 
-/* Mobile Navigation - Hide Scrollbar */
-.hide-scrollbar::-webkit-scrollbar {
-  display: none;
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+  } 
+  .scrollbar-thumb-indigo-500\/50 {
+    scrollbar-color: rgba(99, 102, 241, 0.5) transparent;
+  }
 }
-
-.hide-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-/* Vertical Text */
 .vertical-text {
   writing-mode: vertical-rl;
-  text-orientation: sideways-right;
-  transform: rotate(-180deg);
+  text-orientation:sideways-right;
 }
 
-/* Animated Flip Text */
-#flip {
-  height: 50px;
-  overflow: hidden;
+/* Add dark mode styles */
+body.dark {
+ background-color: #000000;
+ color: #ECD9FF;
 }
 
-#flip > div > div {
-  color: #fff;
-  padding: 4px 12px;
-  height: 45px;
-  margin-bottom: 45px;
-  display: inline-block;
+body, body.dark * {
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-#flip div:first-child {
-  animation: show 5s linear infinite;
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
+
+  p {
+    color: #2a1c0c;
+  }
 }
 
-#flip div div {
-  background: #42c58a;
-}
 
-#flip div:first-child div {
-  background: #4ec7f3;
-}
-
-#flip div:last-child div {
-  background: #DC143C;
-}
-
-@keyframes show {
-  0% { margin-top: -270px; }
-  5% { margin-top: -180px; }
-  33% { margin-top: -180px; }
-  38% { margin-top: -90px; }
-  66% { margin-top: -90px; }
-  71% { margin-top: 0px; }
-  99.99% { margin-top: 0px; }
-  100% { margin-top: -270px; }
-}
-
-/* Fixed Footer Text */
-p {
-  position: fixed;
-  width: 100%;
-  bottom: 30px;
-  font-size: 12px;
-  color: #999;
-  margin-top: 200px;
-}
 
 /* iPad-specific adjustments */
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
@@ -121,4 +68,79 @@ p {
   .md\:justify-center {
     justify-content: center;
   }
+}
+
+
+
+
+@plugin "daisyui/theme" {
+  name: "newlight";
+  default: true;
+  prefersdark: true;
+  color-scheme: "dark";
+  --color-base-100: oklch(82% 0.119 306.383);
+  --color-base-200: oklch(81% 0.111 293.571);
+  --color-base-300: oklch(55% 0.288 302.321);
+  --color-base-content: oklch(29% 0.149 302.717);
+  --color-primary: oklch(81% 0.111 293.571);
+  --color-primary-content: oklch(43% 0.218 303.724);
+  --color-secondary: oklch(44% 0.017 285.786);
+  --color-secondary-content: oklch(98% 0 0);
+  --color-accent: oklch(54% 0.281 293.009);
+  --color-accent-content: oklch(96% 0.016 293.756);
+  --color-neutral: oklch(29% 0.136 325.661);
+  --color-neutral-content: oklch(97% 0.017 320.058);
+  --color-info: oklch(62% 0.214 259.815);
+  --color-info-content: oklch(97% 0.014 254.604);
+  --color-success: oklch(44% 0.119 151.328);
+  --color-success-content: oklch(98% 0.018 155.826);
+  --color-warning: oklch(42% 0.095 57.708);
+  --color-warning-content: oklch(42% 0.095 57.708);
+  --color-error: oklch(39% 0.141 25.723);
+  --color-error-content: oklch(96% 0.015 12.422);
+  --radius-selector: 0rem;
+  --radius-field: 2rem;
+  --radius-box: 1rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1.5px;
+  --depth: 0;
+  --noise: 1;
+}
+
+
+
+@plugin "daisyui/theme" {
+  name: "halloween";
+  default: false;
+  prefersdark: false;
+  color-scheme: "dark";
+  --color-base-100: oklch(21% 0.006 56.043);
+  --color-base-200: oklch(14% 0.004 49.25);
+  --color-base-300: oklch(0% 0 0);
+  --color-base-content: oklch(84.955% 0 0);
+  --color-primary: oklch(77.48% 0.204 60.62);
+  --color-primary-content: oklch(19.693% 0.004 196.779);
+  --color-secondary: oklch(45.98% 0.248 305.03);
+  --color-secondary-content: oklch(89.196% 0.049 305.03);
+  --color-accent: oklch(64.8% 0.223 136.073);
+  --color-accent-content: oklch(0% 0 0);
+  --color-neutral: oklch(24.371% 0.046 65.681);
+  --color-neutral-content: oklch(84.874% 0.009 65.681);
+  --color-info: oklch(54.615% 0.215 262.88);
+  --color-info-content: oklch(90.923% 0.043 262.88);
+  --color-success: oklch(62.705% 0.169 149.213);
+  --color-success-content: oklch(12.541% 0.033 149.213);
+  --color-warning: oklch(66.584% 0.157 58.318);
+  --color-warning-content: oklch(13.316% 0.031 58.318);
+  --color-error: oklch(65.72% 0.199 27.33);
+  --color-error-content: oklch(13.144% 0.039 27.33);
+  --radius-selector: 1rem;
+  --radius-field: 0.5rem;
+  --radius-box: 1rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 1;
+  --noise: 0;
 }

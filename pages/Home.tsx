@@ -7,6 +7,9 @@ import ExperienceBoard from "../app/components/ExperienceBoard";
 import { githubProjects } from "@/lib/githubProjects";
 import { mapImageResources } from "@/lib/cloudinary";
 import { cn } from "@/lib/utils";
+import { socialLinks } from "../lib/links.ts";
+import Link from "next/link";
+import { useThemeStore } from "../app/store/themeStore.ts";
 
 // Define the MappedImage type if not imported from elsewhere
 type MappedImage = {
@@ -18,6 +21,7 @@ type MappedImage = {
 
 // --- GalleriesContent Component ---
 const GalleriesContent = () => {
+  const { isDarkMode } = useThemeStore(); // ✅ use hook at top
   const [images, setImages] = useState<MappedImage[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -36,8 +40,6 @@ const GalleriesContent = () => {
           );
         }
         const data = await response.json();
-
-        // ✅ Map Cloudinary resources to MappedImage[]
         const mapped = mapImageResources(data.resources || []);
         setImages(mapped);
       } catch (err: any) {
@@ -49,6 +51,8 @@ const GalleriesContent = () => {
 
     fetchGalleryImages();
   }, []);
+
+  const textColor = isDarkMode ? "text-purple-300" : "text-gray-800";
 
   if (loading) {
     return (
@@ -137,11 +141,8 @@ const GithubHighlightsContent = () => (
               <span
                 className={cn(
                   "text-xs px-2 py-1 font-apple rounded-md font-medium",
-                  // Base glassmorphism effect
                   "backdrop-blur-sm backdrop-saturate-150 border border-white/10",
-                  // Light mode: purple tint
                   "text-purple-900 bg-purple-500/10",
-                  // Dark mode: dark glass effect
                   "dark:text-black dark:bg-gray-700/20 dark:border-white/10",
                 )}
               >
@@ -179,13 +180,7 @@ const GithubHighlightsContent = () => (
       />
     </div>
 
-    <div
-      className={cn(
-        "mt-4 text-sm font-semibold",
-        "text-purple-900 dark:text-gray-300", // mobile default
-        "sm:text-gray-800 dark:sm:text-gray-300", // larger screens
-      )}
-    >
+    <div className="mt-4 text-sm font-semibold text-purple-900 dark:text-gray-300 sm:text-gray-800 dark:sm:text-gray-300">
       <p>
         Want to contribute in my GitHub projects? Feel free to open an issue or
         PR!
@@ -203,6 +198,28 @@ const Home = ({ setActiveSection }: HomeProps) => {
   const [activeContent, setActiveContent] = useState<"galleries" | "github">(
     "galleries",
   );
+  const [isMobile, setIsMobile] = useState(false);
+
+  const { isDarkMode } = useThemeStore();
+  const textColor = isDarkMode ? "text-gray-800" : "text-purple-900";
+
+  useEffect(() => {
+    // Check if window is defined (client-side)
+    if (typeof window !== "undefined") {
+      const handleResize = () => {
+        setIsMobile(window.innerWidth < 768);
+      };
+
+      // Set initial value
+      handleResize();
+
+      // Add event listener
+      window.addEventListener("resize", handleResize);
+
+      // Clean up
+      return () => window.removeEventListener("resize", handleResize);
+    }
+  }, []);
 
   const handleHireMeClick = () => {
     setActiveSection("Contact");
@@ -210,6 +227,39 @@ const Home = ({ setActiveSection }: HomeProps) => {
       const middleOfPage = window.innerHeight * 0.95 + window.scrollY;
       window.scrollTo({ top: middleOfPage, behavior: "smooth" });
     }, 100);
+  };
+
+  // Simple Tooltip component
+  const Tooltip = ({
+    title,
+    children,
+    placement = "bottom",
+  }: {
+    title: string;
+    children: React.ReactNode;
+    placement?: string;
+  }) => {
+    return (
+      <div className="relative group">
+        {children}
+        <span
+          className={`
+          absolute 
+          ${placement === "bottom" ? "top-full mt-2" : "bottom-full mb-2"} 
+          left-1/2 transform -translate-x-1/2
+          px-2 py-1 
+          bg-black text-white text-xs 
+          rounded 
+          opacity-0 group-hover:opacity-100 
+          transition-opacity duration-300
+          whitespace-nowrap
+          z-10
+        `}
+        >
+          {title}
+        </span>
+      </div>
+    );
   };
 
   return (
@@ -271,17 +321,32 @@ const Home = ({ setActiveSection }: HomeProps) => {
           >
             Creating Digital Experiences with Love & Passion
           </motion.h2>
+
           <div className="w-full max-w-lg flex justify-center items-center md:block md:-translate-x-[5rem]">
             <ExperienceBoard />
+          </div>
+          <div className="flex space-x-4 md:space-x-6">
+            {socialLinks.map(
+              ({ href, label, title, Icon, colorClass, download }) => (
+                <Tooltip key={label} title={title} placement="bottom">
+                  <a
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`relative hover:opacity-90 ${textColor} ${colorClass}`}
+                    aria-label={label}
+                    download={download ? true : undefined}
+                  >
+                    <Icon size={isMobile ? 20 : 24} />
+                  </a>
+                </Tooltip>
+              ),
+            )}
           </div>
 
           <motion.div
             initial={{ x: -20, opacity: 0 }}
-            animate={{
-              x: 0,
-              opacity: 1,
-              y: [0, -5, 0],
-            }}
+            animate={{ x: 0, opacity: 1, y: [0, -5, 0] }}
             transition={{
               delay: 0.6,
               duration: 0.6,
@@ -292,12 +357,12 @@ const Home = ({ setActiveSection }: HomeProps) => {
                 ease: "easeInOut",
               },
             }}
-            className=" flex flex-col items-center md:items-start w-full"
+            className="flex flex-col items-center md:items-start w-full"
           >
             <motion.button
               onClick={handleHireMeClick}
               className="bg-gradient-to-r from-pink-500 to-purple-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-opacity-50 text-xs sm:text-sm px-4 py-2
-                         dark:from-gray-700 dark:to-gray-800 dark:text-gray-100 dark:focus:ring-gray-500"
+                         dark:from-gray-700 dark:to-gray-800 dark:text-gray-100 dark:focus:ring-gray-500 -mx-2 my-6"
             >
               Work With Me
             </motion.button>
@@ -305,7 +370,7 @@ const Home = ({ setActiveSection }: HomeProps) => {
         </div>
 
         {/* Right Column */}
-        <div className="flex flex-col items-center md:items-start text-center md:text-left w-full transform md:-translate-y-[5rem]">
+        <div className="flex flex-col items-center md:items-start text-center md:text-left w-full transform md:-translate-y-[4rem]">
           <div className="flex mb-4 w-full max-w-sm md:max-w-full">
             <button
               onClick={() => setActiveContent("galleries")}
@@ -313,7 +378,7 @@ const Home = ({ setActiveSection }: HomeProps) => {
                 "flex-1 py-3 font-semibold transition-all duration-300 rounded-l-sm flex items-center justify-center gap-2 text-xs",
                 "backdrop-blur-xl backdrop-saturate-150 border border-white/10",
                 activeContent === "galleries"
-                  ? "bg-purple-500/20 text-purple-900  dark:bg-gray-800/30 dark:text-black"
+                  ? "bg-purple-500/20 text-purple-900 dark:bg-gray-800/30 dark:text-black"
                   : "bg-purple-500/10 text-purple-700 dark:bg-gray-800/20 dark:text-gray-800",
               )}
             >
@@ -327,7 +392,7 @@ const Home = ({ setActiveSection }: HomeProps) => {
                 "flex-1 py-3 font-semibold transition-all duration-300 rounded-r-sm flex items-center justify-center gap-2 text-xs",
                 "backdrop-blur-xl backdrop-saturate-150 border border-white/30",
                 activeContent === "github"
-                  ? "bg-purple-500/20 text-purple-900  dark:bg-gray-800/30 dark:text-black"
+                  ? "bg-purple-500/20 text-purple-900 dark:bg-gray-800/30 dark:text-black"
                   : "bg-purple-500/10 text-purple-700 dark:bg-gray-800/20 dark:text-gray-800",
               )}
             >
