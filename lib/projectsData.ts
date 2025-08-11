@@ -1,6 +1,6 @@
-import Ecom from "../assets/images/UX Design.png";
-import Game from "../assets/images/Into the Light.png";
-import UIX from "../assets/images/E-commerce MockUP.png";
+import AMS from "../assets/images/AMS.png";
+import Game from "../assets/images/Game.png";
+import myPortfolio from "../assets/images/Portfolio.png";
 
 export const projectsData = [
   {
@@ -13,19 +13,19 @@ export const projectsData = [
       "https://araanna.github.io/gamedev_website/game.html?name=Into%20the%20Light", // Link to the game
   },
   {
-    title: "POS and Inventory System",
+    title: "Attendance Monitoring System",
     description:
-      "A POS and inventory system with an intuitive UI/UX design, allowing efficient inventory management and simplified operations. A first semester Project for finals",
-    tags: ["Figma", "TypeScript", "Next.js", "Tailwind", "PHP", "GIT", "MYSQL"],
-    imageUrl: Ecom,
+      "Built a comprehensive attendance monitoring system for a school, featuring real-time attendance tracking, student profiles, and reporting functionalities. The system is designed to streamline attendance management and improve administrative efficiency.",
+    tags: ["Figma", "Laravel", "VueJS", "Tailwind", "Typescript", "GIT", "MYSQL"],
+    imageUrl: AMS,
     gameLink: null, // No link for this project
   },
   {
-    title: "UI/UX Design and System Development",
+    title: "myPortfolio",
     description:
-      "E-commerce platform mockup and full-stack system development. Features include user-friendly design, dynamic product filtering, and integrated payment solutions.",
-    tags: ["HTML", "CSS", "JavaScript", "AJAX", "RESTful APIs", "PHP", "MySQL"],
-    imageUrl: UIX,
+      "A personal portfolio website showcasing my skills, projects, and experiences. The site is designed to highlight my work and provide a platform for potential employers or clients to view my capabilities.",
+    tags: ["NextJS", "Typescript", "Tailwind", "Cloudinary", "GIT", "Framer Motion"],
+    imageUrl: myPortfolio,
     gameLink: null, // No link for this project
   },
 ];

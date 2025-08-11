@@ -47,7 +47,7 @@ const Sidebar: React.FC<SidebarProps> = ({ section, children }) => {
   const borderColor = isDarkMode ? "border-purple-300" : "border-slate-900";
   const hoverBgColor = isDarkMode ? "hover:bg-purple-900/40" : "hover:bg-gray-900";
   const activeBgColor = isDarkMode ? "active:bg-purple-900/50" : "active:bg-black-900/70";
-    const hoverTextColr = isDarkMode ? "hover:text-purple-300" : "hover:text-white";
+  const hoverTextColr = isDarkMode ? "hover:text-purple-300" : "hover:text-white";
 
   return (
     <div className="flex flex-col md:flex-row">

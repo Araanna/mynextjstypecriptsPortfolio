@@ -1,13 +1,14 @@
 import Fligno from "../assets/images/Fligno.jpeg";
 import Image from "next/image";
-import Layout from "../app/components/Layout.tsx";
+import Layout from "../app/components/Layout";
 
 import PyTsada from "../assets/images/PyTsada.jpg";
 import React from "react";
 import Sidebar from "../app/components/Sidebar.tsx";
 import Tesda from "../assets/images/TesdaCert.jpg";
 import BWAI2025 from "../assets/images/Google Certificate.jpg";
-
+import Devcon from "../assets/images/Volunteers.png";
+import WordPress from "../assets/images/WordPress.jpg";
 import { motion } from "framer-motion";
 
 const certificates = [
@@ -39,6 +40,20 @@ const certificates = [
     alt: "Certificate 4",
     title: "Building With AI 2025",
     description: "Google Certificate",
+  },
+  {
+    id: 5,
+    image: Devcon,
+    alt: "Certificate 5",
+    title: "Devcon Volunteer",
+    description: "Devcon 2025 Volunteer Certificate",
+  },
+  {
+    id: 6,
+    image: WordPress,
+    alt: "Certificate 6",
+    title: "WordPress Campus Connect",
+    description: "WordPress 2025 Workshop Certificate",
   },
 ];
 

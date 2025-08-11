@@ -5,7 +5,7 @@ import Image3 from "../assets/images/image 3.png";
 import Image4 from "../assets/images/image 4.png";
 import Image5 from "../assets/images/image 5.png";
 import Image6 from "../assets/images/image 6.png";
-import Layout from "../app/components/Layout.tsx";
+import Layout from "../app/components/Layout";
 import Sidebar from "../app/components/Sidebar.tsx";
 import { motion } from "framer-motion";
 

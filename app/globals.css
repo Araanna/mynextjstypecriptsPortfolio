@@ -17,7 +17,7 @@ body {
   background-color: #ECD9FF;
   color: #000000;
   transition: background-color 0.3s ease, color 0.3s ease;
-  @apply font-apple;
+  @apply font-apple;  
 }
 
 @layer utilities {
