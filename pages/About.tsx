@@ -23,7 +23,7 @@ function About() {
           transition={{ duration: 0.8 }}
         >
           <div className="max-w-2xl mx-auto">
-            <div className="inline-flex items-center text-xs font-semibold mb-6 px-3 py-2 rounded-lg border shadow-sm hover:shadow-md transition-all duration-300 bg-black text-white border-black/20 dark:bg-purple-900/30 dark:text-purple-600 dark:border-purple-900/30 cursor-pointer">
+            <div className="inline-flex items-center text-xs font-semibold mb-6 px-3 py-2 rounded-lg border shadow-sm hover:shadow-md transition-all duration-300 bg-black text-white border-black/20 dark:bg-purple-900/30 dark:text-purple-300 dark:border-purple-900/30 cursor-pointer">
               <h1 className="text-center">About Me</h1>
             </div>
             <div className="space-y-6">

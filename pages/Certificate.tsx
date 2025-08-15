@@ -73,7 +73,7 @@ const Certificate: React.FC = () => {
             className={clsx(
               "inline-flex items-center text-xs font-semibold mb-6 px-2 py-1 rounded-lg border shadow-sm hover:shadow-md transition-all duration-300",
               "!bg-black !text-white !border-black/20",
-              "dark:!bg-purple-900/30 dark:!text-purple-600 dark:!border-purple-900/30"
+              "dark:!bg-purple-900/30 dark:!text-purple-300 dark:!border-purple-900/30"
             )}
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
