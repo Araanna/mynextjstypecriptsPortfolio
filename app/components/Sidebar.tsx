@@ -151,7 +151,7 @@ const Sidebar: React.FC<SidebarProps> = ({ section, children }) => {
                         <li key={id}>
                           <Link href={href}>
                             <span
-                              className={`cursor-pointer transition-all duration-300 hover:scale-105 text-xs font-bold px-2 py-1 border rounded-lg ${textColor} ${borderColor} `}
+                              className={`cursor-pointer transition-all duration-300 hover:scale-105 text-[18px] font-bold px-2 py-1 border rounded-lg ${textColor} ${borderColor} `}
                             >
                               {label}
                             </span>
