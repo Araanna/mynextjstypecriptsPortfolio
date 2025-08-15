@@ -115,7 +115,7 @@ const Nav = () => {
             size={20}
           />
         </a>
-        <p className="font-bold text-inherit text-sm hidden sm:block">
+        <p className="text-inherit text-xs hidden sm:block">
           Facebook
         </p>
       </div>
@@ -131,7 +131,7 @@ const Nav = () => {
             size={20}
           />
         </a>
-        <p className="font-bold text-inherit text-sm hidden sm:block">
+        <p className="text-inherit text-xs hidden sm:block">
           Instagram
         </p>
       </div>
@@ -147,7 +147,7 @@ const Nav = () => {
             size={20}
           />
         </a>
-        <p className="font-bold text-inherit text-sm hidden sm:block">
+        <p className="text-inherit text-xs hidden sm:block">
           LinkedIn
         </p>
       </div>
@@ -160,7 +160,7 @@ const Nav = () => {
         >
           <FaGitlab className="text-gray-700 dark:text-purple-400" size={20} />
         </a>
-        <p className="font-bold text-inherit text-sm hidden sm:block">Gitlab</p>
+        <p className="text-inherit text-xs hidden sm:block">Gitlab</p>
       </div>
     </div>
   );

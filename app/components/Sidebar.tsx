@@ -171,7 +171,7 @@ const Sidebar: React.FC<SidebarProps> = ({ section, children }) => {
                           hover:scale-105 
                           text-xs 
                           font-semi 
-                          px-2 
+                          px-1 
                           py-2 
                           border 
                           rounded-lg 
@@ -185,8 +185,8 @@ const Sidebar: React.FC<SidebarProps> = ({ section, children }) => {
                           hover:-translate-x-0.5
                           active:translate-x-0
                           active:scale-95
-                          w-10
-                          h-24
+                          w-8
+                          h-18
                           flex
                           items-center
                           justify-center
@@ -227,7 +227,7 @@ const Sidebar: React.FC<SidebarProps> = ({ section, children }) => {
                           hover:scale-105 
                           text-xs 
                           font-bold 
-                          px-3 
+                          px-2 
                           py-2 
                           border 
                           rounded-lg 
