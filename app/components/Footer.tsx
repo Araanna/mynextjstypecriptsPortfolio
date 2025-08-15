@@ -115,7 +115,7 @@ const Nav = () => {
             size={20}
           />
         </a>
-        <p className="font-bold text-inherit text-xs hidden sm:block">
+        <p className="text-inherit text-xs hidden sm:block">
           Facebook
         </p>
       </div>

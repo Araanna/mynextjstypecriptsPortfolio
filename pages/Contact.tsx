@@ -72,9 +72,9 @@ const Contact: React.FC = () => {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <h1 className="text-4xl sm:text-6xl md:text-7xl font-mono font-extrabold mb-8">
-          Contact Me
-        </h1>
+          <div className="inline-flex items-center text-xs font-semibold mb-6 px-3 py-2 rounded-lg border shadow-sm hover:shadow-md transition-all duration-300 bg-black text-white border-black/20 dark:bg-purple-900/30 dark:text-purple-600 dark:border-purple-900/30 cursor-pointer">
+              <h1 className="text-center">Contact Me</h1>
+            </div>
         <div className="mb-8">
           <h2 className="font-bold text-xl mb-4 ">Let's Connect</h2>
           <p className="mb-3 text-inherit">I'd love to hear from you!</p>

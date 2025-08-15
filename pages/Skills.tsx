@@ -36,6 +36,8 @@ const Skills: React.FC = () => {
   return (
     <section className="flex flex-col md:flex-row items-center justify-center min-h-full w-full px-4 sm:px-6 lg:px-8 max-w-[1200px] mx-auto  md:py-2 overflow-visible">
       {/* Left Column: About Section */}
+
+      
       <motion.div
         className="w-full md:w-1/2 order-2 md:order-1 mb-[25rem] md:mb-0 md:pr-12 md:pb-[20rem]"
         initial={{ opacity: 0, x: -50 }}

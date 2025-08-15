@@ -6,11 +6,10 @@ import { motion } from "framer-motion";
 import profileImage from "../assets/images/mela.dev.jpg";
 
 const staticData = {
-  intro: `I am a dedicated and passionately curious full-stack web developer with strong expertise in JavaScript, React, and backend development. My experience includes working with SQL, MongoDB, and Docker, as well as building REST APIs using Django.
+intro: `I am a full-stack developer with a Bachelor of Science in Information Technology, majoring in Systems Development. I specialize in building web and mobile applications, with a strong proficiency in Next.js for frontend development and Laravel and Django for backend solutions. I have extensive experience developing applications and APIs, including WebSocket, REST API, and GraphQL integrations. In addition, I have volunteered as a coach in learning communities such as DjangoGirls CDO, reflecting my commitment to sharing knowledge and fostering growth in the tech community. My passion for technology drives me to continuously explore, learn, and apply innovative solutions.`,
 
-  To prepare myself for job opportunities, I have self-studied these technologies, diving deep into their applications and principles. I enjoy the process of learning and integrating various APIs, often leveraging tools like Postman to test and refine my work.`,
-  passion: `Building projects, from websites to mobile applications, fuels my passion for technology and problem-solving. Each project is an opportunity to grow, and I take pride in seeing my ideas come to life. You can explore my creations on GitHub, where I showcase my knowledge and enthusiasm for coding.`,
 };
+
 
 function About() {
   return (
@@ -24,16 +23,14 @@ function About() {
           transition={{ duration: 0.8 }}
         >
           <div className="max-w-2xl mx-auto">
-            <h1 className="text-3xl sm:text-4xl font-apple font-bold mb-6 text-center lg:text-left">
-              About Me
-            </h1>
+            <div className="inline-flex items-center text-xs font-semibold mb-6 px-3 py-2 rounded-lg border shadow-sm hover:shadow-md transition-all duration-300 bg-black text-white border-black/20 dark:bg-purple-900/30 dark:text-purple-600 dark:border-purple-900/30 cursor-pointer">
+              <h1 className="text-center">About Me</h1>
+            </div>
             <div className="space-y-6">
               <p className="text-sm sm:text-base font-apple leading-relaxed text-inherit">
                 {staticData.intro}
               </p>
-              <p className="text-sm sm:text-base font-apple leading-relaxed text-inherit">
-                {staticData.passion}
-              </p>
+             
             </div>
           </div>
         </motion.div>
