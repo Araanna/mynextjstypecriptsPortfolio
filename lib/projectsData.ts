@@ -1,7 +1,7 @@
 import AMS from "../assets/images/AMS.png";
 import Game from "../assets/images/Game.png";
 import myPortfolio from "../assets/images/Portfolio.png";
-import GSD from "../assets/imageS/GSD.png";
+import GSD from "../assets/images/GSD.png";
 
 export const projectsData = [
   {
