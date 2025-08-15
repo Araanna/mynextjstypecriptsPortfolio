@@ -1,6 +1,7 @@
 import AMS from "../assets/images/AMS.png";
 import Game from "../assets/images/Game.png";
 import myPortfolio from "../assets/images/Portfolio.png";
+import GSD from "../assets/imageS/GSD.png";
 
 export const projectsData = [
   {
@@ -27,6 +28,15 @@ export const projectsData = [
       "A personal portfolio website showcasing my skills, projects, and experiences. The site is designed to highlight my work and provide a platform for potential employers or clients to view my capabilities.",
     tags: ["NextJS", "Typescript", "Tailwind", "Cloudinary", "GIT", "Framer Motion"],
     imageUrl: myPortfolio,
+    gameLink: null,
+    githubLink: "https://github.com/Araanna/mynextjstypecriptsPortfolio"
+  },
+  {
+    title: "General Service Department PHINMA-COC",
+    description:
+      "A website for the General Service Department of PHINMA Cagayan de Oro College, developed foe easy monitoring and reservation of venues, vehicle, and equipment of the school.",
+    tags: ["ReactJS", "PHP", "Tailwind", "RESTAPI", "GIT", "Framer Motion"],
+    imageUrl: GSD,
     gameLink: null,
     githubLink: "https://github.com/Araanna/mynextjstypecriptsPortfolio"
   }

@@ -16,7 +16,7 @@ const Works: React.FC = () => {
         </div>
 
         {/* Main Content - reduced width by 50px */}
-        <div className="flex-1 p-8 md:pl-4 md:pr-[calc(8rem-40px)] overflow-y-auto max-h-[calc(100vh-4rem)]">
+        <div className="flex-1 p-8 md:pl-4  overflow-y-auto max-h-[calc(100vh-4rem)]">
           {/* Works Title with Motion */}
           <motion.span
             className={clsx(
@@ -29,7 +29,7 @@ const Works: React.FC = () => {
             transition={{ duration: 0.5 }}
           >
             <svg
-              className={clsx(
+              className={clsx(  
                 "w-4 h-4 mr-2",
                 "!text-white",
                 "dark:!text-purple-500"
@@ -57,7 +57,7 @@ const Works: React.FC = () => {
                 className="group max-w-2xl w-full"
               >
                 <div className="relative mb-4 flex justify-center">
-                  <div className="relative border-2 border-gray-200 dark:border-purple-900/30 bg-gray-100/30 dark:bg-purple-900/10 backdrop-blur-sm rounded-md">
+                  <div className="relative border-2 border-gray-200 dark:border-purple-900/30 bg-gray-100/30 dark:bg-purple-900/10 backdrop-blur-sm rounded-lg shadow-sm overflow-hidden transition-transform duration-500 group-hover:scale-[1.02]">
                     <div className="p-4">
                       <Image
                         src={project.imageUrl}
