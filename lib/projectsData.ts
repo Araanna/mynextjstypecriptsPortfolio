@@ -34,7 +34,7 @@ export const projectsData = [
   {
     title: "General Service Department PHINMA-COC",
     description:
-      "A website for the General Service Department of PHINMA Cagayan de Oro College, developed foe easy monitoring and reservation of venues, vehicle, and equipment of the school.",
+      "As a Co-Developer(Frontend)- A capstone project website for the General Service Department of PHINMA Cagayan de Oro College, developed for easy monitoring and reservation of venues, vehicle, and equipment of the school.",
     tags: ["ReactJS", "PHP", "Tailwind", "RESTAPI", "GIT", "Framer Motion"],
     imageUrl: GSD,
     gameLink: null,
