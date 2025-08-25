@@ -225,12 +225,12 @@ const Sidebar: React.FC<SidebarProps> = ({ section, children }) => {
                           duration-200 
                           transform 
                           hover:scale-105 
-                          text-xs 
-                          font-bold 
-                          px-2 
-                          py-2 
+                          text-[10px] 
+                          font-medium
+                          px-1 
+                          py-1 
                           border 
-                          rounded-lg 
+                          rounded-md 
                           ${textColor} 
                           ${borderColor} 
                           whitespace-nowrap
