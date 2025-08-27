@@ -183,10 +183,10 @@ const GithubHighlightsContent = () => (
    <div className="mt-4 text-sm font-semibold mb-8">
 <p
   className="
-    !text-purple-900        /* small light */
-    dark:!text-white        /* small dark */
-    lg:!text-purple-900     /* lg light */
-    lg:dark:!text-black     /* lg dark */
+    text-purple-900       /* small light */
+    dark:text-white       /* small dark */
+    lg:text-purple-900    /* lg light */
+    lg:dark:text-black    /* lg dark */
   "
 >
   Want to contribute in my GitHub projects? Feel free to open an issue or PR!
@@ -279,19 +279,19 @@ const Home = ({ setActiveSection }: HomeProps) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
-      className="flex flex-col items-center justify-center min-h-screen relative pt-[2rem] md:pt-0
+      className="flex flex-col items-center justify-center min-h-screen relative p md:pt-0 p-[12rem]
                  bg-gradient-to-b from-white via-purple-100 to-purple-300 text-purple-900 overflow-hidden
                  dark:bg-gradient-to-b dark:from-white dark:via-gray-100 dark:to-black-900 dark:text-gray-100"
       id="home-section"
     >
       <div className="mx-auto max-w-7xl w-full p-4 md:p-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
         {/* Left Column */}
-        <div className="flex flex-col items-center text-center md:items-start md:text-left md:col-span-1">
+        <div className="flex flex-col items-center text-center md:items-start md:text-left md:col-span-1 -mt-8">
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.6 }}
-            className="w-32 h-32 rounded-full bg-gradient-to-r from-purple-400 to-pink-400 mb-4 overflow-hidden border-4 border-white dark:border-gray-900"
+            className="w-32 h-32 rounded-full bg-gradient-to-r from-purple-400 to-pink-400 mb-4 overflow-hidden border-4 border-white dark:border-gray-900 transform inset- -translate-y-8"
           >
             <img
               src="https://images.fineartamerica.com/images-medium-large-5/soap-bubble-with-a-pattern-of-colours-adam-hart-davisscience-photo-library.jpg"
@@ -334,7 +334,7 @@ const Home = ({ setActiveSection }: HomeProps) => {
             Creating Digital Experiences with Love & Passion
           </motion.h2>
 
-          <div className="w-full max-w-lg flex justify-center items-center md:block md:-translate-x-[5rem]">
+          <div className="w-full max-w-lg flex justify-center items-center md:block md:-translate-x-[5rem] mt-8">
             <ExperienceBoard />
           </div>
           <div className="flex space-x-4 md:space-x-6">
