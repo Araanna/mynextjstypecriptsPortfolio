@@ -1,7 +1,8 @@
 import type { Config } from "tailwindcss";
+import colors from "tailwindcss/colors";
 
 export default {
-  
+  important: true,
   mode: "jit",
   darkMode: "class",
   content: [
@@ -25,6 +26,10 @@ export default {
           "Arial",
           "sans-serif",
         ],
+      },
+      // ✅ restore all Tailwind default colors
+      colors: {
+        ...colors,
       },
       animation: {
         "spin-slow": "spin 20s linear infinite",
@@ -91,6 +96,13 @@ export default {
   ],
 
   daisyui: {
-    themes: true, // ✅ allow DaisyUI to read @plugin "daisyui/theme" in CSS
+    themes: true,
+  },
+  screens: {
+    sm: "640px",
+    md: "768px",
+    lg: "1024px",
+    xl: "1280px",
+    "2xl": "1536px",
   },
 } satisfies Config;

@@ -27,7 +27,7 @@ function About() {
               <h1 className="text-center">About Me</h1>
             </div>
             <div className="space-y-6">
-              <p className="text-[10px] sm:text-base font-apple leading-relaxed text-inherit">
+              <p className="text-[14px] sm:text-[18px] font-apple leading-relaxed text-inherit">
                 {staticData.intro}
               </p>
              
@@ -60,7 +60,7 @@ function About() {
                 src={profileImage}
                 alt="Profile Image"
                 fill
-                className="rounded-full object-cover shadow-lg border-4 border-white dark:border-gray-800"
+                className="rounded-full object-cover shadow-lg border-4 border-white dark:border-purple-300"
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 priority
               />

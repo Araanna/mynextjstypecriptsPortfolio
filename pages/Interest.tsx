@@ -10,13 +10,13 @@ import Sidebar from "../app/components/Sidebar.tsx";
 import { motion } from "framer-motion";
 
 export default function Interest() {
-  // Floating animation variants
+  
   const floatVariants = {
     initial: { y: 0 },
     animate: (i: number) => ({
       y: [-5, 5, -5],
       transition: {
-        duration: 3 + i,
+        duration: 2 + i,
         repeat: Infinity,
         ease: "easeInOut",
       },
@@ -48,15 +48,16 @@ export default function Interest() {
         </div>
 
         {/* Main Content */}
-        <div className="flex-1 p-4 md:px-8 overflow-y-auto">
-          <motion.h1
-            className="text-3xl md:text-5xl font-bold text-left mb-6 md:mb-8"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            ᵐʸ ᶦⁿᵗᵉʳᵉˢᵗ
-          </motion.h1>
+      <div className="flex-1 p-8 md:px-6 flex justify-center overflow-y-auto mr-[12rem]">
+  <div className="w-full max-w-6xl">
+    <motion.h1
+      className="text-3xl md:text-5xl font-bold text-center mb-6 md:mb-8"
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      ᵐʸ ᶦⁿᵗᵉʳᵉˢᵗ
+    </motion.h1>
 
           {/* Mobile: Vertical stack */}
           <motion.div
@@ -297,6 +298,7 @@ export default function Interest() {
               </h2>
             </motion.div>
           </motion.div>
+          </div>
         </div>
       </div>
     </Layout>
