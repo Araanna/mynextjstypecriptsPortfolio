@@ -171,11 +171,12 @@ const Sidebar: React.FC<SidebarProps> = ({ section, children }) => {
                           hover:scale-105 
                           text-xs 
                           font-semi 
-                          px-1 
-                          py-2 
+                          px-1
+                          py-1 
                           border 
-                          rounded-lg 
+                          rounded-md 
                           vertical-text 
+                          font-medium
                           ${textColor} 
                           ${borderColor}
                           ${hoverBgColor}
@@ -185,7 +186,7 @@ const Sidebar: React.FC<SidebarProps> = ({ section, children }) => {
                           hover:-translate-x-0.5
                           active:translate-x-0
                           active:scale-95
-                          w-8
+                          w-6
                           h-18
                           flex
                           items-center
