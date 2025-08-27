@@ -291,7 +291,7 @@ const Home = ({ setActiveSection }: HomeProps) => {
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.6 }}
-            className="w-32 h-32 rounded-full bg-gradient-to-r from-purple-400 to-pink-400 mb-4 overflow-hidden border-4 border-white dark:border-gray-900 transform inset- -translate-y-8"
+            className="w-32 h-32 rounded-full bg-gradient-to-r from-purple-400 to-pink-400 mb-4 overflow-hidden border-4 border-white dark:border-gray-900 "
           >
             <img
               src="https://images.fineartamerica.com/images-medium-large-5/soap-bubble-with-a-pattern-of-colours-adam-hart-davisscience-photo-library.jpg"
@@ -329,12 +329,12 @@ const Home = ({ setActiveSection }: HomeProps) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.6 }}
-            className="text-sm md:text-md font-semibold text-purple-800 dark:text-gray-900 mt-2"
+            className="text-sm md:text-md font-semibold text-purple-800 dark:text-gray-900 "
           >
             Creating Digital Experiences with Love & Passion
           </motion.h2>
 
-          <div className="w-full max-w-lg flex justify-center items-center md:block md:-translate-x-[5rem] mt-8">
+          <div className="w-full max-w-lg flex justify-center items-center md:block md:-translate-x-[5rem]">
             <ExperienceBoard />
           </div>
           <div className="flex space-x-4 md:space-x-6">
