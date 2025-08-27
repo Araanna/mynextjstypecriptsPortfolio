@@ -282,149 +282,149 @@ const Home = ({ setActiveSection }: HomeProps) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
-      className="flex flex-col items-center justify-center min-h-screen relative md:pt-0
+      className="flex flex-col items-center justify-center min-h-screen relative p-[8rem] md:pt-0
                  bg-gradient-to-b from-white via-purple-100 to-purple-300 text-purple-900 overflow-hidden
                  dark:bg-gradient-to-b dark:from-white dark:via-gray-100 dark:to-black-900 dark:text-gray-100"
       id="home-section"
     >
-   <div className="mx-auto max-w-7xl w-full md:p-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-  {/* Left Column */}
-  <div className="flex flex-col items-center text-center md:items-start md:text-left md:col-span-1">
-    <motion.div
-      initial={{ scale: 0.8, opacity: 0 }}
-      animate={{ scale: 1, opacity: 1 }}
-      transition={{ delay: 0.2, duration: 0.6 }}
-      className="w-32 h-32 rounded-full bg-gradient-to-r from-purple-400 to-pink-400 mb-4 overflow-hidden border-4 border-white dark:border-gray-900"
-    >
-      <img
-        src="https://images.fineartamerica.com/images-medium-large-5/soap-bubble-with-a-pattern-of-colours-adam-hart-davisscience-photo-library.jpg"
-        className="w-full h-full object-cover"
-        alt="Profile Picture"
-      />
-    </motion.div>
+     <div className="mx-auto max-w-7xl w-full p md:p-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+   {/* Left Column */}
+        <div className="flex flex-col items-center text-center md:items-start md:text-left md:col-span-1">
+     <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+            className="w-32 h-32 rounded-full bg-gradient-to-r from-purple-400 to-pink-400 mb-4 overflow-hidden border-4 border-white dark:border-gray-900"
+          >
+            <img
+              src="https://images.fineartamerica.com/images-medium-large-5/soap-bubble-with-a-pattern-of-colours-adam-hart-davisscience-photo-library.jpg"
+              className="w-full h-full object-cover"
+              alt="Profile Picture"
+            />
+          </motion.div>
 
-    <motion.h1
-      initial={{ y: 20, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ delay: 0.3, duration: 0.8 }}
-      className="text-[2.2rem] sm:text-[2.5rem] font-apple font-bold text-purple-900 dark:text-gray-900"
-    >
-      Melanie Abalde
-    </motion.h1>
+          <motion.h1
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+            className="text-[2.2rem] sm:text-[2.5rem] font-apple font-bold text-purple-900 dark:text-gray-900"
+          >
+            Melanie Abalde
+          </motion.h1>
 
-    <div className="w-full flex justify-center md:justify-start">
-      <div className="relative overflow-hidden h-10">
-        <div className="relative flex flex-col animate-flip text-purple-800 dark:text-gray-950">
-          <div className="flex items-center h-10 font-semibold text-md">
-            FullStack Developer
+          <div className="w-full flex justify-center md:justify-start">
+            <div className="relative overflow-hidden h-10">
+              <div className="relative flex flex-col animate-flip text-purple-800 dark:text-gray-950">
+                <div className="flex items-center h-10 font-semibold text-md">
+                  FullStack Developer
+                </div>
+                <div className="flex items-center h-10 font-semibold text-md">
+                  Mobile Developer
+                </div>
+                <div className="flex items-center h-10 font-semibold text-md">
+                  UI Designer
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="flex items-center h-10 font-semibold text-md">
-            Mobile Developer
+
+          <motion.h2
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+            className="text-sm md:text-md font-semibold text-purple-800 dark:text-gray-900 mt-2"
+          >
+            Creating Digital Experiences with Love & Passion
+          </motion.h2>
+
+          <div className="w-full max-w-lg flex justify-center items-center md:block md:-translate-x-[5rem]">
+            <ExperienceBoard />
           </div>
-          <div className="flex items-center h-10 font-semibold text-md">
-            UI Designer
+          <div className="flex space-x-4 md:space-x-6">
+            {socialLinks.map(
+              ({ href, label, title, Icon, colorClass, download }) => (
+                <Tooltip key={label} title={title} placement="bottom">
+                  <a
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`relative hover:opacity-90 ${textColor} ${colorClass}`}
+                    aria-label={label}
+                    download={download ? true : undefined}
+                  >
+                    <Icon size={isMobile ? 20 : 24} />
+                  </a>
+                </Tooltip>
+              ),
+            )}
+          </div>
+
+          <motion.div
+            initial={{ x: -20, opacity: 0 }}
+            animate={{ x: 0, opacity: 1, y: [0, -5, 0] }}
+            transition={{
+              delay: 0.6,
+              duration: 0.6,
+              y: {
+                repeat: Infinity,
+                repeatType: "reverse",
+                duration: 3,
+                ease: "easeInOut",
+              },
+            }}
+            className="flex flex-col items-center md:items-start w-full"
+          >
+            <motion.button
+              onClick={handleHireMeClick}
+              className="bg-gradient-to-r from-pink-500 to-purple-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-opacity-50 text-xs sm:text-sm px-4 py-2
+                         dark:from-gray-700 dark:to-gray-800 dark:text-gray-100 dark:focus:ring-gray-500 -mx-2 my-6"
+            >
+              Work With Me
+            </motion.button>
+          </motion.div>
+        </div>
+
+        {/* Right Column */}
+        <div className="flex flex-col items-center md:items-start text-center md:text-left w-full transform md:-translate-y-[5rem]">
+    <div className="flex mb-4 w-full max-w-sm md:max-w-full">
+            <button
+              onClick={() => setActiveContent("galleries")}
+              className={cn(
+                "flex-1 py-3 font-semibold transition-all duration-300 rounded-l-sm flex items-center justify-center gap-2 text-xs",
+                "backdrop-blur-xl backdrop-saturate-150 border border-white/10",
+                activeContent === "galleries"
+                  ? "bg-purple-500/20 text-purple-900 dark:bg-gray-800/30 dark:text-black"
+                  : "bg-purple-500/10 text-purple-700 dark:bg-gray-800/20 dark:text-gray-800",
+              )}
+            >
+              <FiCamera className="text-lg font-bold" />
+              MY TECH JOURNEY
+            </button>
+
+            <button
+              onClick={() => setActiveContent("github")}
+              className={cn(
+                "flex-1 py-3 font-semibold transition-all duration-300 rounded-r-sm flex items-center justify-center gap-2 text-xs",
+                "backdrop-blur-xl backdrop-saturate-150 border border-white/30",
+                activeContent === "github"
+                  ? "bg-purple-500/20 text-purple-900 dark:bg-gray-800/30 dark:text-black"
+                  : "bg-purple-500/10 text-purple-700 dark:bg-gray-800/20 dark:text-gray-800",
+              )}
+            >
+              <FiGithub className="text-lg" />
+              GitHub
+            </button>
+          </div>
+
+          <div className="w-full min-h-[400px]">
+            {activeContent === "galleries" ? (
+              <GalleriesContent />
+            ) : (
+              <GithubHighlightsContent />
+            )}
           </div>
         </div>
       </div>
-    </div>
-
-    <motion.h2
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ delay: 0.4, duration: 0.6 }}
-      className="text-sm md:text-md font-semibold text-purple-800 dark:text-gray-900 mt-2"
-    >
-      Creating Digital Experiences with Love & Passion
-    </motion.h2>
-
-    <div className="w-full max-w-lg flex justify-center items-center md:block md:-translate-x-[5rem]">
-      <ExperienceBoard />
-    </div>
-
-    <div className="flex space-x-4 md:space-x-6">
-      {socialLinks.map(({ href, label, title, Icon, colorClass, download }) => (
-        <Tooltip key={label} title={title} placement="bottom">
-          <a
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`relative hover:opacity-90 ${textColor} ${colorClass}`}
-            aria-label={label}
-            download={download ? true : undefined}
-          >
-            <Icon size={isMobile ? 20 : 24} />
-          </a>
-        </Tooltip>
-      ))}
-    </div>
-
-    <motion.div
-      initial={{ x: -20, opacity: 0 }}
-      animate={{ x: 0, opacity: 1, y: [0, -5, 0] }}
-      transition={{
-        delay: 0.6,
-        duration: 0.6,
-        y: {
-          repeat: Infinity,
-          repeatType: "reverse",
-          duration: 3,
-          ease: "easeInOut",
-        },
-      }}
-      className="flex flex-col items-center md:items-start w-full"
-    >
-      <motion.button
-        onClick={handleHireMeClick}
-        className="bg-gradient-to-r from-pink-500 to-purple-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-opacity-50 text-xs sm:text-sm px-4 py-2
-                   dark:from-gray-700 dark:to-gray-800 dark:text-gray-100 dark:focus:ring-gray-500 -mx-2 my-6"
-      >
-        Work With Me
-      </motion.button>
-    </motion.div>
-  </div>
-
-  {/* Right Column */}
-  <div className="flex flex-col items-center md:items-start text-center md:text-left w-full">
-    <div className="flex mb-4 w-full max-w-sm md:max-w-full">
-      <button
-        onClick={() => setActiveContent("galleries")}
-        className={cn(
-          "flex-1 py-3 font-semibold transition-all duration-300 rounded-l-sm flex items-center justify-center gap-2 text-xs",
-          "backdrop-blur-xl backdrop-saturate-150 border border-white/10",
-          activeContent === "galleries"
-            ? "bg-purple-500/20 text-purple-900 dark:bg-gray-800/30 dark:text-black"
-            : "bg-purple-500/10 text-purple-700 dark:bg-gray-800/20 dark:text-gray-800",
-        )}
-      >
-        <FiCamera className="text-lg font-bold" />
-        MY TECH JOURNEY
-      </button>
-
-      <button
-        onClick={() => setActiveContent("github")}
-        className={cn(
-          "flex-1 py-3 font-semibold transition-all duration-300 rounded-r-sm flex items-center justify-center gap-2 text-xs",
-          "backdrop-blur-xl backdrop-saturate-150 border border-white/30",
-          activeContent === "github"
-            ? "bg-purple-500/20 text-purple-900 dark:bg-gray-800/30 dark:text-black"
-            : "bg-purple-500/10 text-purple-700 dark:bg-gray-800/20 dark:text-gray-800",
-        )}
-      >
-        <FiGithub className="text-lg" />
-        GitHub
-      </button>
-    </div>
-
-    <div className="w-full min-h-[400px]">
-      {activeContent === "galleries" ? (
-        <GalleriesContent />
-      ) : (
-        <GithubHighlightsContent />
-      )}
-    </div>
-  </div>
-</div>
-
     </motion.section>
   );
 };
