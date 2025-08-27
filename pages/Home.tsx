@@ -279,7 +279,7 @@ const Home = ({ setActiveSection }: HomeProps) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
-      className="flex flex-col items-center justify-center min-h-screen relative pt-[8rem] md:pt-0 p-[12rem]
+      className="flex flex-col items-center justify-center min-h-screen relative pt-[8rem] md:pt-0 
                  bg-gradient-to-b from-white via-purple-100 to-purple-300 text-purple-900 overflow-hidden
                  dark:bg-gradient-to-b dark:from-white dark:via-gray-100 dark:to-black-900 dark:text-gray-100"
       id="home-section"
