@@ -180,16 +180,13 @@ const GithubHighlightsContent = () => (
       />
     </div>
 
-   <div className="mt-4 text-sm font-semibold">
+   <div className="mt-4 text-sm font-semibold mb-8">
 <p
   className="
-  text-left
-    !text-purple-700       
-    dark:!text-white    
-    md:!text-purple-900  
-    md:dark:text-black     
-    lg:!text-purple-900    
-    lg:dark:text-black     
+    !text-purple-900        /* small light */
+    dark:!text-white        /* small dark */
+    lg:!text-purple-900     /* lg light */
+    lg:dark:!text-black     /* lg dark */
   "
 >
   Want to contribute in my GitHub projects? Feel free to open an issue or PR!
@@ -282,15 +279,15 @@ const Home = ({ setActiveSection }: HomeProps) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
-      className="flex flex-col items-center justify-center min-h-screen relative p-[8rem] md:pt-0
+      className="flex flex-col items-center justify-center min-h-screen relative pt-[2rem] md:pt-0
                  bg-gradient-to-b from-white via-purple-100 to-purple-300 text-purple-900 overflow-hidden
                  dark:bg-gradient-to-b dark:from-white dark:via-gray-100 dark:to-black-900 dark:text-gray-100"
       id="home-section"
     >
-     <div className="mx-auto max-w-7xl w-full p md:p-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-   {/* Left Column */}
+      <div className="mx-auto max-w-7xl w-full p-4 md:p-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        {/* Left Column */}
         <div className="flex flex-col items-center text-center md:items-start md:text-left md:col-span-1">
-     <motion.div
+          <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.6 }}
@@ -385,8 +382,8 @@ const Home = ({ setActiveSection }: HomeProps) => {
         </div>
 
         {/* Right Column */}
-        <div className="flex flex-col items-center md:items-start text-center md:text-left w-full transform md:-translate-y-[5rem]">
-    <div className="flex mb-4 w-full max-w-sm md:max-w-full">
+        <div className="flex flex-col items-center md:items-start text-center md:text-left w-full transform md:-translate-y-[4rem]">
+          <div className="flex mb-4 w-full max-w-sm md:max-w-full">
             <button
               onClick={() => setActiveContent("galleries")}
               className={cn(

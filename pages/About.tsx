@@ -27,7 +27,7 @@ function About() {
               <h1 className="text-center">About Me</h1>
             </div>
             <div className="space-y-6">
-              <p className="text-[14px] sm:text-[18px] font-apple leading-relaxed text-inherit">
+              <p className="text-[14px] sm:text-[14px] font-apple leading-relaxed text-inherit">
                 {staticData.intro}
               </p>
              
