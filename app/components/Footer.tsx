@@ -32,7 +32,7 @@ const Section2 = () => {
       <div className="flex flex-col items-center justify-center text-center md:items-start md:text-left md:justify-start">
         {/* Top Section - text color now inherits */}
         <div className="flex flex-col items-center justify-center text-center gap-1 mb-0 translate-y-[4vh] md:translate-y-[10vh] text-inherit md:flex-row md:items-center md:gap-1">
-          <p className="inline-flex items-center gap-1 text-sm md:text-md mb-12 text-inherit font-semibold">
+          <p className="inline-flex items-center gap-1 text-xs md:text-md mb-12 text-inherit font-semibold">
             CRAFTED WITH
             <CiHeart /> BY
           </p>
