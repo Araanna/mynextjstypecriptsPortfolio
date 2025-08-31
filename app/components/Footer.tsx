@@ -122,7 +122,7 @@ const Nav = () => {
 
       <div className="flex gap-4 items-center text-inherit">
         <a
-          href="https://www.instagram.com/_melkyway/?hl=en"
+          href="https://www.instagram.com/arannnnnaaa/?hl=en"
           target="_blank"
           rel="noopener noreferrer"
         >
