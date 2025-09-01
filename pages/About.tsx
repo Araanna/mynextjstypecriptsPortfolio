@@ -13,9 +13,9 @@ intro: `I am a full-stack developer with a Bachelor of Science in Information Te
 
 function About() {
   return (
-    <section className="flex items-center justify-center min-h-[calc(90vh-4rem)] w-full px-4 py-8 sm:py-12">
-      <div className="flex flex-col lg:flex-row items-center justify-center gap-8 max-w-6xl w-full">
-        {/* Content Column */}
+   <section className="flex items-center justify-center min-h-[calc(90vh-4rem)] w-full px-12 py-8 sm:py-12">
+<div className="flex flex-col lg:flex-row items-center justify-center gap-8 max-w-6xl w-full ml-8">
+      {/* Content Column */}
         <motion.div
           className="w-full lg:w-1/2 order-2 lg:order-1"
           initial={{ opacity: 0, x: -50 }}
@@ -72,7 +72,7 @@ function About() {
                 src={profileImage}
                 alt="Profile Image"
                 fill
-                className="rounded-lg object-cover shadow-xl"
+                className="rounded-lg object-cover shadow-xl border-1 border-none dark:border-gray-200"
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 priority
               />

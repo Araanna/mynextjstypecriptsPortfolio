@@ -2,6 +2,8 @@ import AMS from "../assets/images/AMS.png";
 import Game from "../assets/images/Game.png";
 import myPortfolio from "../assets/images/Portfolio.png";
 import GSD from "../assets/images/GSD.png";
+import ExpenseTracker from "../assets/images/Mobile.png"
+
 
 export const projectsData = [
   {
@@ -39,5 +41,15 @@ export const projectsData = [
     imageUrl: GSD,
     gameLink: null,
     githubLink: "https://github.com/Araanna/mynextjstypecriptsPortfolio"
-  }
+  },
+  {
+  title: "Student Expense Tracker - PHINMA COC",
+  description:
+    "As a Fullstack Developer (Mobile App) - My pet project mobile application designed for PHINMA Cagayan de Oro College students to track and manage their daily expenses. Built with Flutter for the frontend and FastAPI for the backend, it provides an intuitive interface with secure REST API integration for data storage and retrieval.",
+  tags: ["Flutter", "FastAPI", "REST API","mySQL", "GIT"],
+  imageUrl: ExpenseTracker, 
+  gameLink: null,
+  githubLink: "https://github.com/Araanna/FASTAPI-PHINMA-COC-STUDENT-EXPENSE-TRACKER" // replace with your repo link
+}
+
 ];
