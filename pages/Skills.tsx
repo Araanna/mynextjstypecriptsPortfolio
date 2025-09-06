@@ -52,17 +52,19 @@ const Skills: React.FC = () => {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, delay: 0.2 }}
       >
-        <div className="flex flex-wrap gap-4 py-6 rounded-lg px-0 justify-start items-center">
+        <div className="flex flex-wrap gap-2 py-3 rounded-lg px-0 justify-center md:justify-start items-center">
           {skillSets.map((skill, index) => (
             <motion.div
               key={index}
-              className="flex flex-col items-center p-3 rounded-lg bg-purple-900 dark:bg-gray-800/50 backdrop-blur-lg transition-all hover:scale-105 min-w-[80px]"
+              className="flex flex-col items-center p-2 rounded-lg bg-purple-900 dark:bg-gray-800/50 backdrop-blur-lg transition-all hover:scale-105 min-w-[80px]"
               whileHover={{ y: -5 }}
             >
-              {/* Icon Centered inside the card */}
+              {/* Icon */}
+              <div className="flex w-full justify-center items-center">
                 <div className="icon-container flex justify-center items-center">
                   <skill.Icon className="text-xl md:text-2xl mb-2 text-white" />
                 </div>
+              </div>
 
               {/* Label */}
               <div className="text-container">
