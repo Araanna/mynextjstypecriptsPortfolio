@@ -72,13 +72,13 @@ const Contact: React.FC = () => {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }}
       >
-          <div className="inline-flex items-center text-xs font-semibold mb-6 px-3 py-2 rounded-lg border shadow-sm hover:shadow-md transition-all duration-300 bg-black text-white border-black/20 dark:bg-purple-900/30 dark:text-purple-300 dark:border-purple-900/30 cursor-pointer">
+          <div className="inline-flex items-center text-xs font-semibold mb-6 px-2 py-1 rounded-lg border shadow-sm hover:shadow-md transition-all duration-300 bg-black text-white border-black/20 dark:bg-purple-900/30 dark:text-purple-300 dark:border-purple-900/30 cursor-pointer">
               <h1 className="text-center">Contact Me</h1>
             </div>
         <div className="mb-8">
-          <h2 className="font-bold text-xl mb-4 ">Let's Connect</h2>
-          <p className="mb-3 text-inherit">I'd love to hear from you!</p>
-          <p className="font-bold text-md mb-4 text-inherit">
+          <h2 className="font-bold text-lg mb-4 ">Let's Connect</h2>
+          <p className="mb-3 text-inherit text-sm">I'd love to hear from you!</p>
+          <p className="font-bold text-sm mb-4 text-inherit">
             Want to
             <span className="relative inline-block text-inherit">
               <span className="underline underline-offset-4 decoration-2 decoration-fuchsia-500 mx-2 text-inherit">

@@ -111,7 +111,7 @@ const Nav = () => {
           rel="noopener noreferrer"
         >
           <FaFacebook
-            className="text-gray-700 dark:text-purple-400"
+            className="text-purple-800 dark:text-purple-400"
             size={20}
           />
         </a>
@@ -127,7 +127,7 @@ const Nav = () => {
           rel="noopener noreferrer"
         >
           <FaInstagram
-            className="text-gray-700 dark:text-purple-400"
+            className="text-purple-800 dark:text-purple-400"
             size={20}
           />
         </a>
@@ -143,7 +143,7 @@ const Nav = () => {
           rel="noopener noreferrer"
         >
           <FaLinkedin
-            className="text-gray-700 dark:text-purple-400"
+            className="text-purple-800 dark:text-purple-400"
             size={20}
           />
         </a>
@@ -158,7 +158,7 @@ const Nav = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <FaGitlab className="text-gray-700 dark:text-purple-400" size={20} />
+          <FaGitlab className="text-purple-800 dark:text-purple-400" size={20} />
         </a>
         <p className="text-inherit text-xs hidden sm:block">Gitlab</p>
       </div>

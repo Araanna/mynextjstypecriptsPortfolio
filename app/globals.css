@@ -14,8 +14,8 @@
 
 }
 body {
-  background-color: #ECD9FF;
-  color: #000000;
+  background-color: #c77dffaf;
+  color:#341e58;
   transition: background-color 0.3s ease, color 0.3s ease;
   @apply font-apple;  
 }

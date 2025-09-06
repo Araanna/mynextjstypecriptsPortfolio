@@ -1,132 +1,76 @@
 "use client";
 
-import React, { useState, useTransition } from "react";
-import TabButton from "../app/components/TabButton";
+import React from "react";
 
-type Tab = {
-  title: string;
-  id: string;
-  content: React.ReactNode;
-};
+const AboutSection: React.FC = () => {
+  const educationData = [
+    {
+      details:
+        "Bachelor of Science in Information Technology Major in System Development",
+      institution: "Cagayan de Oro College - PHINMA",
+      period: "2022-2026",
+      achievements: [],
+    },
+    {
+      details: "Information Technology",
+      institution: "Central Mindanao University",
+      period: "2021-2022",
+      achievements: [
+        "College Dean's Lister",
+        "College of Information Science and Computing Organization Member",
+        "University Scholar",
+      ],
+    },
+  ];
 
-const TAB_DATA: Tab[] = [
-  {
-    title: "Skills",
-    id: "skills",
-    content: (
-      <ul className="list-disc pl-2">
-        {[
-          "Node.js",
-          "Express",
-          "PostgreSQL",
-          "Django",
-          "FastAPI",
-          "Typescript",
-          "React",
-        ].map((skill, index) => (
-          <li key={index} className="hover:text-gray-700 dark:hover:text-gray-300">
-            {skill}
-          </li>
-        ))}
-      </ul>
-    ),
-  },
-  {
-    title: "Education",
-    id: "education",
-    content: (
-      <ul className="list-disc pl-2">
-        {[
-          {
-            year: "2023-2024",
-            details: [
-              "Information Technology Major in System Development",
-              "Cagayan de Oro College - PHINMA",
-            ],
-          },
-          {
-            year: "2021-2022",
-            details: ["Information Technology", "Central Mindanao University"],
-            achievements: [
-              "College Dean's Lister",
-              "College of Information Science and Computing Organization Member",
-              "University Scholar",
-            ],
-          },
-        ].map((education, index) => (
-          <li key={index} className="mb-4">
-            <span className="hover:text-gray-700 dark:hover:text-gray-300 font-bold">
-              {education.year}
-            </span>
-            <ul className="pl-5 list-disc">
-              {education.details.map((detail, i) => (
-                <li key={i} className="hover:text-gray-600 dark:hover:text-gray-400">
-                  {detail}
-                </li>
-              ))}
-              {education.achievements && (
-                <ul className="pl-8 list-disc">
+  return (
+    <section className="w-full sm:px-6 lg:px-8 max-w-[1200px] mx-auto overflow-visible px-4 py-8 sm:py-12">
+      <div className="flex justify-start">
+        <div className="inline-flex items-center text-xs font-semibold mb-6 px-2 py-1 rounded-lg border shadow-sm hover:shadow-md transition-all duration-300 bg-violet-500 text-white  border-none dark:bg-purple-900/30 dark:text-purple-300 dark:border-purple-900/30 cursor-pointer">
+          <h1 className="text-center">Education</h1>
+        </div>
+      </div>
+
+      <div className="mt-8 space-y-8">
+        {educationData.map((education, index) => (
+          <div
+            key={index}
+            className="pb-6 border-b border-gray-200 dark:border-gray-700 last:border-b-0"
+          >
+            {/* Degree and period on same line */}
+            <h3 className="font-bold  text-purple-900 dark:text-purple-200">
+              {education.details}
+            </h3>
+
+            <div className="flex flex-row sm:justify-between sm:items-center">
+              <p className="text-base font-[8px] text-purple-800 dark:text-purple-200">
+                {education.institution}
+              </p>
+              <span className="relative text-xs text-purple-500 dark:text-purple-400 mt-1 sm:mt-0 before:content-['•'] before:mr-1 before:text-purple-400 dark:before:text-purple-500">
+                {education.period}
+              </span>
+            </div>
+
+            {/* Achievements */}
+            {education.achievements && education.achievements.length > 0 && (
+              <div className="mt-4">
+                <h1 className="font-xs text-purple-800 dark:text-purple-200 mb-2 text-sm">
+                  Achievements:
+                </h1>
+                <ul className="pl-5 list-disc space-y-1">
                   {education.achievements.map((achievement, j) => (
-                    <li key={j} className="hover:text-gray-600 dark:hover:text-gray-400">
+                    <li
+                      key={j}
+                      className="text-purple-900 dark:text-purple-200 hover:text-purple-800 dark:hover:text-purple-500 text-xs"
+                    >
                       {achievement}
                     </li>
                   ))}
                 </ul>
-              )}
-            </ul>
-          </li>
+              </div>
+            )}
+          </div>
         ))}
-      </ul>
-    ),
-  },
-  {
-    title: "Certifications & Internships",
-    id: "certifications",
-    content: (
-      <ul className="list-disc pl-2">
-        {[
-          "Linux Fundamentals",
-          "TESDA UI Design Certificate",
-          "Fligno Software Developer Intern",
-        ].map((certification, index) => (
-          <li key={index} className="hover:text-gray-600 dark:hover:text-gray-400">
-            {certification}
-          </li>
-        ))}
-      </ul>
-    ),
-  },
-];
-
-const AboutSection: React.FC = () => {
-  const [tab, setTab] = useState<string>("skills");
-  const [isPending, startTransition] = useTransition();
-
-  const handleTabChange = (id: string) => {
-    startTransition(() => {
-      setTab(id);
-    });
-  };
-
-  const currentTab = TAB_DATA.find((t) => t.id === tab);
-
-  return (
-    <section className="text-purple-700 dark:text-gray-300">
-      <div className="ml-4 md:ml-0 text-left flex flex-col h-full">
-        <div className="flex justify-start mt-8">
-          {TAB_DATA.map((tabItem) => (
-            <TabButton
-              key={tabItem.id}
-              selectTab={() => handleTabChange(tabItem.id)}
-              active={tab === tabItem.id}
-            >
-              {tabItem.title}
-            </TabButton>
-          ))}
-        </div>
-        <div className="mt-8 relative">
-          <div className="absolute inset-0">{currentTab?.content}</div>
-        </div>
       </div>
     </section>
   );
