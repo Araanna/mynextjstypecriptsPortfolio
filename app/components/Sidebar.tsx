@@ -45,11 +45,13 @@ const Sidebar: React.FC<SidebarProps> = ({ section, children }) => {
     setShowVerticalNav(!homePage);
   }, [pathname]);
 
-  const textColor = isDarkMode ? "text-purple-300" : "text-purple-900";
+  const textColor = isDarkMode ? "text-purple-300" : "text-purple-100";
   const borderColor = isDarkMode ? "border-purple-300" : "border-purple-900";
   const hoverBgColor = isDarkMode ? "hover:bg-purple-900/40" : "hover:bg-purple-900";
-  const activeBgColor = isDarkMode ? "active:bg-purple-900/50" : "active:bg-purple-900/70";
-  const hoverTextColr = isDarkMode ? "hover:text-purple-300" : "hover:text-white";
+  
+  // Active state colors - different for light/dark modes
+  const activeBgColor = isDarkMode ? "bg-purple-900/30" : "bg-purple-900";
+  const activeTextColor = isDarkMode ? "text-white" : "text-white";
 
   return (
     <div className="flex flex-col md:flex-row">
@@ -96,8 +98,7 @@ const Sidebar: React.FC<SidebarProps> = ({ section, children }) => {
                         ${textColor} 
                         ${borderColor}
                         ${hoverBgColor}
-                        ${activeBgColor}
-                        ${hoverTextColr}
+                        ${pathname === href ? `${activeBgColor} ${activeTextColor}` : ''}
                         transform
                         w-6
                         h-18
@@ -159,7 +160,7 @@ const Sidebar: React.FC<SidebarProps> = ({ section, children }) => {
                             ${textColor} 
                             ${borderColor}
                             ${hoverBgColor}
-                            ${activeBgColor}
+                            ${pathname === href ? `${activeBgColor} ${activeTextColor}` : ''}
                             transform
                             active:scale-95
                           `}
@@ -212,8 +213,7 @@ const Sidebar: React.FC<SidebarProps> = ({ section, children }) => {
                     ${borderColor} 
                     whitespace-nowrap
                     ${hoverBgColor}
-                    ${activeBgColor}
-                    ${hoverTextColr}
+                    ${pathname === href ? `${activeBgColor} ${activeTextColor}` : ''}
                     active:scale-95
                     flex
                     items-center
