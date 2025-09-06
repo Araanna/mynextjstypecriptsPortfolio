@@ -57,7 +57,7 @@ const GalleriesContent = () => {
   if (loading) {
     return (
       <motion.div className="text-center mt-8 text-purple-800 dark:text-gray-400 text-xs font-semibold">
-        LOADING GALLERY... 📸
+        LOADING GALLERY...
       </motion.div>
     );
   }
