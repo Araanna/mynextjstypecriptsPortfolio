@@ -99,7 +99,7 @@ const Sidebar: React.FC<SidebarProps> = ({ section, children }) => {
                         ${activeBgColor}
                         ${hoverTextColr}
                         transform
-                        w-5
+                        w-6
                         h-18
                         flex
                         items-center

@@ -23,11 +23,11 @@ function About() {
           transition={{ duration: 0.8 }}
         >
           <div className="max-w-2xl mx-auto">
-            <div className="inline-flex items-center text-xs font-semibold mb-6 px-2 py-1 rounded-lg border-1 shadow-sm hover:shadow-md transition-all duration-300 bg-violet-500 text-white  border-none  dark:bg-purple-900/30 dark:text-purple-300 dark:border-purple-900/30 cursor-pointer">
+            <div className="inline-flex items-center text-xs font-semibold mb-6 px-2 py-1 rounded-lg border-1 shadow-sm hover:shadow-md transition-all duration-300 bg-purple-900 text-white  border-none  dark:bg-purple-900/30 dark:text-purple-300 dark:border-purple-900/30 cursor-pointer">
               <h1 className="text-center">About Me</h1>
             </div>
             <div className="space-y-6">
-              <p className="text-[14px] sm:text-[14px] font-apple leading-relaxed text-inherit">
+              <p className="text-[14px] sm:text-[14px] font-apple leading-relaxed text-inherit text-purple-900 dark:text-purple-200">
                 {staticData.intro}
               </p>
              

@@ -75,19 +75,19 @@ const Contact: React.FC = () => {
           <div className="inline-flex items-center text-xs font-semibold mb-6 px-2 py-1 rounded-lg border shadow-sm hover:shadow-md transition-all duration-300 bg-black text-white border-black/20 dark:bg-purple-900/30 dark:text-purple-300 dark:border-purple-900/30 cursor-pointer">
               <h1 className="text-center">Contact Me</h1>
             </div>
-        <div className="mb-8">
-          <h2 className="font-bold text-lg mb-4 ">Let's Connect</h2>
-          <p className="mb-3 text-inherit text-sm">I'd love to hear from you!</p>
+        <div className="mt-16">
+          <h2 className="font-bold text-lg mt-4 ">Let's Connect</h2>
+          <p className="mb-3 text-inherit text-[14px]">I'd love to hear from you!</p>
           <p className="font-bold text-sm mb-4 text-inherit">
             Want to
             <span className="relative inline-block text-inherit">
-              <span className="underline underline-offset-4 decoration-2 decoration-fuchsia-500 mx-2 text-inherit">
+              <span className="underline underline-offset-4 decoration-2 decoration-fuchsia-500 mx-2 text-inherit text-xs">
                 get in touch
               </span>
             </span>
             with me?
           </p>
-          <p className="text-sm font-bold text-inherit">
+          <p className="text-xs font-bold text-inherit">
             Fill up the form to easily reach me out.
           </p>
         </div>
