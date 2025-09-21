@@ -18,7 +18,7 @@ export default function Footer() {
                    py-12 px-6 sm:px-8 flex flex-col justify-between"
       >
         <div className="translate-x-0 translate-y-[35rem] md:translate-y-[45vh]">
-          <Nav />
+          {/* <Nav /> */}
           <Section2 />
         </div>
       </div>
@@ -99,69 +99,69 @@ const Section2 = () => {
   );
 };
 
-const Nav = () => {
-  return (
-    // On mobile (default), display as a row and center the icons.
-    // On larger screens (sm and up), revert to original display with text.
-    <div className="flex flex-row justify-center items-center gap-5 sm:flex-col sm:items-start sm:gap-2 text-inherit">
-      <div className="flex gap-4 items-center text-inherit">
-        <a
-          href="https://web.facebook.com/ichbinaranna"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaFacebook
-            className="text-purple-800 dark:text-purple-400"
-            size={20}
-          />
-        </a>
-        <p className="text-inherit text-xs hidden sm:block">
-          Facebook
-        </p>
-      </div>
+// const Nav = () => {
+//   return (
+//     // On mobile (default), display as a row and center the icons.
+//     // On larger screens (sm and up), revert to original display with text.
+//     <div className="flex flex-row justify-center items-center gap-5 sm:flex-col sm:items-start sm:gap-2 text-inherit">
+//       <div className="flex gap-4 items-center text-inherit">
+//         <a
+//           href="https://web.facebook.com/ichbinaranna"
+//           target="_blank"
+//           rel="noopener noreferrer"
+//         >
+//           <FaFacebook
+//             className="text-purple-800 dark:text-purple-400"
+//             size={20}
+//           />
+//         </a>
+//         <p className="text-inherit text-xs hidden sm:block">
+//           Facebook
+//         </p>
+//       </div>
 
-      <div className="flex gap-4 items-center text-inherit">
-        <a
-          href="https://www.instagram.com/arannnnnaaa/?hl=en"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaInstagram
-            className="text-purple-800 dark:text-purple-400"
-            size={20}
-          />
-        </a>
-        <p className="text-inherit text-xs hidden sm:block">
-          Instagram
-        </p>
-      </div>
+//       <div className="flex gap-4 items-center text-inherit">
+//         <a
+//           href="https://www.instagram.com/arannnnnaaa/?hl=en"
+//           target="_blank"
+//           rel="noopener noreferrer"
+//         >
+//           <FaInstagram
+//             className="text-purple-800 dark:text-purple-400"
+//             size={20}
+//           />
+//         </a>
+//         <p className="text-inherit text-xs hidden sm:block">
+//           Instagram
+//         </p>
+//       </div>
 
-      <div className="flex gap-4 items-center text-inherit">
-        <a
-          href="https://www.linkedin.com/in/melanie-abalde-0a363a31b/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaLinkedin
-            className="text-purple-800 dark:text-purple-400"
-            size={20}
-          />
-        </a>
-        <p className="text-inherit text-xs hidden sm:block">
-          LinkedIn
-        </p>
-      </div>
+//       <div className="flex gap-4 items-center text-inherit">
+//         <a
+//           href="https://www.linkedin.com/in/melanie-abalde-0a363a31b/"
+//           target="_blank"
+//           rel="noopener noreferrer"
+//         >
+//           <FaLinkedin
+//             className="text-purple-800 dark:text-purple-400"
+//             size={20}
+//           />
+//         </a>
+//         <p className="text-inherit text-xs hidden sm:block">
+//           LinkedIn
+//         </p>
+//       </div>
 
-      <div className="flex gap-4 items-center text-inherit">
-        <a
-          href="https://gitlab.com/Araanna"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaGitlab className="text-purple-800 dark:text-purple-400" size={20} />
-        </a>
-        <p className="text-inherit text-xs hidden sm:block">Gitlab</p>
-      </div>
-    </div>
-  );
-};
+//       <div className="flex gap-4 items-center text-inherit">
+//         <a
+//           href="https://gitlab.com/Araanna"
+//           target="_blank"
+//           rel="noopener noreferrer"
+//         >
+//           <FaGitlab className="text-purple-800 dark:text-purple-400" size={20} />
+//         </a>
+//         <p className="text-inherit text-xs hidden sm:block">Gitlab</p>
+//       </div>
+//     </div>
+//   );
+// };
