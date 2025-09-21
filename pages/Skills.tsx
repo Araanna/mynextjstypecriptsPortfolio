@@ -21,7 +21,7 @@ type SkillSet = {
 };
 
 const skillSets: SkillSet[] = [
-  { Icon: FaReact, name: "REACJs" },
+  { Icon: FaReact, name: "ReactJs" },
   { Icon: SiTypescript, name: "TypeScript" },
   { Icon: SiDjango, name: "Django" },
   { Icon: SiFastapi, name: "Fastapi" },
