@@ -17,7 +17,7 @@ export default function Footer() {
                    bg-white/20 dark:bg-black/20 backdrop-blur-lg 
                    py-12 px-6 sm:px-8 flex flex-col justify-between"
       >
-        <div className="translate-x-0 translate-y-[35rem] md:translate-y-[45vh]">
+        <div className="translate-x-0 translate-y-[45rem] md:translate-y-[45vh]">
           {/* <Nav /> */}
           <Section2 />
         </div>
@@ -39,7 +39,7 @@ const Section2 = () => {
         </div>
 
         {/* Bottom Section - text color now inherits */}
-        <div className="flex flex-col items-center justify-center mb-0 translate-y-[-3vh] md:sticky md:flex-row md:justify-between md:items-end md:translate-y-[-6vh] md:translate-x-[-2vw] text-inherit w-full">
+        <div className="flex flex-col items-center justify-center mb-0 translate-y-[-8vh] md:sticky md:flex-row md:justify-between md:items-end md:translate-y-[-6vh] md:translate-x-[-2vw] text-inherit w-full">
           <h1 className="text-[22px] leading-[0.8] mt-4 sm:text-[15vw] md:text-[18vw] lg:text-[20vw] xl:text-[22vw] md:text-shadow-xs md:font-serif md:font-bold">
             𝓶𝓮𝓵𝓪
           </h1>
