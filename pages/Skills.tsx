@@ -5,7 +5,7 @@ import {
   SiDjango,
   SiMysql,
   SiNextdotjs,
-  SiPhp,
+
   SiPostgresql,
   SiTypescript,
   SiPostman,
@@ -26,7 +26,7 @@ const skillSets: SkillSet[] = [
   { Icon: SiDjango, name: "Django" },
   { Icon: SiFastapi, name: "Fastapi" },
   { Icon: SiNextdotjs, name: "NextJS" },
-  { Icon: SiPhp, name: "PHP" },
+ 
   { Icon: SiMysql, name: "MySQL" },
   { Icon: FaDocker, name: "Docker" },
   { Icon: FaGitAlt, name: "Git" },
