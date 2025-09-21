@@ -1,16 +1,16 @@
 "use client";
 
-import { FaDocker, FaGitAlt, FaNodeJs, FaVuejs,  } from "react-icons/fa";
+import { FaDocker, FaGitAlt, FaNodeJs, FaReact,  } from "react-icons/fa";
 import {
   SiDjango,
   SiMysql,
   SiNextdotjs,
-
   SiPostgresql,
   SiTypescript,
   SiPostman,
   SiFastapi,
   SiSwagger,
+  SiTailwindcss, 
 } from "react-icons/si";
 import React from "react";
 import { motion } from "framer-motion";
@@ -21,12 +21,12 @@ type SkillSet = {
 };
 
 const skillSets: SkillSet[] = [
-  { Icon: FaVuejs, name: "VueJS" },
+  { Icon: FaReact, name: "REACTJS" },
   { Icon: SiTypescript, name: "TypeScript" },
   { Icon: SiDjango, name: "Django" },
   { Icon: SiFastapi, name: "Fastapi" },
   { Icon: SiNextdotjs, name: "NextJS" },
- 
+ { Icon: SiTailwindcss, name: "TailwindCSS" },
   { Icon: SiMysql, name: "MySQL" },
   { Icon: FaDocker, name: "Docker" },
   { Icon: FaGitAlt, name: "Git" },
