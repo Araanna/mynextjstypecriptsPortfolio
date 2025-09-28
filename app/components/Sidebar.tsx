@@ -2,10 +2,9 @@
 
 import { FiMoon, FiSun } from "react-icons/fi";
 import React, { useEffect, useState } from "react";
-import { navLinks, socialLinks } from "../../lib/links.ts";
+import { navLinks } from "../../lib/links.ts";
 import { FaHome } from "react-icons/fa";
 import Link from "next/link";
-
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { useThemeStore } from "../store/themeStore.ts";
@@ -45,13 +44,17 @@ const Sidebar: React.FC<SidebarProps> = ({ section, children }) => {
     setShowVerticalNav(!homePage);
   }, [pathname]);
 
-  const textColor = isDarkMode ? "text-purple-300" : "text-purple-100";
+  // Color styles
+  const textColor = isDarkMode ? "text-purple-300" : "text-purple-950";
   const borderColor = isDarkMode ? "border-purple-300" : "border-purple-900";
-  const hoverBgColor = isDarkMode ? "hover:bg-purple-900/40" : "hover:bg-purple-900";
-  
-  // Active state colors - different for light/dark modes
+
+  // Fixed polished hover colors
+  const hoverBgColor = isDarkMode ? "hover:bg-purple-100" : "hover:bg-purple-900";
+  const hoverTextColor = isDarkMode ? "hover:text-purple-900" : "hover:text-white";
+
+  // Active state colors
   const activeBgColor = isDarkMode ? "bg-purple-900/30" : "bg-purple-900";
-  const activeTextColor = isDarkMode ? "text-white" : "text-white";
+  const activeTextColor = "text-white";
 
   return (
     <div className="flex flex-col md:flex-row">
@@ -76,6 +79,7 @@ const Sidebar: React.FC<SidebarProps> = ({ section, children }) => {
             >
               {isDarkMode ? <FiSun /> : <FiMoon />}
             </button>
+
             {/* NavLinks - Vertical on desktop */}
             {showVerticalNav && (
               <div className="flex flex-col items-center space-y-6 mt-4">
@@ -87,18 +91,18 @@ const Sidebar: React.FC<SidebarProps> = ({ section, children }) => {
                         transition-all 
                         duration-200 
                         hover:scale-105 
-                        text-[10px] 
-                        font-semi 
-                        px-1
-                        py-2 
+                        text-[3px] 
+                        font-semibold
+                        px-0.5
+                        py-0.5
                         border 
                         rounded-md 
                         vertical-text 
-                        font-medium
                         ${textColor} 
                         ${borderColor}
                         ${hoverBgColor}
-                        ${pathname === href ? `${activeBgColor} ${activeTextColor}` : ''}
+                        ${hoverTextColor}
+                        ${pathname === href ? `${activeBgColor} ${activeTextColor}` : ""}
                         transform
                         w-6
                         h-18
@@ -150,17 +154,17 @@ const Sidebar: React.FC<SidebarProps> = ({ section, children }) => {
                             cursor-pointer 
                             transition-all 
                             duration-200    
-                            text-[7px] 
-                            font-semi 
-                            px-1
-                            py-1 
-                            border-1 
-                            border-solid 
+                            text-[4px] 
+                            font-semibold 
+                            px-0.5
+                            py-0.5
+                            border
                             rounded-lg
                             ${textColor} 
                             ${borderColor}
                             ${hoverBgColor}
-                            ${pathname === href ? `${activeBgColor} ${activeTextColor}` : ''}
+                            ${hoverTextColor}
+                            ${pathname === href ? `${activeBgColor} ${activeTextColor}` : ""}
                             transform
                             active:scale-95
                           `}
@@ -177,77 +181,75 @@ const Sidebar: React.FC<SidebarProps> = ({ section, children }) => {
         </motion.div>
       )}
 
-  
-{/* Main Content */}
-<div className="flex-1 flex flex-col">
-  {showTopBar && (
-    <motion.div
-      className={`w-full h-16 flex items-center px-4 md:px-8 border-b-[1px] ${borderColor}`}
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -20 }}
-      transition={{ duration: 0.5 }}
-    >
-      <div className="w-full flex items-center justify-end space-x-4 md:space-x-6">
-        {/* Navigation links - Always visible */}
-        <ul className="flex items-center space-x-2 md:space-x-4 lg:space-x-6 overflow-x-auto py-2 no-scrollbar">
-          {navLinks.map(({ id, href, label }) => (
-            <li key={id} className="flex-shrink-0">
-              <Link href={href}>
-                <span
-                  className={`
-                    cursor-pointer 
-                    transition-all 
-                    duration-200 
-                    transform
-                    text-[7px] 
-                    md:text-xs
-                    font-medium
-                    px-1 
-                    py-1 
-                    md:px-1
-                    md:py-1
-                    border 
-                    rounded-md 
-                    ${textColor} 
-                    ${borderColor} 
-                    whitespace-nowrap
-                    ${hoverBgColor}
-                    ${pathname === href ? `${activeBgColor} ${activeTextColor}` : ''}
-                    active:scale-95
-                    flex
-                    items-center
-                    justify-center
-                  `}
-                >
-                  {label}
-                </span>
-              </Link>
-            </li>
-          ))}
-        </ul>
-
-        {/* Home icon and theme toggle - Always visible */}
-        <div className="flex items-center space-x-4 border-l ${borderColor} pl-4 md:pl-6">
-          <Link href="/">
-            <span className={`text-xl md:text-2xl hover:opacity-90 ${textColor} flex items-center justify-center`}>
-              <FaHome />
-            </span>
-          </Link>
-          <button
-            onClick={toggleTheme}
-            className={`text-xl md:text-2xl hover:opacity-90 ${textColor} flex items-center justify-center`}
+      {/* Main Content */}
+      <div className="flex-1 flex flex-col">
+        {showTopBar && (
+          <motion.div
+            className={`w-full h-16 flex items-center px-4 md:px-8 border-b-[1px] ${borderColor}`}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.5 }}
           >
-            {isDarkMode ? <FiSun /> : <FiMoon />}
-          </button>
-        </div>
-      </div>
-    </motion.div>
-  )}
+            <div className="w-full flex items-center justify-end space-x-4 md:space-x-6">
+              {/* Navigation links - Always visible */}
+              <ul className="flex items-center space-x-2 md:space-x-4 lg:space-x-6 overflow-x-auto py-2 no-scrollbar">
+                {navLinks.map(({ id, href, label }) => (
+                  <li key={id} className="flex-shrink-0">
+                    <Link href={href}>
+                      <span
+                        className={`
+                          cursor-pointer 
+                          transition-all 
+                          duration-200 
+                          transform
+                          text-xs
+                          md:text-[4px]
+                          font-semibold
+                          px-0.5
+                          py-0.5
+                          border 
+                          rounded-md 
+                          ${textColor} 
+                          ${borderColor} 
+                          ${hoverBgColor}
+                          ${hoverTextColor}
+                          ${pathname === href ? `${activeBgColor} ${activeTextColor}` : ""}
+                          active:scale-95
+                          flex
+                          items-center
+                          justify-center
+                        `}
+                      >
+                        {label}
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
 
-  <div className="flex-1 p-4 md:p-6">{children}</div>
-</div>
-      {/* Mobile-specific styles */}
+              {/* Home + theme toggle */}
+              <div className={`flex items-center space-x-4 border-l ${borderColor} pl-4 md:pl-6`}>
+                <Link href="/">
+                  <span className={`text-xl md:text-2xl hover:opacity-90 ${textColor} flex items-center justify-center`}>
+                    <FaHome />
+                  </span>
+                </Link>
+                <button
+                  onClick={toggleTheme}
+                  className={`text-xl md:text-2xl hover:opacity-90 ${textColor} flex items-center justify-center`}
+                >
+                  {isDarkMode ? <FiSun /> : <FiMoon />}
+                </button>
+              </div>
+            </div>
+          </motion.div>
+        )}
+
+        <div className="flex-1 p-4 md:p-6">{children}</div>
+      </div>
+
+      {/* Extra CSS */}
       <style jsx>{`
         .hide-scrollbar::-webkit-scrollbar {
           display: none;

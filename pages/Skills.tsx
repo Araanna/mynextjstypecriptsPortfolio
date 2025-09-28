@@ -1,6 +1,6 @@
 "use client";
 
-import { FaDocker, FaGitAlt, FaNodeJs, FaReact,  } from "react-icons/fa";
+import { FaDocker, FaGitAlt, FaNodeJs, FaReact } from "react-icons/fa";
 import {
   SiDjango,
   SiMysql,
@@ -10,7 +10,7 @@ import {
   SiPostman,
   SiFastapi,
   SiSwagger,
-  SiTailwindcss, 
+  SiTailwindcss,
 } from "react-icons/si";
 import React from "react";
 import { motion } from "framer-motion";
@@ -26,7 +26,7 @@ const skillSets: SkillSet[] = [
   { Icon: SiDjango, name: "Django" },
   { Icon: SiFastapi, name: "Fastapi" },
   { Icon: SiNextdotjs, name: "NextJS" },
- { Icon: SiTailwindcss, name: "TailwindCSS" },
+  { Icon: SiTailwindcss, name: "TailwindCSS" },
   { Icon: SiMysql, name: "MySQL" },
   { Icon: FaDocker, name: "Docker" },
   { Icon: FaGitAlt, name: "Git" },
@@ -59,19 +59,12 @@ const Skills: React.FC = () => {
               className="flex flex-col items-center p-2 rounded-lg bg-purple-900 dark:bg-gray-800/50 backdrop-blur-lg transition-all hover:scale-105 min-w-[80px]"
               whileHover={{ y: -5 }}
             >
-              {/* Icon */}
               <div className="flex w-full justify-center items-center">
-                <div className="icon-container flex justify-center items-center">
-                  <skill.Icon className="text-xl md:text-2xl mb-2 text-white" />
-                </div>
+                <skill.Icon className="text-xl md:text-2xl mb-2 text-white" />
               </div>
-
-              {/* Label */}
-              <div className="text-container">
-                <p className="text-[5px] md:text-xs text-white whitespace-nowrap">
-                  {skill.name}
-                </p>
-              </div>
+              <p className="text-[5px] md:text-xs text-white whitespace-nowrap">
+                {skill.name}
+              </p>
             </motion.div>
           ))}
         </div>
