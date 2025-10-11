@@ -91,9 +91,9 @@ const Sidebar: React.FC<SidebarProps> = ({ section, children }) => {
                         transition-all 
                         duration-200 
                         hover:scale-105 
-                        text-[3px] 
+                        text-[10px] 
                         font-semibold
-                        px-0.5
+                        px-0.2
                         py-0.5
                         border 
                         rounded-md 
@@ -154,10 +154,10 @@ const Sidebar: React.FC<SidebarProps> = ({ section, children }) => {
                             cursor-pointer 
                             transition-all 
                             duration-200    
-                            text-[4px] 
+                            text-[10px] 
                             font-semibold 
-                            px-0.5
-                            py-0.5
+                            px-0.2
+                            py-1
                             border
                             rounded-lg
                             ${textColor} 
@@ -204,7 +204,7 @@ const Sidebar: React.FC<SidebarProps> = ({ section, children }) => {
                           duration-200 
                           transform
                           text-xs
-                          md:text-[4px]
+                          md:text-[10px]
                           font-semibold
                           px-0.5
                           py-0.5

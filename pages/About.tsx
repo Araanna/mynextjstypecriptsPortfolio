@@ -12,9 +12,14 @@ const staticData = {
 function About() {
   return (
     <section className="w-full px-4 sm:px-6 lg:px-8 max-w-[1200px] mx-auto py-8 overflow-visible">
-      {/* Headline - EXACT COPY from Skills */}
-      <div className="flex justify-start">
-        <div className="inline-flex items-center text-xs font-semibold mb-6 px-3 py-1 rounded-lg border shadow-sm hover:shadow-md transition-all duration-300 bg-purple-900 text-white border-none dark:bg-purple-900/30 dark:text-purple-300 dark:border-purple-900/30 cursor-pointer">
+      
+      <div className="flex justify-start -ml-4 sm:-ml-6 md:ml-0">
+        <div className="inline-flex items-center text-xs font-semibold 
+          md:mr-[16rem]
+          mb-6 px-3 py-1 rounded-lg border shadow-sm 
+          hover:shadow-md transition-all duration-300 bg-purple-900 text-white 
+          border-none dark:bg-purple-900/30 dark:text-purple-300 
+          dark:border-purple-900/30 cursor-pointer">
           <h1 className="text-center">About Me</h1>
         </div>
       </div>
