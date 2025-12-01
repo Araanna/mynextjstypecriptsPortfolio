@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
         rules: {
             userAgent: "*",
             allow: "/",
-            disallow: "/private/",
+            disallow: ["/private/", "/admin/"],
         },
         sitemap: "https://mela-portfolio.vercel.app/sitemap.xml", // Replace with your actual domain
     };

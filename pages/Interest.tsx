@@ -95,7 +95,7 @@ export default function Interest() {
                 )
               )}
 
-              <motion.div
+              {/* <motion.div
                 className="p-4 shadow-md border border-stone-800 rounded-md w-full"
                 variants={itemVariants}
                 whileHover={{ y: -3 }}
@@ -122,7 +122,7 @@ export default function Interest() {
                   Besides these interests, what excites me the most is learning
                   different languages and cuisines.
                 </h2>
-              </motion.div>
+              </motion.div> */}
             </motion.div>
 
             {/* Desktop: Grid layout */}
