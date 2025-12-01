@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Layout from "../app/components/Layout";
 import React from "react";

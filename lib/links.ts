@@ -5,10 +5,13 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { AiOutlineFileText } from "react-icons/ai";
 
 export const navLinks = [
-  { id: "works", href: "/Works", label: "Works" },
-  { id: "values", href: "/Values", label: "Values" },
-  { id: "interest", href: "/Interest", label: "Interest" },
-  { id: "certificates", href: "/Certificate", label: "Certificates" },
+  { id: "about", href: "/about", label: "About" },
+  { id: "skills", href: "/skills", label: "Skills" },
+  { id: "works", href: "/works", label: "Works" },
+  { id: "values", href: "/values", label: "Values" },
+  { id: "interest", href: "/interest", label: "Interest" },
+  { id: "certificates", href: "/certificate", label: "Certificates" },
+  { id: "contact", href: "/contact", label: "Contact" },
 ];
 
 export const socialLinks = [

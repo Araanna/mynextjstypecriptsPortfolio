@@ -1,0 +1,106 @@
+
+> myportfolio@0.1.0 build
+> npm install --legacy-peer-deps && next build
+
+
+added 44 packages, and audited 650 packages in 2s
+
+205 packages are looking for funding
+  run `npm fund` for details
+
+10 vulnerabilities (3 low, 4 moderate, 3 high)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+   ▲ Next.js 15.2.4
+   - Environments: .env.local
+
+   Creating an optimized production build ...
+
+warn - As of Tailwind CSS v2.2, `lightBlue` has been renamed to `sky`.
+warn - Update your configuration file to silence this warning.
+
+warn - As of Tailwind CSS v3.0, `warmGray` has been renamed to `stone`.
+warn - Update your configuration file to silence this warning.
+
+warn - As of Tailwind CSS v3.0, `trueGray` has been renamed to `neutral`.
+warn - Update your configuration file to silence this warning.
+
+warn - As of Tailwind CSS v3.0, `coolGray` has been renamed to `gray`.
+warn - Update your configuration file to silence this warning.
+
+warn - As of Tailwind CSS v3.0, `blueGray` has been renamed to `slate`.
+warn - Update your configuration file to silence this warning.
+/*! 🌼 daisyUI 5.0.50 */
+/*! 🌼 daisyUI 5.0.50 */
+Failed to compile.
+
+HookWebpackError: Cannot find module './features/css3-cursors-grab'
+Require stack:
+- /Users/melanieabalde/Documents/GitHub/mynextjstypecriptsPortfolio/node_modules/caniuse-lite/data/features.js
+- /Users/melanieabalde/Documents/GitHub/mynextjstypecriptsPortfolio/node_modules/caniuse-lite/dist/unpacker/features.js
+- /Users/melanieabalde/Documents/GitHub/mynextjstypecriptsPortfolio/node_modules/caniuse-lite/dist/unpacker/index.js
+- /Users/melanieabalde/Documents/GitHub/mynextjstypecriptsPortfolio/node_modules/next/dist/compiled/cssnano-simple/index.js
+- /Users/melanieabalde/Documents/GitHub/mynextjstypecriptsPortfolio/node_modules/next/dist/build/webpack/plugins/css-minimizer-plugin.js
+- /Users/melanieabalde/Documents/GitHub/mynextjstypecriptsPortfolio/node_modules/next/dist/build/webpack-config.js
+- /Users/melanieabalde/Documents/GitHub/mynextjstypecriptsPortfolio/node_modules/next/dist/build/webpack/plugins/next-trace-entrypoints-plugin.js
+- /Users/melanieabalde/Documents/GitHub/mynextjstypecriptsPortfolio/node_modules/next/dist/build/collect-build-traces.js
+- /Users/melanieabalde/Documents/GitHub/mynextjstypecriptsPortfolio/node_modules/next/dist/build/index.js
+- /Users/melanieabalde/Documents/GitHub/mynextjstypecriptsPortfolio/node_modules/next/dist/cli/next-build.js
+    at makeWebpackError (/Users/melanieabalde/Documents/GitHub/mynextjstypecriptsPortfolio/node_modules/next/dist/compiled/webpack/bundle5.js:29:315788)
+    at /Users/melanieabalde/Documents/GitHub/mynextjstypecriptsPortfolio/node_modules/next/dist/compiled/webpack/bundle5.js:29:106487
+    at eval (eval at create (/Users/melanieabalde/Documents/GitHub/mynextjstypecriptsPortfolio/node_modules/next/dist/compiled/webpack/bundle5.js:14:9224), <anonymous>:44:1)
+-- inner error --
+Error: Cannot find module './features/css3-cursors-grab'
+Require stack:
+- /Users/melanieabalde/Documents/GitHub/mynextjstypecriptsPortfolio/node_modules/caniuse-lite/data/features.js
+- /Users/melanieabalde/Documents/GitHub/mynextjstypecriptsPortfolio/node_modules/caniuse-lite/dist/unpacker/features.js
+- /Users/melanieabalde/Documents/GitHub/mynextjstypecriptsPortfolio/node_modules/caniuse-lite/dist/unpacker/index.js
+- /Users/melanieabalde/Documents/GitHub/mynextjstypecriptsPortfolio/node_modules/next/dist/compiled/cssnano-simple/index.js
+- /Users/melanieabalde/Documents/GitHub/mynextjstypecriptsPortfolio/node_modules/next/dist/build/webpack/plugins/css-minimizer-plugin.js
+- /Users/melanieabalde/Documents/GitHub/mynextjstypecriptsPortfolio/node_modules/next/dist/build/webpack-config.js
+- /Users/melanieabalde/Documents/GitHub/mynextjstypecriptsPortfolio/node_modules/next/dist/build/webpack/plugins/next-trace-entrypoints-plugin.js
+- /Users/melanieabalde/Documents/GitHub/mynextjstypecriptsPortfolio/node_modules/next/dist/build/collect-build-traces.js
+- /Users/melanieabalde/Documents/GitHub/mynextjstypecriptsPortfolio/node_modules/next/dist/build/index.js
+- /Users/melanieabalde/Documents/GitHub/mynextjstypecriptsPortfolio/node_modules/next/dist/cli/next-build.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1420:15)
+    at /Users/melanieabalde/Documents/GitHub/mynextjstypecriptsPortfolio/node_modules/next/dist/server/require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1058:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1063:22)
+    at Module._load (node:internal/modules/cjs/loader:1226:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1503:12)
+    at mod.require (/Users/melanieabalde/Documents/GitHub/mynextjstypecriptsPortfolio/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:152:16)
+caused by plugins in Compilation.hooks.processAssets
+Error: Cannot find module './features/css3-cursors-grab'
+Require stack:
+- /Users/melanieabalde/Documents/GitHub/mynextjstypecriptsPortfolio/node_modules/caniuse-lite/data/features.js
+- /Users/melanieabalde/Documents/GitHub/mynextjstypecriptsPortfolio/node_modules/caniuse-lite/dist/unpacker/features.js
+- /Users/melanieabalde/Documents/GitHub/mynextjstypecriptsPortfolio/node_modules/caniuse-lite/dist/unpacker/index.js
+- /Users/melanieabalde/Documents/GitHub/mynextjstypecriptsPortfolio/node_modules/next/dist/compiled/cssnano-simple/index.js
+- /Users/melanieabalde/Documents/GitHub/mynextjstypecriptsPortfolio/node_modules/next/dist/build/webpack/plugins/css-minimizer-plugin.js
+- /Users/melanieabalde/Documents/GitHub/mynextjstypecriptsPortfolio/node_modules/next/dist/build/webpack-config.js
+- /Users/melanieabalde/Documents/GitHub/mynextjstypecriptsPortfolio/node_modules/next/dist/build/webpack/plugins/next-trace-entrypoints-plugin.js
+- /Users/melanieabalde/Documents/GitHub/mynextjstypecriptsPortfolio/node_modules/next/dist/build/collect-build-traces.js
+- /Users/melanieabalde/Documents/GitHub/mynextjstypecriptsPortfolio/node_modules/next/dist/build/index.js
+- /Users/melanieabalde/Documents/GitHub/mynextjstypecriptsPortfolio/node_modules/next/dist/cli/next-build.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1420:15)
+    at /Users/melanieabalde/Documents/GitHub/mynextjstypecriptsPortfolio/node_modules/next/dist/server/require-hook.js:55:36
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1058:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1063:22)
+    at Module._load (node:internal/modules/cjs/loader:1226:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1503:12)
+    at mod.require (/Users/melanieabalde/Documents/GitHub/mynextjstypecriptsPortfolio/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:152:16)
+
+
+> Build failed because of webpack errors

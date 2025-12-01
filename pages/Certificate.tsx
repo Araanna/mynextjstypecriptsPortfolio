@@ -1,3 +1,5 @@
+"use client";
+
 import Fligno from "../assets/images/Fligno.jpeg";
 import Image from "next/image";
 import Layout from "../app/components/Layout";

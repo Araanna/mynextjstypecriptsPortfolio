@@ -1,3 +1,5 @@
+"use client";
+
 import Layout from "../app/components/Layout";
 import React from "react";
 import RotatingText from "../app/components/RotatingText";
